@@ -135,7 +135,7 @@ test('Code Engine upload includes the Veo server library and excludes nested cre
     const repo = join(files.directory, 'repo');
     mkdirSync(repo);
     execFileSync('git', ['init', '-q', repo]);
-    for (const [name, ignored] of [['lib/veo-server.ts', false], ['lib/credentials.json', true], ['app/.env.local', true], ['app/service-account.json', true], ['secrets/google.json', true], ['mich-devfest-hackathon-example.json', true], ['lib/mich-devfest-hackathon-example.json', true]]) {
+    for (const [name, ignored] of [['lib/veo-server.ts', false], ['content/finding-love-at-a-hackathon/shot-data/episode-01.json', false], ['content/finding-love-at-a-hackathon/shot-data/credentials.json', true], ['lib/credentials.json', true], ['app/.env.local', true], ['app/service-account.json', true], ['secrets/google.json', true], ['mich-devfest-hackathon-example.json', true], ['lib/mich-devfest-hackathon-example.json', true]]) {
       const result = spawnSync('git', ['-C', repo, '-c', `core.excludesFile=${rules}`, 'check-ignore', '--no-index', '-q', '--', name]);
       assert.equal(result.status, ignored ? 0 : 1, name);
     }

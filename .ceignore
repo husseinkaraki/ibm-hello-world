@@ -9,6 +9,19 @@
 !app/**
 !lib/
 !lib/**
+!content/
+!content/finding-love-at-a-hackathon/
+!content/finding-love-at-a-hackathon/shot-data/
+!content/finding-love-at-a-hackathon/shot-data/episode-01.json
+!content/finding-love-at-a-hackathon/shot-data/episode-02.json
+!content/finding-love-at-a-hackathon/shot-data/episode-03.json
+!content/finding-love-at-a-hackathon/shot-data/episode-04.json
+!content/finding-love-at-a-hackathon/shot-data/episode-05.json
+!content/finding-love-at-a-hackathon/shot-data/episode-06.json
+!content/finding-love-at-a-hackathon/shot-data/episode-07.json
+!content/finding-love-at-a-hackathon/shot-data/episode-08.json
+!content/finding-love-at-a-hackathon/shot-data/episode-09.json
+!content/finding-love-at-a-hackathon/shot-data/episode-10.json
 !scripts/
 !scripts/prepare-standalone.mjs
 # Keep environment files excluded even inside otherwise allowed directories.

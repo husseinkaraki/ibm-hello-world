@@ -2,7 +2,7 @@ import "server-only";
 import { GoogleAuth } from "google-auth-library";
 import { timingSafeEqual } from "node:crypto";
 import {
-  VEO_MODEL, VeoError, type Readiness, type VertexOperation,
+  VEO_MODEL, VeoError, type Readiness, type VertexOperation, type GenerationOptions,
   generationBody, operationState,
 } from "./veo-contract";
 import { createJobToken, modelPath, readJobToken, validateOperationName } from "./veo-job";
@@ -110,9 +110,9 @@ async function vertex(method: "predictLongRunning" | "fetchPredictOperation", bo
   return result;
 }
 
-export async function submitScene(prompt: string, image?: { bytes: Uint8Array; mimeType: string }) {
+export async function submitScene(prompt: string, image?: { bytes: Uint8Array; mimeType: string }, options: GenerationOptions = {}) {
   const config = configuration();
-  const operation = await vertex("predictLongRunning", generationBody(prompt, image));
+  const operation = await vertex("predictLongRunning", generationBody(prompt, image, options));
   validateOperationName(operation.name, config.path);
   return createJobToken(operation.name, config.secret);
 }

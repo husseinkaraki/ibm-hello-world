@@ -1,8 +1,12 @@
 /** Shared, non-secret configuration. The browser never imports Google auth code. */
 export const VEO_MODEL = "veo-3.1-fast-generate-001";
 export const CLIP_SECONDS = 4;
+export type ClipSeconds = 4 | 6 | 8;
+export type AspectRatio = "16:9" | "9:16";
+export type Resolution = "720p" | "1080p";
+export type GenerationOptions = { durationSeconds?: ClipSeconds; aspectRatio?: AspectRatio; resolution?: Resolution; generateAudio?: boolean };
 export const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
-export const MAX_PROMPT_LENGTH = 2000;
+export const MAX_PROMPT_LENGTH = 4000;
 
 export type Readiness = {
   ready: boolean;
@@ -22,6 +26,42 @@ export class VeoError extends Error {
     this.name = "VeoError";
     this.status = status;
   }
+}
+
+export function validateDuration(value: FormDataEntryValue | null): ClipSeconds {
+  if (value === null) return CLIP_SECONDS;
+  if (value === "4" || value === "6" || value === "8") return Number(value) as ClipSeconds;
+  throw new VeoError("Choose a supported clip length: 4, 6, or 8 seconds.");
+}
+
+export function validateAspectRatio(value: FormDataEntryValue | null): AspectRatio {
+  if (value === null) return "16:9";
+  if (value === "16:9" || value === "9:16") return value;
+  throw new VeoError("Choose a supported video format: 16:9 or 9:16.");
+}
+
+export function validateResolution(value: FormDataEntryValue | null): Resolution {
+  if (value === null) return "720p";
+  if (value === "720p" || value === "1080p") return value;
+  throw new VeoError("Choose a supported resolution: 720p or 1080p.");
+}
+
+export function validateAudio(value: FormDataEntryValue | null): boolean {
+  if (value === null || value === "false") return false;
+  if (value === "true") return true;
+  throw new VeoError("Audio generation must be true or false.");
+}
+
+export function validateFocusWord(value: FormDataEntryValue | null): string | undefined {
+  if (value === null) return undefined;
+  if (typeof value === "string" && /^[\p{L}][\p{L}\p{M}'’-]{0,39}$/u.test(value)) return value;
+  throw new VeoError("Use one focus word of up to 40 letters, with no spaces.");
+}
+
+export function validateVideoSettings(data: FormData): Required<GenerationOptions> {
+  const durationSeconds = validateDuration(data.get("durationSeconds"));
+  const resolution = validateResolution(data.get("resolution"));
+  return { durationSeconds, resolution, aspectRatio: validateAspectRatio(data.get("aspectRatio")), generateAudio: validateAudio(data.get("generateAudio")) };
 }
 
 export function validatePrompt(value: FormDataEntryValue | null): string {
@@ -73,7 +113,7 @@ export function operationState(operation: VertexOperation): "pending" | "complet
   throw new VeoError("Google finished this request without a playable video. Try a different scene.", 422);
 }
 
-export function generationBody(prompt: string, image?: { bytes: Uint8Array; mimeType: string }) {
+export function generationBody(prompt: string, image?: { bytes: Uint8Array; mimeType: string }, options: GenerationOptions = {}) {
   return {
     instances: [{
       prompt,
@@ -84,10 +124,10 @@ export function generationBody(prompt: string, image?: { bytes: Uint8Array; mime
     }],
     parameters: {
       sampleCount: 1,
-      durationSeconds: CLIP_SECONDS,
-      aspectRatio: "16:9",
-      resolution: "720p",
-      generateAudio: false,
+      durationSeconds: options.durationSeconds ?? CLIP_SECONDS,
+      aspectRatio: options.aspectRatio ?? "16:9",
+      resolution: options.resolution ?? "720p",
+      generateAudio: options.generateAudio ?? false,
       personGeneration: "allow_adult",
       // No storageUri: Vertex returns video bytes, so this demo needs no GCS bucket.
     },

@@ -8,8 +8,10 @@ const home = await fetch(new URL('/', base), { signal: AbortSignal.timeout(120_0
 assert.equal(home.status, 200, 'Home endpoint must return HTTP 200');
 assert.match(home.headers.get('content-type'), /^text\/html/);
 const html = await home.text();
-assert.match(html, /<h1>Hello World!<\/h1>/);
-assert.match(html, /Your Next\.js application is running/);
+assert.match(html, /Finding Love at a Hackathon/);
+assert.match(html, /Make this word yours/);
+assert.match(html, /Scene <strong>1<\/strong>/);
+assert.match(html, /DEMO SCORES/);
 const health = await fetch(new URL('/health', base), { signal: AbortSignal.timeout(30_000) });
 assert.equal(health.status, 200, 'Health endpoint must return HTTP 200');
 const status = await health.json();

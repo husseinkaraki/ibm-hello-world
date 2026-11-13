@@ -1,6 +1,8 @@
-# Next.js Hello World on IBM Cloud
+# Finding Love at a Hackathon on IBM Cloud
 
-A minimal TypeScript + Next.js 16 App Router application for IBM Cloud Code Engine. `/` serves the Hello World page; `/health` returns the application identity, framework version, and health status.
+A TypeScript + Next.js 16 App Router language-learning drama for IBM Cloud Code Engine. `/` is the main product: practice one word three times with clearly simulated scores, then generate/watch an eight-second personalized scene and advance to the next word. Episode 1 uses the writing workstream's ten authored shots. `/health` returns the application identity, framework version, and health status.
+
+See [the learning workflow and shared video API contract](docs/main-product.md) for local recordings, full scene audio with a silently mouthed focus word, job reuse, content integration, and browser verification. `/veo` remains the existing integration tester until the Scene Creator workstream moves it to `/scene-creator`.
 
 Source repository: [husseinkaraki/ibm-hello-world](https://github.com/husseinkaraki/ibm-hello-world) (private).
 
@@ -27,7 +29,7 @@ npm test
 npm start
 ```
 
-`npm test` starts its own production standalone server on a temporary local port and checks the rendered HTML, generated CSS, health route, HEAD requests, 404s, and method rejection. Build before running these tests. No test server remains running afterward. `npm start` serves the production build on port 8080.
+`npm test` starts its own production standalone server on a temporary local port and checks the rendered HTML, generated CSS, health route, HEAD requests, 404s, and method rejection, plus episode/API/runtime setup tests. Build before running these tests. `npx playwright install chromium` and `npm run test:browser` run the learning flow in a real browser with fake microphone input and mocked video generation; no paid requests are submitted. No test server remains running afterward. `npm start` serves the production build on port 8080.
 
 ## Deploy to IBM
 

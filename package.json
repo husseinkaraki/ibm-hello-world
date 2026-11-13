@@ -3,23 +3,27 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "TypeScript and Next.js Hello World for IBM Cloud Code Engine",
-  "engines": { "node": ">=24" },
+  "description": "Personalized language-learning drama on IBM Cloud Code Engine",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0 --port 8080",
     "build": "next build && node scripts/prepare-standalone.mjs",
     "start": "next start --hostname 0.0.0.0 --port 8080",
     "check": "tsc --noEmit && node --check scripts/deploy.mjs && node --check scripts/runtime-bindings.mjs && node --check scripts/setup-google-cloud.mjs && node --check scripts/verify.mjs && bash -n deploy.sh",
-    "test": "node --test"
+    "test": "node --test",
+    "test:browser": "playwright test"
   },
   "dependencies": {
+    "google-auth-library": "11.3.4",
     "next": "16.4.6",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "google-auth-library": "11.3.4",
     "server-only": "0.0.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.0",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",

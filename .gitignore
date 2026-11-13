@@ -25,6 +25,8 @@ credentials*.json
 artifacts/
 output/playwright/
 .playwright-cli/
+playwright-report/
+test-results/
 !.env.example
 !**/.env.example
 

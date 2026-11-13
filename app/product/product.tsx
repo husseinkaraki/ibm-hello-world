@@ -1,0 +1,143 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import type { DramaEpisode } from "../../lib/drama-episode";
+import { generationPrompt } from "../../lib/drama-prompt";
+import { MAX_IMAGE_BYTES, validateImage } from "../../lib/veo-contract";
+import { composeScenePrompt } from "../../lib/scene-prompt";
+import { useWordRecorder } from "./use-word-recorder";
+import { useSceneGeneration } from "./use-scene-generation";
+import ScenePlayer from "./scene-player";
+import Icon from "./icons";
+import styles from "./product.module.css";
+
+const WAVE = [8, 16, 25, 14, 32, 42, 26, 52, 34, 22, 46, 62, 36, 50, 28, 42, 20, 34, 14, 24, 12];
+
+export default function Product({ episode }: { episode: DramaEpisode }) {
+  const [index, setIndex] = useState(0);
+  const [screen, setScreen] = useState<"practice" | "watch">("practice");
+  const [promptOpen, setPromptOpen] = useState(false);
+  const [selfieOpen, setSelfieOpen] = useState(false);
+  const [selfie, setSelfie] = useState<File | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
+  const [photoError, setPhotoError] = useState("");
+  const [password, setPassword] = useState("");
+  const [finished, setFinished] = useState(false);
+  const heading = useRef<HTMLHeadingElement>(null);
+  const fileInput = useRef<HTMLInputElement>(null);
+  const shot = episode.shots[index];
+  const recorder = useWordRecorder(shot.id);
+  const generation = useSceneGeneration(shot.id, episode.id);
+  const { current, connection } = generation;
+  const recording = recorder.status === "recording";
+  const microphoneBusy = recorder.status !== "idle";
+  const generating = current.phase === "submitting" || current.phase === "pending";
+  const last = index === episode.shots.length - 1;
+  const attemptsDone = recorder.attempts.length === 3;
+  const disabledGeneration = !connection?.ready || !generation.hydrated || generating || Boolean(connection.requiresPassword && !password.trim());
+
+  useEffect(() => {
+    if (!selfie) { setPreview(null); return; }
+    const url = URL.createObjectURL(selfie); setPreview(url);
+    return () => URL.revokeObjectURL(url);
+  }, [selfie]);
+
+  function navigate(next: number, view: "practice" | "watch" = "practice") {
+    recorder.stopPlayback(); setPromptOpen(false); setFinished(false); setIndex(next); setScreen(view);
+    requestAnimationFrame(() => heading.current?.focus());
+  }
+
+  async function chooseSelfie(file?: File) {
+    if (!file) return;
+    setPhotoError("");
+    try {
+      if (file.size > MAX_IMAGE_BYTES) throw new Error("Choose a photo smaller than 5 MB.");
+      validateImage(new Uint8Array(await file.arrayBuffer()), file.type);
+      setSelfie(file);
+    } catch (error) { setPhotoError(error instanceof Error ? error.message : "Choose a JPEG or PNG photo."); }
+    if (fileInput.current) fileInput.current.value = "";
+  }
+
+  const startGeneration = (newTake = false) => void generation.generate(generationPrompt(shot, Boolean(selfie)), shot.focusWord, selfie, password, newTake);
+
+  return <main className={styles.app}>
+    <div className={styles.shell}>
+      <header className={styles.header}>
+        <a href="/" className={styles.brand} aria-label="Scene home"><span className={styles.brandMark}><Icon name="film" size={21} /></span>scene<span className={styles.brandPeriod}>.</span><span className={styles.brandDescriptor}>LEARN IT. LIVE IT.</span></a>
+        <div className={styles.headerRight}><span className={styles.demoBadge}><span />HACKATHON DEMO</span><button type="button" className={styles.selfieButton} onClick={() => setSelfieOpen(value => !value)} aria-expanded={selfieOpen} aria-controls="selfie-panel">{preview ? <img src={preview} alt="" /> : <Icon name="camera" size={17} />}<span>{selfie ? "Your selfie" : "Add your selfie"}</span><span className={styles.optional}>OPTIONAL</span></button></div>
+      </header>
+
+      {selfieOpen && <section id="selfie-panel" className={styles.selfiePanel} aria-label="Your protagonist photo">
+        <div><strong>You’re the main character.</strong><p>Add a clear adult selfie once. We’ll reuse it for your next scenes. Your photo is sent to Google only when you generate.</p></div>
+        <div className={styles.photoActions}><label className={styles.photoLabel}>{selfie ? "Replace photo" : "Upload or take a selfie"}<input ref={fileInput} type="file" accept="image/jpeg,image/png" capture="user" disabled={generating} onChange={event => void chooseSelfie(event.target.files?.[0])} /></label>{selfie && <button type="button" className={styles.textButton} disabled={generating} onClick={() => { setSelfie(null); setPhotoError(""); }}>Remove</button>}<span>JPEG / PNG · up to 5 MB</span></div>
+        {photoError && <p role="alert" className={styles.inlineMessage}>{photoError}</p>}
+      </section>}
+
+      <section className={styles.episodeHeader} aria-label="Episode progress">
+        <div className={styles.episodeTop}><p className={styles.eyebrow}>YOUR OWN LITTLE DRAMA <span> / </span> EPISODE {String(episode.number).padStart(2, "0")}</p><p className={styles.sceneTally} aria-live="polite">Scene <strong>{index + 1}</strong> <span>of {episode.shots.length}</span></p></div>
+        <h1>{episode.seriesTitle}</h1>
+        <div className={styles.progress} aria-label={`Scene ${index + 1} of ${episode.shots.length}`}>{episode.shots.map((item, i) => <span key={item.id} className={i < index || finished ? styles.progressDone : i === index ? styles.progressCurrent : ""} />)}</div>
+      </section>
+
+      <div className={styles.lessonLayout}>
+        <aside className={styles.storyAside}>
+          <div className={styles.episodeStamp}><span>01—{String(episode.shots.length).padStart(2, "0")}</span><Icon name="spark" size={21} /></div>
+          <p className={styles.eyebrow}>EPISODE {String(episode.number).padStart(2, "0")}</p>
+          <h2>{episode.title}</h2>
+          <p className={styles.storyDescription}>One word at a time.<br />One scene closer.</p>
+          <div className={styles.steps} aria-label="Learning steps">
+            <div className={screen === "practice" ? styles.stepActive : styles.stepDone}><span>{screen === "watch" ? <Icon name="check" size={14} /> : "01"}</span><div><strong>Find your voice</strong><small>One word. Three takes.</small></div></div>
+            <span className={styles.stepLine} />
+            <div className={screen === "watch" ? styles.stepActive : ""}><span>02</span><div><strong>Live the scene</strong><small>You’re the main character.</small></div></div>
+          </div>
+          <p className={styles.repeatNote}><Icon name="refresh" size={15} />Next scene, a new word.</p>
+          <div className={styles.sceneInfo}><span>THIS SCENE</span><strong>{shot.title}</strong><small>~8 seconds · vertical drama</small></div>
+          {index > 0 && <button type="button" className={styles.previous} disabled={microphoneBusy || current.phase === "submitting"} onClick={() => navigate(index - 1)}><Icon name="back" size={15} />Previous scene</button>}
+        </aside>
+
+        <section className={`${styles.lesson} ${screen === "watch" ? styles.watchLesson : ""}`} aria-labelledby="lesson-title">
+          <div className={styles.lessonTop}><span className={styles.eyebrow}>{screen === "practice" ? "01 / FIND YOUR VOICE" : "02 / LIVE THE SCENE"}</span><span className={styles.tinyLabel}>{screen === "practice" ? "MICROPHONE EXERCISE" : current.phase === "complete" ? "READY TO WATCH" : "YOUR NEXT TAKE"}</span></div>
+
+          {screen === "practice" ? <>
+            <div className={styles.practiceHeading}><h2 id="lesson-title" tabIndex={-1} ref={heading}>Make this word yours.</h2><p>Say it three times. Then see where it takes you.</p></div>
+            <div className={styles.wordBlock}><span className={styles.wordLabel}>YOUR WORD</span><p className={styles.word}>{shot.focusWord}<span>.</span></p>{shot.pronunciation && <span className={styles.pronunciation}>{shot.pronunciation}</span>}<p className={styles.meaning}>{shot.meaning}</p></div>
+            <div className={`${styles.capture} ${recording ? styles.isRecording : ""}`}>
+              <div className={styles.wave} aria-hidden="true">{WAVE.map((height, i) => <i key={i} style={{ height, animationDelay: `${i * 45}ms` }} />)}</div>
+              <button type="button" className={`${styles.recordButton} ${recording ? styles.stopButton : ""}`} disabled={attemptsDone || recorder.status === "requesting" || recorder.status === "saving"} onClick={() => { if (recording) recorder.stop(); else void recorder.start(); }} aria-label={recording ? "Stop recording" : `Record attempt ${Math.min(3, recorder.attempts.length + 1)}`}>
+                {recording ? <span className={styles.stopSquare} /> : attemptsDone ? <Icon name="check" size={27} /> : <Icon name="mic" size={27} />}
+              </button>
+              <p className={styles.recordHint} aria-live="polite">{recording ? `Recording · ${recorder.elapsed.toFixed(1)}s / 8s · tap to stop` : recorder.status === "requesting" ? "Allow your microphone to begin…" : recorder.status === "saving" ? "Saving your take…" : attemptsDone ? "Three takes. You’re ready for your scene." : `Tap to record take ${recorder.attempts.length + 1} of 3`}</p>
+            </div>
+            {recorder.error && <p className={styles.inlineMessage} role="alert">{recorder.error}</p>}
+            <div className={styles.attempts} aria-label="Your three attempts">{[0, 1, 2].map(i => {
+              const attempt = recorder.attempts[i];
+              return <div key={i} className={`${styles.attempt} ${attempt ? styles.attemptComplete : ""}`}><div className={styles.attemptTop}><span>TAKE {String(i + 1).padStart(2, "0")}</span>{attempt ? <Icon name="check" size={14} /> : <span className={styles.emptyDot} />}</div><strong>{attempt ? <>{attempt.score}<small>/100</small></> : <span className={styles.pendingScore}>—</span>}</strong>{attempt ? <button type="button" disabled={microphoneBusy} onClick={() => void recorder.replay(i)} aria-label={`${recorder.playing === i ? "Pause" : "Play"} attempt ${i + 1}`}><Icon name={recorder.playing === i ? "pause" : "play"} size={12} />{recorder.playing === i ? "Pause" : "Replay"}</button> : <span className={styles.notRecorded}>Not recorded yet</span>}</div>;
+            })}</div>
+            <p className={styles.scoreNote}><span>DEMO SCORES</span>Randomly simulated, not a pronunciation assessment. All three takes unlock your scene.</p>
+            <div className={styles.practiceBottom}><span><Icon name="mic" size={14} />Recordings stay on this device.</span><button type="button" className={styles.primaryButton} disabled={!attemptsDone} onClick={() => navigate(index, "watch")}>Next: your scene<Icon name="arrow" size={18} /></button></div>
+          </> : <>
+            <div className={styles.watchHeading}><div><h2 id="lesson-title" tabIndex={-1} ref={heading}>{finished ? "To be continued…" : "Your word. Your moment."}</h2><p>{finished ? "Ten scenes, ten words. Your next chapter is still unwritten." : <>Get ready to mouth <strong>“{shot.focusWord}”.</strong></>}</p></div><button type="button" className={styles.textButton} onClick={() => navigate(index, "practice")}><Icon name="back" size={14} />Back to practice</button></div>
+            <div className={styles.theater}>
+              {current.phase === "complete" && current.videoUrl ? <ScenePlayer key={shot.id} src={current.videoUrl} word={shot.focusWord} /> : <div className={styles.emptyTheater}>
+                <div className={styles.frameTop}><span>SCENE {String(index + 1).padStart(2, "0")}</span><span>9:16</span></div>
+                <div className={styles.frameCenter}><span className={`${styles.filmRing} ${generating && !current.paused ? styles.spinning : ""}`}><Icon name={generating ? "spark" : current.phase === "error" || current.phase === "uncertain" ? "refresh" : "play"} size={29} /></span><h3>{current.phase === "submitting" ? "And… action." : current.phase === "pending" ? current.paused ? "Your take is saved." : "A little drama is unfolding." : current.phase === "error" ? "Let’s take that again." : current.phase === "uncertain" ? "Your request needs a check." : "Your story is waiting."}</h3><p>{current.phase === "submitting" ? "Sending this scene to Google Cloud." : current.phase === "pending" ? current.paused ? "Check the same generation whenever you’re ready." : "Veo is creating your scene. This may take a few minutes." : current.phase === "error" || current.phase === "uncertain" ? "See the details below before requesting another take." : "An eight-second scene, starring a familiar face. Yours, if you add a selfie."}</p></div>
+                <div className={styles.frameBottom}><span>+</span><span>FINDING LOVE AT A HACKATHON</span><span>+</span></div>
+              </div>}
+              <div className={styles.clipMeta}><span>~08 SEC</span><span>FULL AUDIO</span><span>VEO 3.1</span></div>
+            </div>
+            <div className={styles.generationControls}>
+              {connection?.requiresPassword && current.phase !== "complete" && <label className={styles.password}>Demo access password<input type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} disabled={generating} placeholder="Enter once for this session" /></label>}
+              {connection && !connection.ready && current.phase !== "complete" && <div className={styles.connectionNotice}><strong>The studio needs a connection.</strong><p>You can still practice. Video generation will be available when the server is ready.</p><details><summary>Connection details</summary><p>{connection.message}</p></details></div>}
+              {current.message && <div className={styles.generationMessage} role="alert"><p>{current.message}</p>{current.paused && <button type="button" onClick={generation.checkAgain}><Icon name="refresh" size={15} />Check this generation again</button>}</div>}
+              {current.phase === "idle" || current.phase === "submitting" || (current.phase === "pending" && !current.paused) ? <><button type="button" className={styles.primaryButton} disabled={disabledGeneration} onClick={() => startGeneration()}><Icon name="spark" size={18} />{current.phase === "submitting" ? "Sending your scene…" : current.phase === "pending" ? "Creating your scene…" : "Generate my scene"}{!generating && <Icon name="arrow" size={18} />}</button><p className={styles.creditNote}>One clip · each generation uses Google Cloud credit</p></> : current.phase === "error" || current.phase === "uncertain" ? <><button type="button" className={styles.primaryButton} disabled={disabledGeneration} onClick={() => startGeneration(true)}><Icon name="refresh" size={16} />{current.phase === "uncertain" ? "Submit another paid request" : "Retry generation · new paid take"}</button><p className={styles.creditNote}>A new request can incur a new charge. Failed jobs are never resubmitted automatically.</p></> : null}
+            </div>
+            <div className={styles.promptSection}><button type="button" className={styles.promptToggle} aria-expanded={promptOpen} aria-controls="scene-prompt" onClick={() => setPromptOpen(value => !value)}><Icon name="eye" size={16} />{promptOpen ? "Hide scene prompt" : "Show scene prompt"}<span>{promptOpen ? "−" : "+"}</span></button>{promptOpen && <div id="scene-prompt" className={styles.promptContent}><p>{composeScenePrompt(generationPrompt(shot, Boolean(selfie)), shot.focusWord)}</p>{shot.dialogue && <p><strong>Your line:</strong> {shot.dialogue}</p>}<small>[name] is you, the adult protagonist. Your selfie is reused when supplied. Only your focus word is requested to be silently mouthed; the rest of the scene has audio. This prompt-driven behavior may vary.</small></div>}</div>
+            <div className={styles.watchBottom}><span>{finished ? "EPISODE COMPLETE" : `SCENE ${String(index + 1).padStart(2, "0")} / ${String(episode.shots.length).padStart(2, "0")}`}</span><button type="button" className={styles.primaryButton} disabled={current.phase !== "complete" || finished} onClick={() => { if (last) setFinished(true); else navigate(index + 1); }}>{last ? finished ? "Chapter complete" : "Finish episode" : "Next scene"}<Icon name={finished ? "check" : "arrow"} size={18} /></button></div>
+          </>}
+        </section>
+      </div>
+
+      <footer className={styles.footer}><span>A LITTLE PRACTICE. A LITTLE PLOT TWIST.</span><div><span>Powered by Veo · Hosted on IBM Cloud</span><a href="/scene-creator">Scene Creator <span aria-hidden="true">↗</span></a></div></footer>
+    </div>
+  </main>;
+}

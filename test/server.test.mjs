@@ -45,8 +45,10 @@ test('production Next.js page serves HTML and its stylesheet', async () => {
   assert.equal(response.status, 200);
   assert.match(response.headers.get('content-type'), /^text\/html/);
   const html = await response.text();
-  assert.match(html, /<h1>Hello World!<\/h1>/);
-  assert.match(html, /Your Next\.js application is running/);
+  assert.match(html, /Finding Love at a Hackathon/);
+  assert.match(html, /Make this word yours/);
+  assert.match(html, /Scene <strong>1<\/strong>/);
+  assert.match(html, /DEMO SCORES/);
   const cssPath = html.match(/href="([^\"]+\.css(?:\?[^\"]*)?)"/)?.[1];
   assert.ok(cssPath, 'Page must include a generated stylesheet');
   const css = await fetch(new URL(cssPath.replaceAll('&amp;', '&'), base));

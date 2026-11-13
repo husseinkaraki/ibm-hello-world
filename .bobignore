@@ -1,10 +1,28 @@
 # IBM Bob uses gitignore syntax. Only sanitized examples may enter context.
 **/.env
 **/.env.*
-!**/.env.example
 node_modules/
 .next/
 .git/
 *.log
 .bluemix/
 .ibmcloud/
+
+# Veo runtime secrets and local verification artifacts
+.env*
+.envrc
+secrets/
+credentials/
+application_default_credentials.json
+credentials*.json
+*-credentials.json
+*service-account*.json
+*.key
+*.pem
+*.p12
+*.pfx
+artifacts/
+output/playwright/
+.playwright-cli/
+!.env.example
+!**/.env.example

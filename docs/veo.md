@@ -1,6 +1,6 @@
-# Scene Lab — Google Veo integration
+# Scene Creator — Google Veo integration
 
-A small TypeScript / Next.js page at `/veo`: an optional JPEG/PNG starting frame plus a scene prompt creates **one real Veo 3.1 Fast job** on Google Cloud. Submission, status polling, and MP4 playback use server-side API routes. No Colab runtime, Gemini Developer API key, storage bucket, or local job database is required.
+A TypeScript / Next.js page at `/scene-creator` selects an authored episode scene and creates **one real Veo 3.1 Fast job** on Google Cloud, with an optional JPEG/PNG starting frame. `/veo` redirects to it. Submission, status polling, and MP4 playback use the existing server-side API routes. See [Scene Creator](scene-creator.md) for selection, editing, settings, audio direction, and persistence behavior.
 
 ## Run locally
 
@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open [Scene Lab](http://localhost:8080/veo). The page and photo preview work without credentials; generation stays disabled with an honest connection message. A completed video appears only after Google returns one.
+Open [Scene Creator](http://localhost:8080/scene-creator). The page and photo preview work without credentials; generation stays disabled with an honest connection message. A completed video appears only after Google returns one.
 
 ## Connect Google Cloud
 
@@ -24,20 +24,20 @@ Open [Scene Lab](http://localhost:8080/veo). The page and photo preview work wit
    ```
 
 3. Set `GOOGLE_CLOUD_PROJECT` in your ignored `.env` or `.env.local`. Set `GOOGLE_CLOUD_LOCATION=us-central1` and a random `VEO_JOB_SECRET` of at least 32 characters. Use `.env.example` as a template without overwriting existing secret files. Signing keys and Google credentials are not copied between worktrees. To generate a new signing secret: `openssl rand -hex 32`.
-4. Restart the dev server, load `/veo`, and generate one short clip. A Gemini Developer API key alone does not configure this Google Cloud OAuth integration.
+4. Restart the dev server, load `/scene-creator`, and generate one short clip. A Gemini Developer API key alone does not configure this Google Cloud OAuth integration.
 
-The fixed preset is `veo-3.1-fast-generate-001`, one 4-second, 16:9, 720p clip, `generateAudio: false`, and `personGeneration: allow_adult`. The optional upload is the **first frame**, rather than a separate identity-reference system. Photo uploads are capped at 5 MB and checked for JPEG/PNG signatures. Use [Google's current pricing](https://cloud.google.com/model-garden/pricing#veo) to check costs; each new submission is paid. Status polling never resubmits a generation.
+The model is `veo-3.1-fast-generate-001`, with one clip per request and `personGeneration: allow_adult`. The creator defaults to eight seconds, portrait 9:16, 720p, and full audio. It offers four/six/eight seconds, 9:16 or 16:9, 720p or eight-second 1080p, and audio on/off through the shared validated API. With audio on, only the protagonist's focus word is instructed to be silently mouthed; the rest of the soundtrack stays normal. This instruction is not a verified guarantee. The optional upload is the **first frame**, rather than a separate identity-reference system. Photo uploads are capped at 5 MB and checked for JPEG/PNG signatures. Use [Google's current pricing](https://cloud.google.com/model-garden/pricing#veo) to check costs; each new submission is paid. Status polling never resubmits a generation.
 
 ## Server behavior
 
 | Endpoint | Behavior |
 | --- | --- |
 | `GET /api/veo` | Checks configuration and ADC token availability, without a paid generation. This does not prove model permissions, quota, or billing. |
-| `POST /api/veo` | Multipart `prompt` and optional `image`; returns HTTP 202 with a signed `job` reference. Optional demo password is sent in `x-veo-password`. |
+| `POST /api/veo` | Multipart `prompt`, optional `focusWord`, `durationSeconds`, `aspectRatio`, `resolution`, `generateAudio`, and optional `image`; returns HTTP 202 with a signed `job` reference. Optional demo password is sent in `x-veo-password`. |
 | `GET /api/veo/status?job=…` | Checks Google's long-running operation and returns `pending`, `complete`, or a real error. |
 | `GET /api/veo/video?job=…` | Fetches Google's finished bytes and serves private MP4, including byte-range support for the browser player. |
 
-The browser polls every 10 seconds. It stores only the signed job reference locally, so a refresh can resume checking the same job. Photo and prompt are not written to local storage. Transient polling failures offer **Check this clip again** without creating new paid work. After 15 minutes, automatic polling pauses; manual checking remains available. Job references expire after 24 hours. Videos and selfie bytes are not persisted by this app; save the MP4 after generation.
+The browser polls at the API's recommended interval. Scene Creator saves the signed job reference and submitted prompt/settings locally, so a refresh can check the same request and clearly label previews that differ from the current editor. Session storage keeps scene selection, prompt edits, and settings; photo bytes and passwords are not stored. Transient polling failures offer **Check this clip again** without creating new paid work. After 15 minutes, automatic polling pauses; manual checking remains available. Job references expire after 24 hours. Videos and selfie bytes are not persisted by this app; download the MP4 after generation.
 
 The server uses the documented `predictLongRunning` and `fetchPredictOperation` REST methods, with `google-auth-library` supplying OAuth and the ADC quota-project header. Each call has a 45-second upstream timeout; submission does not wait for rendering and is never automatically retried. A lost submission response can leave a job running on Google; the UI reports that uncertainty. No in-memory job map or filesystem storage is needed across requests or instances.
 
@@ -66,13 +66,13 @@ npm test
 npm run build
 ```
 
-The nine Veo tests cover the documented request/operation shapes, filtered and failed jobs, image/prompt validation, signed capability expiry/tampering, and MP4 ranges. The shared app also runs its four existing production runtime tests (13 total). Their video bytes are labeled fixtures and do not represent a generated video. Browser checks cover the actual local upload/form layout and missing-configuration state.
+Veo tests cover request/operation shapes, filtered and failed jobs, image/prompt validation, signed capability expiry/tampering, and MP4 ranges. Creator tests additionally cover setting/prompt/photo mismatches and safe restoration of saved requests and drafts. Their video bytes are fixtures and do not represent a newly generated video. Browser QA uses intercepted generation/status/video responses.
 
-**Live generation status:** not verified. This machine had no `gcloud`, Google Cloud project setting, or Application Default Credentials when inspected. No paid generation was submitted. Local builds and passing fixtures do not prove account access.
+Creator regression testing does not submit paid generations. Local builds and passing fixtures do not prove Google account access; runtime credentials and model permissions are verified separately from UI checks.
 
 ## Feature boundaries
 
-This feature adds `app/veo`, `app/api/veo`, three `lib/veo-*` modules, and `tests/veo.test.ts` to the canonical Next.js app. The home page, root layout, health route, Dockerfile, and deployment workflow are preserved. Production dependencies are `google-auth-library@11.3.4` and `server-only@0.0.1`. The TypeScript configuration allows explicit TypeScript imports for Node 24 tests. The container allowlist includes `lib/`, followed by secret-file exclusions.
+`app/scene-creator` owns the creator UI; `app/veo` is its compatibility redirect. The creator reuses the learning product's scene catalog and prompt helper plus `app/api/veo` and `lib/veo-*`. It preserves `/health`, runtime secret mounts, deployment helpers, and build/source exclusions. Google authentication remains server-side through `google-auth-library` and `server-only`.
 
 The application was prepared against canonical base `37fbd53ecfc3311aa4b66e61674a16bea1081d2f`. Account access remains a separate runtime requirement; builds and tests do not start paid jobs.
 

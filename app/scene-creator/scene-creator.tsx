@@ -240,7 +240,7 @@ export default function SceneCreator({ episodes }: { episodes: DramaEpisode[] })
               </label>
               {image && <button className={styles.removePhoto} type="button" disabled={locked} aria-label="Remove photo" onClick={() => { setImage(null); setReferenceId(null); }}><Icon name="close" size={16} /></button>}
             </div>
-            <p className={styles.hint}>Your photo stays selected across scenes in this page. Reattach it after a reload.</p>
+            <p className={styles.hint}>Your photo becomes the starting frame and stays selected across scenes. Reattach it after a reload.</p>
 
             <div className={styles.sectionLabel}><span className={styles.number}>03</span><h2><label htmlFor="scene-prompt">Direct the scene</label></h2><button className={styles.textButton} type="button" disabled={locked} onClick={() => setPrompt(shot.scenePrompt)}>Reset prompt</button></div>
             <div className={styles.promptBox}>
@@ -282,7 +282,7 @@ export default function SceneCreator({ episodes }: { episodes: DramaEpisode[] })
             <div className={styles.previewHeading}><h2 id="preview-title">Your scene preview</h2><span className={styles.takeStatus}><span className={`${styles.statusDot} ${phase === "complete" ? styles.greenDot : ""}`} />{phase === "complete" ? "READY TO WATCH" : busy ? "IN PRODUCTION" : "READY WHEN YOU ARE"}</span></div>
             <div className={styles.theater}>
               {phase === "complete" && videoUrl ? <video key={videoUrl} className={styles.video} src={videoUrl} controls playsInline preload="metadata" aria-label="Your generated scene" onError={() => { setPaused(true); setMessage("This video could not be loaded. Check this clip again to retrieve it."); }} /> : <>
-                <span className={styles.frameTop}>SCENE CREATOR</span><span className={styles.frameFormat}>{shownSettings.aspectRatio}</span>
+                <span className={styles.frameTop}>SCENE CREATOR</span><span className={styles.frameFormat}>{take && !take.snapshot ? "EARLIER TAKE" : shownSettings.aspectRatio}</span>
                 <div className={styles.frameContent} aria-live="polite">
                   <div className={`${styles.aperture} ${busy && !paused ? styles.spinning : ""}`}><Icon name="film" size={32} /></div>
                   <h3>{phase === "pending" ? (paused ? "Your request is saved." : "A scene is taking shape.") : phase === "submitting" ? "And… action." : phase === "error" ? "Your next take awaits." : "Put yourself in the story."}</h3>

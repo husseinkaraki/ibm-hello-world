@@ -8,6 +8,10 @@
 
 Learn a language through entertaining drama and active participation.
 
+## Inspiration
+
+[Short-form AI drama inspiration — @EndFolding79421](https://x.com/EndFolding79421/status/2119955961305571485)
+
 ## Run locally
 
 Use Node.js 24 or newer.

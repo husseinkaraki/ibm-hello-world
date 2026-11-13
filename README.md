@@ -1,6 +1,6 @@
-# Finding Love at a Hackathon on IBM Cloud
+# Drama Talk on IBM Cloud
 
-A TypeScript + Next.js 16 App Router language-learning drama for IBM Cloud Code Engine. `/` is the main product: practice one word three times with clearly simulated scores, then generate/watch an eight-second personalized scene and advance to the next word. Episode 1 uses the writing workstream's ten authored shots. `/health` returns the application identity, framework version, and health status.
+A TypeScript + Next.js 16 App Router language-learning app for IBM Cloud Code Engine. Drama Talk combines entertaining drama with active participation: practice one word three times with clearly simulated scores, then generate/watch an eight-second personalized scene and advance to the next word. The demo show is Finding Love at a Hackathon; the main flow uses its first episode's ten authored shots. Page two requires the learner photo and automatically includes the supplied Lucy reference. `/health` returns the application identity, framework version, and health status.
 
 See [the learning workflow and shared video API contract](docs/main-product.md) for local recordings, full scene audio with a silently mouthed focus word, job reuse, content integration, and browser verification. `/veo` remains the existing integration tester until the Scene Creator workstream moves it to `/scene-creator`.
 

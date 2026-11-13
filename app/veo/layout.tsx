@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Scene Creator",
+  title: "Scene Creator · Drama Talk",
   description: "Scene Creator has moved to /scene-creator.",
 };
 

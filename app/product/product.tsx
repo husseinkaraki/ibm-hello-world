@@ -42,7 +42,7 @@ export default function Product({ episode }: { episode: DramaEpisode }) {
   return <main className={styles.app}>
     <div className={styles.shell}>
       <header className={styles.header}>
-        <a href="/" className={styles.brand} aria-label="Scene home"><span className={styles.brandMark}><Icon name="film" size={21} /></span>scene<span className={styles.brandPeriod}>.</span><span className={styles.brandDescriptor}>LEARN IT. LIVE IT.</span></a>
+        <a href="/" className={styles.brand} aria-label="Drama Talk home"><span className={styles.brandMark}><Icon name="film" size={21} /></span>Drama Talk<span className={styles.brandPeriod}>.</span><span className={styles.brandDescriptor}>LEARN IT. LIVE IT.</span></a>
         <span className={styles.demoBadge}><span />HACKATHON DEMO</span>
       </header>
 

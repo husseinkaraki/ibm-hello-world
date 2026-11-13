@@ -22,7 +22,8 @@ export default function Product({ episode }: { episode: DramaEpisode }) {
   const shot = episode.shots[index];
   const recorder = useWordRecorder(shot.id);
   const references = useSceneReferences();
-  const generation = useSceneGeneration(shot.id, episode.id, references.referenceKey);
+  const basePrompt = generationPrompt(shot, true);
+  const generation = useSceneGeneration(shot.id, episode.id, references.referenceKey, basePrompt, shot.focusWord);
   const { current, connection } = generation;
   const recording = recorder.status === "recording";
   const microphoneBusy = recorder.status !== "idle";
@@ -36,8 +37,7 @@ export default function Product({ episode }: { episode: DramaEpisode }) {
     requestAnimationFrame(() => heading.current?.focus());
   }
 
-  const basePrompt = generationPrompt(shot, true);
-  const startGeneration = (newTake = false) => void generation.generate(basePrompt, shot.focusWord, references.learner, references.cast, newTake);
+  const startGeneration = (newTake = false) => void generation.generate(references.learner, references.cast, newTake);
 
   return <main className={styles.app}>
     <div className={styles.shell}>
@@ -118,6 +118,7 @@ export default function Product({ episode }: { episode: DramaEpisode }) {
                 {references.castError && <div className={styles.generationMessage} role="alert"><p>{references.castError}</p><button type="button" onClick={references.reloadCast}>Reload Lucy photo</button></div>}
                 {connection && !connection.ready && current.phase !== "complete" && <div className={styles.connectionNotice}><strong>Video connection unavailable.</strong><details><summary>Details</summary><p>{connection.message}</p></details></div>}
                 {current.message && <div className={styles.generationMessage} role="alert"><p>{current.message}</p>{current.paused && <button type="button" onClick={generation.checkAgain}><Icon name="refresh" size={15} />Check this generation again</button>}</div>}
+                {current.phase === "complete" && <><button type="button" className={styles.primaryButton} disabled={disabledGeneration} onClick={() => startGeneration(true)}><Icon name="refresh" size={16} />Regenerate scene</button><p className={styles.creditNote}>New take · uses Google Cloud credit</p></>}
                 {current.phase === "idle" || current.phase === "submitting" || (current.phase === "pending" && !current.paused) ? <><button type="button" className={styles.primaryButton} disabled={disabledGeneration} onClick={() => startGeneration()}><Icon name="spark" size={18} />{current.phase === "submitting" ? "Sending your scene…" : current.phase === "pending" ? "Creating your scene…" : "Generate my scene"}{!generating && <Icon name="arrow" size={18} />}</button><p className={styles.creditNote}>Uses Google Cloud credit</p></> : current.phase === "error" || current.phase === "uncertain" ? <><button type="button" className={styles.primaryButton} disabled={disabledGeneration} onClick={() => startGeneration(true)}><Icon name="refresh" size={16} />{current.phase === "uncertain" ? "Submit another paid request" : "Retry generation · new paid take"}</button><p className={styles.creditNote}>New request · new charge</p></> : null}
                 <div className={styles.promptSection}><button type="button" className={styles.promptToggle} aria-expanded={promptOpen} aria-controls="scene-prompt" onClick={() => setPromptOpen(value => !value)}><Icon name="eye" size={16} />{promptOpen ? "Hide scene prompt" : "Show scene prompt"}<span>{promptOpen ? "−" : "+"}</span></button></div>
               </div>

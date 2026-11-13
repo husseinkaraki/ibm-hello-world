@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Readiness } from "../../lib/veo-contract";
+import { dramaGenerationIdentity, DRAMA_GENERATION_CONTRACT, DRAMA_SETTINGS } from "../../lib/drama-generation";
 
 export type Generation = {
   phase: "idle" | "submitting" | "pending" | "complete" | "error" | "uncertain";
@@ -12,15 +13,15 @@ export type Generation = {
 };
 const IDLE: Generation = { phase: "idle" };
 
-export function useSceneGeneration(scene: string, episode: string, referenceKey: string) {
+export function useSceneGeneration(scene: string, episode: string, referenceKey: string, prompt: string, focusWord: string) {
   const [records, setRecords] = useState<Record<string, Generation>>({});
   const [connection, setConnection] = useState<Readiness | null>(null);
   const [hydrated, setHydrated] = useState(false);
   const [checkVersion, setCheckVersion] = useState(0);
   const recordRef = useRef(records);
   const submitLock = useRef(false);
-  const storageKey = `scene:episode:${episode}:cast-v3`;
-  const cacheId = referenceKey ? `${scene}:${referenceKey}` : "";
+  const storageKey = `scene:episode:${episode}:${DRAMA_GENERATION_CONTRACT}`;
+  const cacheId = referenceKey ? `${scene}:${dramaGenerationIdentity(prompt, focusWord, referenceKey)}` : "";
   const current = cacheId ? records[cacheId] || IDLE : IDLE;
 
   function update(id: string, record: Generation) {
@@ -103,15 +104,15 @@ export function useSceneGeneration(scene: string, episode: string, referenceKey:
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cacheId, current.job, current.phase, current.paused, checkVersion]);
 
-  async function generate(prompt: string, focusWord: string, learner: File | null, cast: File | null, newTake = false) {
+  async function generate(learner: File | null, cast: File | null, newTake = false) {
     const existing = recordRef.current[cacheId];
     if (!learner || !cast || !cacheId || !hydrated || submitLock.current || existing?.phase === "submitting" || existing?.phase === "pending" ||
         (!newTake && (existing?.job || existing?.phase === "uncertain"))) return;
     submitLock.current = true;
     update(cacheId, { phase: "submitting" });
     const body = new FormData();
-    body.set("prompt", prompt); body.set("durationSeconds", "8"); body.set("aspectRatio", "9:16");
-    body.set("resolution", "720p"); body.set("generateAudio", "true"); body.set("focusWord", focusWord);
+    body.set("prompt", prompt); body.set("focusWord", focusWord);
+    for (const [name, value] of Object.entries(DRAMA_SETTINGS)) body.set(name, String(value));
     body.set("learnerImage", learner); body.set("castImage", cast);
     try {
       const response = await fetch("/api/veo/drama", { method: "POST", body });

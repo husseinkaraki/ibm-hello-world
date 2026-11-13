@@ -88,7 +88,9 @@ test("three actual local recordings unlock the video, with simulated scores and 
   expect(body.get("image")).toBeNull();
   await page.getByRole("button", { name: "Play scene", exact: true }).click();
   await expect.poll(() => page.locator("video").evaluate(video => (video as HTMLVideoElement).currentTime)).toBeGreaterThan(0.1);
+  const playingVideo = await page.locator("video").elementHandle();
   await page.getByRole("button", { name: "Back to practice" }).click();
+  expect(await playingVideo!.evaluate(video => (video as HTMLVideoElement).paused)).toBe(true);
   await page.getByRole("button", { name: "Next: your scene" }).click();
   await expect(page.getByLabel("Your generated scene using safe")).toBeVisible();
   expect(cloud.submissions).toBe(1);

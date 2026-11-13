@@ -33,6 +33,13 @@
       "speaker": "Maya",
       "text": "<short audible supporting line>",
       "delivery": "voiced_normally"
+    },
+    {
+      "speaker": "[name]",
+      "text": "<short natural line containing the exact word>",
+      "performance_text": "<same line with [silently mouthed: <word>] replacing just the word>",
+      "labelled_text": "[name]: <same marked performance line>",
+      "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest normally. No word timing or synchronization."
     }
   ],
   "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",

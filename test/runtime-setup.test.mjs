@@ -36,7 +36,7 @@ test('setup sends secrets only over stdin and preserves signing/password values 
       const name = args[args.indexOf('--name') + 1];
       const source = args[args.indexOf('--from-file') + 1];
       assert.ok(source.endsWith('=/dev/stdin'));
-      secrets.set(name, { [source.split('=')[0]]: Buffer.from(options.input).toString('base64') });
+      secrets.set(name, { [source.split('=')[0]]: Buffer.from(options.input).toString('utf8') });
     }
     return '{}';
   };
@@ -44,7 +44,7 @@ test('setup sends secrets only over stdin and preserves signing/password values 
   try {
     await setupGoogleCloud({ project: 'example-project', credentials: files.credential }, dependencies);
     const signing = secrets.get('veo-job-signing').VEO_JOB_SECRET;
-    assert.ok(Buffer.from(signing, 'base64').length >= 32);
+    assert.ok(signing.length >= 32);
     assert.ok(!JSON.stringify(calls.map(call => call.args)).includes(demoPassword));
     assert.ok(!messages.join('\n').includes(demoPassword));
     const update = calls.find(call => call.args[1] === 'app' && call.args[2] === 'update').args;
@@ -58,9 +58,16 @@ test('setup sends secrets only over stdin and preserves signing/password values 
     await setupGoogleCloud({ project: 'example-project', credentials: files.credential }, {
       ...dependencies, promptPassword: () => { throw new Error('Existing password must be reused'); },
     });
-    assert.equal(secrets.get('veo-job-signing').VEO_JOB_SECRET, signing);
+    assert.ok(secrets.get('veo-job-signing').VEO_JOB_SECRET === signing);
     assert.ok(!calls.slice(count).some(call => ['create', 'update'].includes(call.args[2]) && call.args.includes('veo-job-signing')));
     assert.ok(!calls.slice(count).some(call => ['create', 'update'].includes(call.args[2]) && call.args.includes('veo-demo-access')));
+    // Existing 32-character signing strings and punctuation passwords are raw
+    // JSON values, not base64. Never decode or replace them during a rerun.
+    secrets.set('veo-job-signing', { VEO_JOB_SECRET: 'fixture'.padEnd(32, '!') });
+    secrets.set('veo-demo-access', { VEO_DEMO_PASSWORD: '!'.repeat(16) });
+    await setupGoogleCloud({ project: 'example-project', credentials: files.credential }, {
+      ...dependencies, promptPassword: () => { throw new Error('Existing password must be reused'); },
+    });
   } finally { files.cleanup(); }
 });
 

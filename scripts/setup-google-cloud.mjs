@@ -106,8 +106,9 @@ export async function setupGoogleCloud(options, dependencies = {}) {
   const names = new Set(listing.secrets.map(secret => secret.name));
   const requireKey = (name, key, minimum) => {
     const secret = json(run(['ce', 'secret', 'get', '--name', name, '--output', 'json']));
-    const encoded = secret.data?.[key];
-    if (typeof encoded !== 'string' || Buffer.from(encoded, 'base64').length < minimum) {
+    // The CLI's JSON API returns plain values; its table output uses base64.
+    const value = secret.data?.[key];
+    if (typeof value !== 'string' || value.length < minimum) {
       throw new SetupError(`Existing secret ${name} lacks a usable ${key}; its contents were not printed.`);
     }
   };

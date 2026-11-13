@@ -182,7 +182,7 @@
       "properties": {
         "speaker": {
           "enum": [
-            "Maya",
+            "Lucy",
             "Leo",
             "Jules"
           ]
@@ -275,7 +275,7 @@
           "items": {
             "enum": [
               "[name]",
-              "Maya",
+              "Lucy",
               "Leo",
               "Jules"
             ]

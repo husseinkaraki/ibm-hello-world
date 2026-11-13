@@ -14,7 +14,7 @@
       "episode_title": "The Last Seat",
       "script": "episodes/episode-01.md",
       "shot_data": "shot-data/episode-01.json",
-      "script_sha256": "7a5bd5787b9456aa882ea749622775c5e363779e59f4f6f0c942c6a7c7f64c1e",
+      "script_sha256": "9cb428179eb41d1a8356849c4ee3d9375361b9165785c893ea3deef1670127f3",
       "shots": 10,
       "duration_seconds": 80
     },
@@ -23,7 +23,7 @@
       "episode_title": "Her Signature",
       "script": "episodes/episode-02.md",
       "shot_data": "shot-data/episode-02.json",
-      "script_sha256": "76b756f9f14f2716ea9c6aeb0d8e6cb8b9f5622acda271127e35a3e83244ab69",
+      "script_sha256": "e7855e59bd6d6d9c3d120138f0bf0f6d236fa1484ed4cacc282abc23fd52c396",
       "shots": 10,
       "duration_seconds": 80
     },
@@ -32,7 +32,7 @@
       "episode_title": "Page Two",
       "script": "episodes/episode-03.md",
       "shot_data": "shot-data/episode-03.json",
-      "script_sha256": "9fd92e99ef8db63694e51738c80d4294fa9d213de7d76efa99b2fc1a2d06ea2d",
+      "script_sha256": "46ded8a27be9032516759613cb7b189285245aca3a0f61071776e25b1f144e67",
       "shots": 10,
       "duration_seconds": 80
     },
@@ -41,7 +41,7 @@
       "episode_title": "One Place",
       "script": "episodes/episode-04.md",
       "shot_data": "shot-data/episode-04.json",
-      "script_sha256": "cb2afdb868a94d9defeb994887361fa080aa0cbc1e4523aa295f47d43238fe04",
+      "script_sha256": "c0b8bd1a5eae4e69e4f38896ff63288e271fb6b767e8bb28c2102595e889a718",
       "shots": 10,
       "duration_seconds": 80
     },
@@ -50,7 +50,7 @@
       "episode_title": "A Better Offer",
       "script": "episodes/episode-05.md",
       "shot_data": "shot-data/episode-05.json",
-      "script_sha256": "2910b795547adcc2c1a049c6f90b2e0bd4571ddb2c0b82a496de0a9100d9f72d",
+      "script_sha256": "c50320e3841096470ee9e62858cfda11aed54e0d92f3c97d2fae616808d283bd",
       "shots": 10,
       "duration_seconds": 80
     },
@@ -59,7 +59,7 @@
       "episode_title": "Two Helpers",
       "script": "episodes/episode-06.md",
       "shot_data": "shot-data/episode-06.json",
-      "script_sha256": "8c2520c332fa4827816829a6970a35c7c6d5cf16ee4031ab4b06a9661a45b1f2",
+      "script_sha256": "932d0220de4b62b9aa7eb9a38df53bc0af2dd20084db26395f6e733c2eb0c91c",
       "shots": 10,
       "duration_seconds": 80
     },
@@ -68,7 +68,7 @@
       "episode_title": "The Honest Error",
       "script": "episodes/episode-07.md",
       "shot_data": "shot-data/episode-07.json",
-      "script_sha256": "2f1a4983b9290061fa1a97e22cff0eab80dce52549fcaee3abfc7f0dbd9149dd",
+      "script_sha256": "88e1131665314846790a09bafbd28fd034c2be0c55bc0590e34d0f4175d8dc6f",
       "shots": 10,
       "duration_seconds": 80
     },
@@ -77,7 +77,7 @@
       "episode_title": "Two Yeses",
       "script": "episodes/episode-08.md",
       "shot_data": "shot-data/episode-08.json",
-      "script_sha256": "fc9e7ffcd66fb0c3c1615f4bff1289c98d9e073e11489dd71cab3a1f87e65b9c",
+      "script_sha256": "f134039b0fb49d7c157be1b708af92fb047ee1ee95522b40362bb78eb92bcd4e",
       "shots": 10,
       "duration_seconds": 80
     },
@@ -86,7 +86,7 @@
       "episode_title": "Your Turn",
       "script": "episodes/episode-09.md",
       "shot_data": "shot-data/episode-09.json",
-      "script_sha256": "cf4d880232e86aca7eced4a0fbe81a57d08e00d75a74d611a88a44a816fbf6d1",
+      "script_sha256": "cf4510151544eea087cc041d46b48e3c46ad52fc0cf5a4b1d7514609a69effff",
       "shots": 10,
       "duration_seconds": 80
     },
@@ -95,7 +95,7 @@
       "episode_title": "Hold Our Place",
       "script": "episodes/episode-10.md",
       "shot_data": "shot-data/episode-10.json",
-      "script_sha256": "2fbb8ca5e0074f90d4efaa16a4dfd8aa967ce9fb2b0c86762b154dce199fbde9",
+      "script_sha256": "0476ff93c27f09a597d9e298b9ef8f5bace1646626f5424b132796b4c1c501a7",
       "shots": 10,
       "duration_seconds": 80
     }

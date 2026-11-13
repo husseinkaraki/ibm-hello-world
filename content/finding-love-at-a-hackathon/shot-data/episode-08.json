@@ -9,7 +9,7 @@
   "aspect_ratio": "9:16",
   "audio_mode": "full_scene_audio_focus_word_silently_mouthed",
   "story_time": "Friday, approximately 18:10:20; the retry clock continues through the conversation.",
-  "hook": "Maya immediately explains the withdrawal instead of letting a sabotage theory grow.",
+  "hook": "Lucy immediately explains the withdrawal instead of letting a sabotage theory grow.",
   "incoming_cliffhanger_id": "E07-C",
   "incoming_payoff": "E08-S01-S04 explain the old-build withdrawal and require independent agreement for V2.",
   "turn": "Their shared decision repairs one breach, but official reinstatement now depends on a competitor whose own turn they could displace.",
@@ -17,7 +17,7 @@
   "cliffhanger": {
     "id": "E08-C",
     "event": "Leo is next at the only test station; Beacon needs both his witness and station time before its retry window closes.",
-    "next_payoff": "E09-S01: with Maya's agreement [name] lets Leo test first; Leo freely agrees to witness Beacon afterward."
+    "next_payoff": "E09-S01: with Lucy's agreement [name] lets Leo test first; Leo freely agrees to witness Beacon afterward."
   },
   "shots": [
     {
@@ -30,12 +30,12 @@
       "scene": "INT. HACKATHON HALL - TABLE 7 - EVENING",
       "location_id": "T7",
       "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
-      "beat": "Immediate payoff to E07-C: Maya explains and accepts responsibility",
+      "beat": "Immediate payoff to E07-C: Lucy explains and accepts responsibility",
       "visible_cast": [
         "[name]",
-        "Maya"
+        "Lucy"
       ],
-      "visible_action": "[name] lowers the old-build receipt enough to meet Maya's eyes; Maya keeps her phone on the table and explains the scope of her action.",
+      "visible_action": "[name] lowers the old-build receipt enough to meet Lucy's eyes; Lucy keeps her phone on the table and explains the scope of her action.",
       "protagonist_visible_throughout": true,
       "focus_word": {
         "word": "why",
@@ -52,7 +52,7 @@
       },
       "dialogue": [
         {
-          "speaker": "Maya",
+          "speaker": "Lucy",
           "text": "I withdrew only the broken build.",
           "delivery": "voiced_normally"
         },
@@ -64,18 +64,18 @@
           "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
         },
         {
-          "speaker": "Maya",
+          "speaker": "Lucy",
           "text": "I should have asked you.",
           "delivery": "voiced_normally"
         }
       ],
       "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
       "continuity": {
-        "in": "Maya has acknowledged initiating the withdrawal",
+        "in": "Lucy has acknowledged initiating the withdrawal",
         "out": "She confirms it applied only to the broken version and admits she should have asked [name]"
       },
       "edit_only_overlay": "WITHDRAWAL: OLD UNSAFE BUILD ONLY",
-      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Maya has acknowledged initiating the withdrawal. Action: [name] lowers the old-build receipt enough to meet Maya's eyes; Maya keeps her phone on the table and explains the scope of her action. [name] performs the exact learner line naturally: \"I understand why.\". Only the exact focus word \"why\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"I withdrew only the broken build.\". After the learner line, Maya says aloud: \"I should have asked you.\". Ending state: She confirms it applied only to the broken version and admits she should have asked [name]. Leave room beside [name] for the editor to add this exact short overlay: WITHDRAWAL: OLD UNSAFE BUILD ONLY. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Lucy has acknowledged initiating the withdrawal. Action: [name] lowers the old-build receipt enough to meet Lucy's eyes; Lucy keeps her phone on the table and explains the scope of her action. [name] performs the exact learner line naturally: \"I understand why.\". Only the exact focus word \"why\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Lucy says aloud: \"I withdrew only the broken build.\". After the learner line, Lucy says aloud: \"I should have asked you.\". Ending state: She confirms it applied only to the broken version and admits she should have asked [name]. Leave room beside [name] for the editor to add this exact short overlay: WITHDRAWAL: OLD UNSAFE BUILD ONLY. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
     },
     {
       "id": "E08-S02",
@@ -90,9 +90,9 @@
       "beat": "Escalation",
       "visible_cast": [
         "[name]",
-        "Maya"
+        "Lucy"
       ],
-      "visible_action": "[name] places the two-name roster beside the withdrawal receipt; Maya looks at both names and puts her own hand beside, not over, the hand of [name].",
+      "visible_action": "[name] places the two-name roster beside the withdrawal receipt; Lucy looks at both names and puts her own hand beside, not over, the hand of [name].",
       "protagonist_visible_throughout": true,
       "focus_word": {
         "word": "choice",
@@ -109,7 +109,7 @@
       },
       "dialogue": [
         {
-          "speaker": "Maya",
+          "speaker": "Lucy",
           "text": "I didn't want to fool anyone.",
           "delivery": "voiced_normally"
         },
@@ -121,7 +121,7 @@
           "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
         },
         {
-          "speaker": "Maya",
+          "speaker": "Lucy",
           "text": "And I left you out.",
           "delivery": "voiced_normally"
         }
@@ -132,7 +132,7 @@
         "out": "They recognize that the team decision still needed both voices"
       },
       "edit_only_overlay": "None",
-      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Close two-shot; [name] face remains clear above the two papers, with no forced touch. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Both agree the unsafe demo should stop. Action: [name] places the two-name roster beside the withdrawal receipt; Maya looks at both names and puts her own hand beside, not over, the hand of [name]. [name] performs the exact learner line naturally: \"It was our choice.\". Only the exact focus word \"choice\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"I didn't want to fool anyone.\". After the learner line, Maya says aloud: \"And I left you out.\". Ending state: They recognize that the team decision still needed both voices. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Close two-shot; [name] face remains clear above the two papers, with no forced touch. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Both agree the unsafe demo should stop. Action: [name] places the two-name roster beside the withdrawal receipt; Lucy looks at both names and puts her own hand beside, not over, the hand of [name]. [name] performs the exact learner line naturally: \"It was our choice.\". Only the exact focus word \"choice\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Lucy says aloud: \"I didn't want to fool anyone.\". After the learner line, Lucy says aloud: \"And I left you out.\". Ending state: They recognize that the team decision still needed both voices. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
     },
     {
       "id": "E08-S03",
@@ -147,9 +147,9 @@
       "beat": "Emotional turn: repair creates a practical shared boundary",
       "visible_cast": [
         "[name]",
-        "Maya"
+        "Lucy"
       ],
-      "visible_action": "[name] draws two empty approval boxes on the V2 resubmission card and slides it halfway to Maya; Maya nods before either marks a box.",
+      "visible_action": "[name] draws two empty approval boxes on the V2 resubmission card and slides it halfway to Lucy; Lucy nods before either marks a box.",
       "protagonist_visible_throughout": true,
       "focus_word": {
         "word": "agree",
@@ -166,7 +166,7 @@
       },
       "dialogue": [
         {
-          "speaker": "Maya",
+          "speaker": "Lucy",
           "text": "What changes now?",
           "delivery": "voiced_normally"
         },
@@ -178,7 +178,7 @@
           "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
         },
         {
-          "speaker": "Maya",
+          "speaker": "Lucy",
           "text": "Even under pressure.",
           "delivery": "voiced_normally"
         }
@@ -189,7 +189,7 @@
         "out": "Both agree on two explicit approvals for withdrawing or resubmitting"
       },
       "edit_only_overlay": "TEAM DECISIONS: TWO YES BOXES",
-      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: The working-boundary conflict has been named. Action: [name] draws two empty approval boxes on the V2 resubmission card and slides it halfway to Maya; Maya nods before either marks a box. [name] performs the exact learner line naturally: \"We must both agree.\". Only the exact focus word \"agree\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"What changes now?\". After the learner line, Maya says aloud: \"Even under pressure.\". Ending state: Both agree on two explicit approvals for withdrawing or resubmitting. Leave room beside [name] for the editor to add this exact short overlay: TEAM DECISIONS: TWO YES BOXES. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: The working-boundary conflict has been named. Action: [name] draws two empty approval boxes on the V2 resubmission card and slides it halfway to Lucy; Lucy nods before either marks a box. [name] performs the exact learner line naturally: \"We must both agree.\". Only the exact focus word \"agree\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Lucy says aloud: \"What changes now?\". After the learner line, Lucy says aloud: \"Even under pressure.\". Ending state: Both agree on two explicit approvals for withdrawing or resubmitting. Leave room beside [name] for the editor to add this exact short overlay: TEAM DECISIONS: TWO YES BOXES. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
     },
     {
       "id": "E08-S04",
@@ -204,10 +204,10 @@
       "beat": "Escalation",
       "visible_cast": [
         "[name]",
-        "Maya",
+        "Lucy",
         "Jules"
       ],
-      "visible_action": "[name] marks the first approval box while Maya marks the second on the same V2 resubmission card; Jules checks the version label.",
+      "visible_action": "[name] marks the first approval box while Lucy marks the second on the same V2 resubmission card; Jules checks the version label.",
       "protagonist_visible_throughout": true,
       "focus_word": {
         "word": "consent",
@@ -236,7 +236,7 @@
           "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
         },
         {
-          "speaker": "Maya",
+          "speaker": "Lucy",
           "text": "Mine is yes.",
           "delivery": "voiced_normally"
         }
@@ -247,7 +247,7 @@
         "out": "Both partners approve V2; no one is signing for the other"
       },
       "edit_only_overlay": "BEACON V2 / TWO APPROVALS",
-      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Two empty boxes await independent approvals. Action: [name] marks the first approval box while Maya marks the second on the same V2 resubmission card; Jules checks the version label. [name] performs the exact learner line naturally: \"I consent to this version.\". Only the exact focus word \"consent\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"Resubmit with two approvals.\". After the learner line, Maya says aloud: \"Mine is yes.\". Ending state: Both partners approve V2; no one is signing for the other. Leave room beside [name] for the editor to add this exact short overlay: BEACON V2 / TWO APPROVALS. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Two empty boxes await independent approvals. Action: [name] marks the first approval box while Lucy marks the second on the same V2 resubmission card; Jules checks the version label. [name] performs the exact learner line naturally: \"I consent to this version.\". Only the exact focus word \"consent\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"Resubmit with two approvals.\". After the learner line, Lucy says aloud: \"Mine is yes.\". Ending state: Both partners approve V2; no one is signing for the other. Leave room beside [name] for the editor to add this exact short overlay: BEACON V2 / TWO APPROVALS. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
     },
     {
       "id": "E08-S05",
@@ -262,9 +262,9 @@
       "beat": "Escalation",
       "visible_cast": [
         "[name]",
-        "Maya"
+        "Lucy"
       ],
-      "visible_action": "[name] places the orange USB beside the approved V2 card while Maya pins the request-only phone card to the green board.",
+      "visible_action": "[name] places the orange USB beside the approved V2 card while Lucy pins the request-only phone card to the green board.",
       "protagonist_visible_throughout": true,
       "focus_word": {
         "word": "version",
@@ -281,7 +281,7 @@
       },
       "dialogue": [
         {
-          "speaker": "Maya",
+          "speaker": "Lucy",
           "text": "No independent phone assignments.",
           "delivery": "voiced_normally"
         },
@@ -293,7 +293,7 @@
           "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
         },
         {
-          "speaker": "Maya",
+          "speaker": "Lucy",
           "text": "One desk. One token.",
           "delivery": "voiced_normally"
         }
@@ -304,7 +304,7 @@
         "out": "Corrected V2 is clearly distinguished from withdrawn V1"
       },
       "edit_only_overlay": "ACTIVE CANDIDATE: V2 / WITHDRAWN: V1",
-      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: V2 has both approvals and a current backup. Action: [name] places the orange USB beside the approved V2 card while Maya pins the request-only phone card to the green board. [name] performs the exact learner line naturally: \"This version is ours.\". Only the exact focus word \"version\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"No independent phone assignments.\". After the learner line, Maya says aloud: \"One desk. One token.\". Ending state: Corrected V2 is clearly distinguished from withdrawn V1. Leave room beside [name] for the editor to add this exact short overlay: ACTIVE CANDIDATE: V2 / WITHDRAWN: V1. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: V2 has both approvals and a current backup. Action: [name] places the orange USB beside the approved V2 card while Lucy pins the request-only phone card to the green board. [name] performs the exact learner line naturally: \"This version is ours.\". Only the exact focus word \"version\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Lucy says aloud: \"No independent phone assignments.\". After the learner line, Lucy says aloud: \"One desk. One token.\". Ending state: Corrected V2 is clearly distinguished from withdrawn V1. Leave room beside [name] for the editor to add this exact short overlay: ACTIVE CANDIDATE: V2 / WITHDRAWN: V1. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
     },
     {
       "id": "E08-S06",
@@ -319,7 +319,7 @@
       "beat": "Escalation",
       "visible_cast": [
         "[name]",
-        "Maya",
+        "Lucy",
         "Jules"
       ],
       "visible_action": "[name] carries the approved card one step to Jules at the nearby check-in desk; Jules keeps the stage pass behind the counter.",
@@ -362,7 +362,7 @@
         "out": "Jules requires a rival to witness before restoring stage access"
       },
       "edit_only_overlay": "None",
-      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: V2 is approved by both partners but remains unverified. Action: [name] carries the approved card one step to Jules at the nearby check-in desk; Jules keeps the stage pass behind the counter. [name] performs the exact learner line naturally: \"Can you restore our slot?\". Only the exact focus word \"restore\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"The new entry can be tested.\". After the learner line, Jules says aloud: \"After a rival witnesses it.\". Ending state: Jules requires a rival to witness before restoring stage access. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: V2 is approved by both partners but remains unverified. Action: [name] carries the approved card one step to Jules at the nearby check-in desk; Jules keeps the stage pass behind the counter. [name] performs the exact learner line naturally: \"Can you restore our slot?\". Only the exact focus word \"restore\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"The new entry can be tested.\". After the learner line, Jules says aloud: \"After a rival witnesses it.\". Ending state: Jules requires a rival to witness before restoring stage access. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
     },
     {
       "id": "E08-S07",
@@ -377,11 +377,11 @@
       "beat": "Escalation",
       "visible_cast": [
         "[name]",
-        "Maya",
+        "Lucy",
         "Jules",
         "Leo"
       ],
-      "visible_action": "[name] takes the unsigned witness sheet from Jules; Maya points toward Leo waiting at the single tabletop test station beside the desk.",
+      "visible_action": "[name] takes the unsigned witness sheet from Jules; Lucy points toward Leo waiting at the single tabletop test station beside the desk.",
       "protagonist_visible_throughout": true,
       "focus_word": {
         "word": "witness",
@@ -410,7 +410,7 @@
           "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
         },
         {
-          "speaker": "Maya",
+          "speaker": "Lucy",
           "text": "Leo has the station.",
           "delivery": "voiced_normally"
         }
@@ -421,7 +421,7 @@
         "out": "Leo is the available rival, but his own station turn comes first"
       },
       "edit_only_overlay": "WITNESSED RETRY REQUIRED",
-      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: A neutral competitor must observe the retry. Action: [name] takes the unsigned witness sheet from Jules; Maya points toward Leo waiting at the single tabletop test station beside the desk. [name] performs the exact learner line naturally: \"We need a witness.\". Only the exact focus word \"witness\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"A competing entrant. Neutral check.\". After the learner line, Maya says aloud: \"Leo has the station.\". Ending state: Leo is the available rival, but his own station turn comes first. Leave room beside [name] for the editor to add this exact short overlay: WITNESSED RETRY REQUIRED. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: A neutral competitor must observe the retry. Action: [name] takes the unsigned witness sheet from Jules; Lucy points toward Leo waiting at the single tabletop test station beside the desk. [name] performs the exact learner line naturally: \"We need a witness.\". Only the exact focus word \"witness\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"A competing entrant. Neutral check.\". After the learner line, Lucy says aloud: \"Leo has the station.\". Ending state: Leo is the available rival, but his own station turn comes first. Leave room beside [name] for the editor to add this exact short overlay: WITNESSED RETRY REQUIRED. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
     },
     {
       "id": "E08-S08",
@@ -436,11 +436,11 @@
       "beat": "Escalation",
       "visible_cast": [
         "[name]",
-        "Maya",
+        "Lucy",
         "Jules",
         "Leo"
       ],
-      "visible_action": "[name] turns the unsigned sheet toward Leo, leaving room for Maya to remain beside [name] and for Jules's retry clock to stay visible.",
+      "visible_action": "[name] turns the unsigned sheet toward Leo, leaving room for Lucy to remain beside [name] and for Jules's retry clock to stay visible.",
       "protagonist_visible_throughout": true,
       "focus_word": {
         "word": "minute",
@@ -475,7 +475,7 @@
         "out": "[name] asks for a brief conversation without demanding priority"
       },
       "edit_only_overlay": "None",
-      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium four-shot in a narrow depth stack, [name] prominent in front; no crowd or extra cast. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Leo waits for his own test; retry clock runs. Action: [name] turns the unsigned sheet toward Leo, leaving room for Maya to remain beside [name] and for Jules's retry clock to stay visible. [name] performs the exact learner line naturally: \"Give me one minute.\". Only the exact focus word \"minute\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"The retry clock keeps running.\". Let the final reaction play with normal ambience and music. Ending state: [name] asks for a brief conversation without demanding priority. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium four-shot in a narrow depth stack, [name] prominent in front; no crowd or extra cast. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Leo waits for his own test; retry clock runs. Action: [name] turns the unsigned sheet toward Leo, leaving room for Lucy to remain beside [name] and for Jules's retry clock to stay visible. [name] performs the exact learner line naturally: \"Give me one minute.\". Only the exact focus word \"minute\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"The retry clock keeps running.\". Let the final reaction play with normal ambience and music. Ending state: [name] asks for a brief conversation without demanding priority. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
     },
     {
       "id": "E08-S09",
@@ -490,10 +490,10 @@
       "beat": "Escalation",
       "visible_cast": [
         "[name]",
-        "Maya",
+        "Lucy",
         "Leo"
       ],
-      "visible_action": "[name] offers the unsigned witness sheet rather than the returned gold pass; Leo looks from the sheet to Maya and back.",
+      "visible_action": "[name] offers the unsigned witness sheet rather than the returned gold pass; Leo looks from the sheet to Lucy and back.",
       "protagonist_visible_throughout": true,
       "focus_word": {
         "word": "favor",
@@ -533,7 +533,7 @@
         "out": "[name] asks for an honest observation, not a changed result"
       },
       "edit_only_overlay": "None",
-      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Leo knows [name] rejected his sponsor offer. Action: [name] offers the unsigned witness sheet rather than the returned gold pass; Leo looks from the sheet to Maya and back. [name] performs the exact learner line naturally: \"I'm asking a favor.\". Only the exact focus word \"favor\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Leo says aloud: \"You turned down my pass.\". After the learner line, Leo says aloud: \"You need my test slot?\". Ending state: [name] asks for an honest observation, not a changed result. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Leo knows [name] rejected his sponsor offer. Action: [name] offers the unsigned witness sheet rather than the returned gold pass; Leo looks from the sheet to Lucy and back. [name] performs the exact learner line naturally: \"I'm asking a favor.\". Only the exact focus word \"favor\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Leo says aloud: \"You turned down my pass.\". After the learner line, Leo says aloud: \"You need my test slot?\". Ending state: [name] asks for an honest observation, not a changed result. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
     },
     {
       "id": "E08-S10",
@@ -548,7 +548,7 @@
       "beat": "Cliffhanger: the needed witness is also the person whose turn would be displaced",
       "visible_cast": [
         "[name]",
-        "Maya",
+        "Lucy",
         "Jules",
         "Leo"
       ],
@@ -592,7 +592,7 @@
         "out": "[name] must choose whether to demand priority or respect the rival's turn"
       },
       "edit_only_overlay": "ONE STATION / LEO NEXT / RETRY CLOCK RUNNING",
-      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Locked medium four-shot, [name] closest to lens, single empty chair visible below faces. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Both teams need the one test station; Leo was already next. Action: [name] holds the witness sheet while Leo rests one hand on the empty station chair; Jules raises one finger to indicate a single available station. [name] performs the exact learner line naturally: \"Which order is fair?\". Only the exact focus word \"order\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"One test station. Leo is next.\". After the learner line, Leo says aloud: \"Your slot or mine?\". Ending state: [name] must choose whether to demand priority or respect the rival's turn. Leave room beside [name] for the editor to add this exact short overlay: ONE STATION / LEO NEXT / RETRY CLOCK RUNNING. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Locked medium four-shot, [name] closest to lens, single empty chair visible below faces. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Both teams need the one test station; Leo was already next. Action: [name] holds the witness sheet while Leo rests one hand on the empty station chair; Jules raises one finger to indicate a single available station. [name] performs the exact learner line naturally: \"Which order is fair?\". Only the exact focus word \"order\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"One test station. Leo is next.\". After the learner line, Leo says aloud: \"Your slot or mine?\". Ending state: [name] must choose whether to demand priority or respect the rival's turn. Leave room beside [name] for the editor to add this exact short overlay: ONE STATION / LEO NEXT / RETRY CLOCK RUNNING. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
     }
   ]
 }

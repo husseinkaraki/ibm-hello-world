@@ -61,7 +61,7 @@ The underlying IBM operations are `ce secret create/update --from-file KEY=/dev/
 
 ## CI behavior and verification
 
-CI only updates the app image/build and runtime resource allocation. It does not replace/remove runtime environment variables or secret mounts. The deploy script compares the runtime bindings before and after an update and fails with a value-free message if they change unexpectedly. Do not run the setup helper during a CI rollout. Google keys, passwords, and signing keys are not GitHub Actions secrets.
+CI only updates the app image/build and runtime resource allocation. Its 60-second HTTP request timeout accommodates the Veo route's 45-second upstream calls. It does not replace/remove runtime environment variables or secret mounts. The deploy script compares the runtime bindings before and after an update and fails with a value-free message if they change unexpectedly. Do not run the setup helper during a CI rollout. Google keys, passwords, and signing keys are not GitHub Actions secrets.
 
 Docker and Code Engine source allowlists include the app's `lib/` server code and exclude `.env*`, credential directories/files, and private-key formats, including nested files. The setup helper and documentation are not included in the image build context.
 

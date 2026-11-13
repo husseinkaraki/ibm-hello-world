@@ -53,7 +53,7 @@ const args = [
   '--max-scale', '1',
   '--port', '8080',
   '--visibility', 'public',
-  '--request-timeout', '30',
+  '--request-timeout', '60',
   '--wait-timeout', '900',
 ];
 if (action === 'update') args.push('--commands-clear', '--arguments-clear');

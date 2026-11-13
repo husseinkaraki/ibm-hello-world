@@ -25,6 +25,10 @@
 
 Every episode has `audio_mode: full_scene_audio_focus_word_silently_mouthed`. There is **no** `onset_seconds`, `focus_word_time_seconds`, learner audio window or target synchronization field. The plain practice text does not mean the target should be audibly spoken in the generated scene: the marked performance text and video prompt control that distinction. Do not send the plain line alone as an instruction to voice the entire line.
 
+The recurring romantic co-star's cast/speaker identifier is `Lucy`; uppercase on-screen labels use `LUCY`. Image 1 is the uploaded learner reference for `[name]`; image 2 is the application-managed story asset `media/lucy.png`, served by `/api/cast-reference`. Leo and Jules keep their existing identifiers and roles. The episode schema remains 1.1 with the same JSON keys and field types. The first demo episode's multiline `video_prompt` strings contain cinematic second-ranged action segments and the complete two-image mapping. Existing app consumers can send that same string unchanged; no new per-segment or word-timing fields are added.
+
+The manifest includes optional `reference_images` metadata for this mapping and the relative Lucy asset path. Its script hashes are regenerated from the canonical scripts. The companion product workstream owns the binary image and API packaging.
+
 Example of the first record's learning fields:
 
 ```json

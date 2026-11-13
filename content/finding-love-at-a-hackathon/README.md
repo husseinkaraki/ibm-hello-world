@@ -6,6 +6,10 @@ Ten complete original episodes of a planned 45-episode vertical romance thriller
 
 Start with [episode 01's complete script](episodes/episode-01.md) or its [machine-readable shot data](shot-data/episode-01.json). Every shot includes camera, visible action, dialogue, one word and meaning, a short marked learner line, continuity and a copyable, self-contained 9:16 video prompt. The user character/selfie reference must be supplied when generating; this package does not invent [name]'s appearance or include a reference image.
 
+**Recurring co-star:** Lucy is [name]'s fictional adult romantic co-star and product-design partner. Her identity comes from the supplied [story reference](media/lucy.png), packaged beside the storyline as **media/lucy.png** by the companion product workstream and served through `/api/cast-reference`. Image 1 is the learner/[name]; image 2 is Lucy. Binary packaging and reference-image API handling belong to the application.
+
+**Current demo prompt format:** [Episode 01](episodes/episode-01.md) and the [reusable Veo prompt template](templates/veo-prompt-template.txt) use reference-image mapping, setting/camera/performance sections, explicit second-ranged action segments, visual continuity and a full soundscape. The ranges guide cinematic action within one eight-second clip. They do not specify the focus word's onset or create application timing controls. The remaining authored episodes are retained; this follow-up does not expand the catalog or reformat their prompts.
+
 | Episode | Title | Script | Shot data |
 | --- | --- | --- | --- |
 | 01 | The Last Seat | [Read](episodes/episode-01.md) | [JSON](shot-data/episode-01.json) |
@@ -26,7 +30,7 @@ Supporting files:
 - [Source-linked format research and techniques actually used](RESEARCH.md).
 - [Production and prompt instructions](PRODUCTION.md).
 - [Shot-data field contract](SHOT_DATA.md), [JSON Schema](shot-data.schema.json) and [export manifest](shot-data/manifest.json).
-- [Reusable episode template](templates/episode-template.md) and [single-shot JSON template](templates/shot-template.json).
+- [Reusable Veo prompt](templates/veo-prompt-template.txt), [episode template](templates/episode-template.md) and [single-shot JSON template](templates/shot-template.json).
 - [Editorial review](EDITORIAL_REVIEW.md) and [structural validation results](VALIDATION.md).
 
 The Markdown scripts in `episodes/` are the source of truth. Edit those first, then regenerate the JSON with the standard-library tools. Do not edit an exported learner line or video prompt independently.

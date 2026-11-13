@@ -115,6 +115,10 @@ def expected_exports() -> dict[str, str]:
     exports['manifest.json'] = serialized({
         'schema_version': '1.1', 'series_title': TITLE, 'source_of_truth': 'episodes/*.md',
         'audio_mode': 'full_scene_audio_focus_word_silently_mouthed',
+        'reference_images': {
+            'image_1': {'character': '[name]', 'source': 'learner_upload'},
+            'image_2': {'character': 'Lucy', 'path': 'media/lucy.png', 'route': '/api/cast-reference'},
+        },
         'planned_episodes': 45, 'optional_expansion_episodes': 60,
         'completed_episodes': len(records), 'completed_shots': sum(r['shots'] for r in records),
         'completed_runtime_seconds': sum(r['duration_seconds'] for r in records),

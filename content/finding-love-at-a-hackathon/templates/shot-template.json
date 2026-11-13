@@ -11,7 +11,7 @@
   "beat": "<dramatic change>",
   "visible_cast": [
     "[name]",
-    "Maya"
+    "Lucy"
   ],
   "visible_action": "[name] <one clear visible action; recognizable face stays in frame>.",
   "protagonist_visible_throughout": true,
@@ -30,7 +30,7 @@
   },
   "dialogue": [
     {
-      "speaker": "Maya",
+      "speaker": "Lucy",
       "text": "<short audible supporting line>",
       "delivery": "voiced_normally"
     },
@@ -48,5 +48,5 @@
     "out": "<specific changed state>"
   },
   "edit_only_overlay": "<short necessary label, or None>",
-  "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. <Write complete fixed casting/wardrobe descriptions for every other visible adult actor.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: \"<plain line>\". Only the exact focus word \"<word>\" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action."
+  "video_prompt": "Finding Love at a Hackathon — <shot_id> — <episode_title>\nFORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.\nREFERENCE IMAGES:\n<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.\n<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.\nCAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.\nintegrated_multimodal_description: <tone, visual style and emotional pressure>.\nSETTING AND LIGHT: <venue, furniture, practical light and screen fill>.\nCAMERA: <framing and one small move keeping [name] recognizable>.\nKeep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.\nSTART: <complete incoming state>.\nPERFORMANCE — no required word onset. Plain learner line: \"<short line with the exact focus word>\".\nPlay once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.\nOnly the exact focus word \"<focus_word>\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.\nRanges guide action/camera, not word timing, detection or recording insertion.\n[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.\n[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.\n[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.\nEND: <complete changed state>.\nVISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.\noverall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.\nnon_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.\nEDIT ONLY: <label or None; add later, not in generated frames>."
 }

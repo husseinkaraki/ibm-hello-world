@@ -11,7 +11,7 @@ from pathlib import Path
 sys.dont_write_bytecode = True
 from export_shots import ROOT, TITLE, expected_exports, parse_script
 
-CAST = {'[name]', 'Maya', 'Leo', 'Jules'}
+CAST = {'[name]', 'Lucy', 'Leo', 'Jules'}
 LOCATIONS = {'T7', 'DESK', 'ALCOVE', 'REVIEW'}
 OLD_AUDIO = re.compile(
     r'render silent|silent source|globally silent|halfway through (?:the )?shot|four seconds|near 4\.0|'
@@ -107,6 +107,10 @@ def run() -> tuple[list[dict], list[str]]:
                          'rest of that line is spoken normally', 'FULL SCENE SOUNDTRACK',
                          'hall ambience', 'sound effects', 'dramatic score', 'Keep that soundtrack continuous']:
                 require(term in prompt, f'{sid}: prompt missing {term!r}')
+            if 'Lucy' in shot['visible_cast']:
+                require('supplied Lucy character reference (lucy.png)' in prompt
+                        and "for Lucy's face, hair and recognizable identity" in prompt,
+                        f'{sid}: preserve Lucy reference identity')
             require(not OLD_AUDIO.search(prompt), f'{sid}: obsolete prompt audio instructions')
             require(shot['continuity']['in'] in prompt and shot['continuity']['out'] in prompt,
                     f'{sid}: prompt must include its own starting/ending state')
@@ -135,6 +139,8 @@ def report(episodes: list[dict]) -> str:
              '- Exactly ten shots per episode, 100 unique shot IDs and 800 seconds total (13:20). Every episode is 80 seconds (01:20).',
              '- Every source shot is eight seconds; edit ranges are contiguous and totals are within 60–120 seconds.',
              '- Every camera/action description keeps [name] visible; every prompt requires the supplied reference and a recognizable face throughout.',
+             '- Lucy is the reference-backed recurring romantic co-star; prompts bind lucy.png to her identity wherever she appears. Leo and Jules remain distinct.',
+             '- The first demo episode uses explicit image 1 / [name] and image 2 / Lucy mapping with cinematic action ranges inside eight seconds. These ranges do not locate the focus word or drive application synchronization.',
              '- Exactly one primary focus object per shot; one exact focus-word occurrence in its short plain learner line; exact [name] speaker label.',
              '- Plain lines and silently-mouthed performance annotations agree. All supporting dialogue is voiced normally.',
              '- Every prompt requests dialogue, ambience, sound effects and score, keeps that background continuous, and leaves only the one [name] focus word unvoiced.',

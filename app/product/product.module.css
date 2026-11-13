@@ -120,8 +120,6 @@
 .generationControls { max-width: 420px; margin: 3px auto 0; text-align: center; }
 .generationControls > .primaryButton { width: 100%; }
 .creditNote { font-size: 10px; line-height: 1.7; color: #737d63; margin: 8px 0 15px; }
-.password { display: block; text-align: left; font-size: 10px; color: #6f795f; margin: 15px 0; }
-.password input { width: 100%; border: 1px solid #d8ddcd; border-radius: 6px; padding: 11px 12px; margin-top: 7px; background: #fff; color: #30372a; font-size: 12px; }
 .connectionNotice { background: #f2f2e8; border-radius: 6px; padding: 13px; text-align: left; font-size: 10px; color: #68735a; margin: 10px 0; line-height: 1.6; }
 .connectionNotice p { margin: 5px 0; }
 .connectionNotice summary { cursor: pointer; font-size: 9px; }

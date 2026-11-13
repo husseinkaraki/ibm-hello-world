@@ -4,7 +4,7 @@
 
 The creator consumes the same `episodes` catalog, `DramaEpisode` / `DramaShot` adapter, `generationPrompt`, and `composeScenePrompt` as the learning product. The selected scene supplies the editable prompt, learner line, focus word, and meaning. Historical word-onset fields do not become controls or synchronization requirements.
 
-The browser submits one multipart request to the existing `/api/veo` route only after the user presses **Generate scene**. Fields are `prompt` (the base prompt), `focusWord`, `durationSeconds`, `aspectRatio`, `resolution`, `generateAudio`, and optional `image`. The shared API composes the audio direction once. The final prompt preview uses that same composition, including the audio setting. The demo password is sent only in `x-veo-password` and is never persisted.
+The browser submits one multipart request to the existing `/api/veo` route only after the user presses **Generate scene**. Fields are `prompt` (the base prompt), `focusWord`, `durationSeconds`, `aspectRatio`, `resolution`, `generateAudio`, and optional `image`. The shared API composes the audio direction once. The final prompt preview uses that same composition, including the audio setting. No demo password is required.
 
 Defaults are eight seconds, portrait 9:16, 720p, and full audio on `veo-3.1-fast-generate-001`. Supported alternatives are four/six seconds, landscape 16:9, 1080p for eight-second clips, and audio off. Selecting 1080p selects eight seconds and disables shorter durations. The authored opening format sentence is adapted to the chosen duration and aspect ratio. Custom direction remains editable.
 

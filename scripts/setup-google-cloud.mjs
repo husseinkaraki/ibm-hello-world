@@ -3,15 +3,12 @@ import { execFileSync, spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, realpathSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { isAbsolute, join, relative, resolve, sep } from 'node:path';
-import { createInterface } from 'node:readline/promises';
-import { Writable } from 'node:stream';
 import { parseArgs } from 'node:util';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const credentialSecret = 'veo-google-credentials';
 const jobSecret = 'veo-job-signing';
-const passwordSecret = 'veo-demo-access';
 const mount = '/var/run/secrets/google-cloud';
 class SetupError extends Error {}
 
@@ -40,7 +37,7 @@ function repositoryRoots() {
 }
 
 function externalFile(path, roots) {
-  if (!path || !isAbsolute(path)) throw new SetupError('Supply an absolute credential/password file path outside every Git worktree.');
+  if (!path || !isAbsolute(path)) throw new SetupError('Supply an absolute credential file path outside every Git worktree.');
   let actual;
   try { actual = realpathSync(path); } catch { throw new SetupError('The supplied file is not accessible.'); }
   const inside = (file, directory) => {
@@ -48,7 +45,7 @@ function externalFile(path, roots) {
     return part === '' || (part !== '..' && !part.startsWith(`..${sep}`) && !isAbsolute(part));
   };
   if (roots.some(directory => inside(resolve(path), directory) || inside(actual, directory))) {
-    throw new SetupError('Keep credential and password files outside every Git worktree, such as ~/.config/ibm-veo/.');
+    throw new SetupError('Keep credential files outside every Git worktree, such as ~/.config/ibm-veo/.');
   }
   try { return readFileSync(actual); } catch { throw new SetupError('The supplied file could not be read.'); }
 }
@@ -65,27 +62,6 @@ function credentialData(bytes) {
   }
 }
 
-function passwordValue(value) {
-  const password = value.replace(/\r?\n$/, '');
-  if (password.length < 16 || /[\r\n]/.test(password)) throw new SetupError('Choose a single-line demo password of at least 16 characters.');
-  return password;
-}
-
-async function promptPassword() {
-  if (!process.stdin.isTTY) throw new SetupError('For the first setup, run interactively or supply --demo-password-file with an existing file outside Git.');
-  const muted = new Writable({ write(_chunk, _encoding, done) { done(); } });
-  const reader = createInterface({ input: process.stdin, output: muted, terminal: true, historySize: 0 });
-  try {
-    process.stderr.write('Demo password (16+ characters; hidden): ');
-    const first = await reader.question('');
-    process.stderr.write('\nConfirm demo password (hidden): ');
-    const second = await reader.question('');
-    process.stderr.write('\n');
-    if (first !== second) throw new SetupError('The demo passwords did not match.');
-    return passwordValue(first);
-  } finally { reader.close(); }
-}
-
 export async function setupGoogleCloud(options, dependencies = {}) {
   const run = dependencies.run || runIBM;
   const log = dependencies.log || console.log;
@@ -95,7 +71,6 @@ export async function setupGoogleCloud(options, dependencies = {}) {
   }
   const credentials = externalFile(options.credentials, roots);
   credentialData(credentials);
-  let password = options.demoPasswordFile ? passwordValue(externalFile(options.demoPasswordFile, roots).toString('utf8')) : undefined;
   const app = process.env.CE_APP_NAME || 'hello-world';
   // Disable file-based HTTP tracing before any authenticated secret request.
   run(['config', '--trace', 'false']);
@@ -113,8 +88,6 @@ export async function setupGoogleCloud(options, dependencies = {}) {
     }
   };
   if (names.has(jobSecret)) requireKey(jobSecret, 'VEO_JOB_SECRET', 32);
-  if (names.has(passwordSecret) && !password) requireKey(passwordSecret, 'VEO_DEMO_PASSWORD', 1);
-  if (!names.has(passwordSecret) && !password) password = passwordValue(await (dependencies.promptPassword || promptPassword)());
 
   const save = (name, key, value) => {
     run(['ce', 'secret', names.has(name) ? 'update' : 'create', '--name', name,
@@ -126,8 +99,6 @@ export async function setupGoogleCloud(options, dependencies = {}) {
     save(jobSecret, 'VEO_JOB_SECRET', Buffer.from(randomBytes(32).toString('base64url')));
     log('Stable job-signing secret created.');
   } else log('Existing job-signing secret preserved.');
-  if (password) save(passwordSecret, 'VEO_DEMO_PASSWORD', Buffer.from(password));
-  else log('Existing demo password preserved.');
   log('Deploying credential mounts and secret-backed environment variables...');
   run(['ce', 'app', 'update', '--name', app,
     '--mount-secret', `${mount}=${credentialSecret}`,
@@ -135,7 +106,6 @@ export async function setupGoogleCloud(options, dependencies = {}) {
     '--env', `GOOGLE_CLOUD_PROJECT=${options.project}`,
     '--env', 'GOOGLE_CLOUD_LOCATION=us-central1',
     '--env-from-secret', `${jobSecret}:VEO_JOB_SECRET`,
-    '--env-from-secret', `${passwordSecret}:VEO_DEMO_PASSWORD`,
     '--revision-name', `${app.slice(0, 40)}-cfg-${Date.now().toString(36)}`,
     '--wait-timeout', '600']);
   log('Runtime secret bindings deployed. Check /api/veo for OAuth readiness; no video generation was submitted.');
@@ -143,9 +113,9 @@ export async function setupGoogleCloud(options, dependencies = {}) {
 
 if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) {
   try {
-    const { values } = parseArgs({ options: { project: { type: 'string' }, credentials: { type: 'string' }, 'demo-password-file': { type: 'string' }, help: { type: 'boolean' } } });
-    if (values.help) console.log('Usage: node scripts/setup-google-cloud.mjs --project PROJECT_ID --credentials /absolute/path/to/credentials.json [--demo-password-file /absolute/path/to/password.txt]\nRun after CI deployment finishes. The first setup prompts privately for the demo password; later runs reuse it unless a password file is supplied.');
-    else await setupGoogleCloud({ project: values.project, credentials: values.credentials, demoPasswordFile: values['demo-password-file'] });
+    const { values } = parseArgs({ options: { project: { type: 'string' }, credentials: { type: 'string' }, help: { type: 'boolean' } } });
+    if (values.help) console.log('Usage: node scripts/setup-google-cloud.mjs --project PROJECT_ID --credentials /absolute/path/to/credentials.json\nRun after CI deployment finishes. The existing job-signing key is reused.');
+    else await setupGoogleCloud({ project: values.project, credentials: values.credentials });
   } catch (error) {
     console.error(error instanceof SetupError ? error.message : 'Setup failed; credential details were withheld. Check the documented options and IBM access.');
     process.exitCode = 1;

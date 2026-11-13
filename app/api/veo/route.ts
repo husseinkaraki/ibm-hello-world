@@ -1,6 +1,6 @@
 import { MAX_IMAGE_BYTES, VeoError, validateImage, validatePrompt, validateVideoSettings, validateFocusWord } from "../../../lib/veo-contract";
 import { composeScenePrompt } from "../../../lib/scene-prompt";
-import { errorResponse, json, readiness, requireDemoPassword, requireSameOrigin, submitScene } from "../../../lib/veo-server";
+import { errorResponse, json, readiness, requireSameOrigin, submitScene } from "../../../lib/veo-server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -13,7 +13,6 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     requireSameOrigin(request);
-    requireDemoPassword(request);
     if (!request.headers.get("content-type")?.startsWith("multipart/form-data")) {
       throw new VeoError("Submit a scene prompt and optional photo as form data.", 415);
     }

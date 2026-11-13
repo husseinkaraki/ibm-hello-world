@@ -10,7 +10,8 @@ export const MAX_PROMPT_LENGTH = 4000;
 
 export type Readiness = {
   ready: boolean;
-  requiresPassword: boolean;
+  /** Kept for older clients; the demo access gate has been removed. */
+  requiresPassword: false;
   message: string;
 };
 

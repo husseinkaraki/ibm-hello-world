@@ -33,7 +33,7 @@ The model is `veo-3.1-fast-generate-001`, with one clip per request and `personG
 | Endpoint | Behavior |
 | --- | --- |
 | `GET /api/veo` | Checks configuration and ADC token availability, without a paid generation. This does not prove model permissions, quota, or billing. |
-| `POST /api/veo` | Multipart `prompt`, optional `focusWord`, `durationSeconds`, `aspectRatio`, `resolution`, `generateAudio`, and optional `image`; returns HTTP 202 with a signed `job` reference. Optional demo password is sent in `x-veo-password`. |
+| `POST /api/veo` | Multipart `prompt`, optional `focusWord`, `durationSeconds`, `aspectRatio`, `resolution`, `generateAudio`, and optional `image`; returns HTTP 202 with a signed `job` reference. No demo password is required. |
 | `GET /api/veo/status?job=…` | Checks Google's long-running operation and returns `pending`, `complete`, or a real error. |
 | `GET /api/veo/video?job=…` | Fetches Google's finished bytes and serves private MP4, including byte-range support for the browser player. |
 
@@ -51,8 +51,6 @@ Keep these values **server-side**; none use the `NEXT_PUBLIC_` prefix:
 | `GOOGLE_CLOUD_LOCATION` | `us-central1`. |
 | `GOOGLE_APPLICATION_CREDENTIALS` | Absolute path to a mounted ADC-compatible service-account or Workload Identity Federation configuration file on IBM. Local ADC login can use its default file instead. |
 | `VEO_JOB_SECRET` | Random signing key, at least 32 characters; shared across all instances and revisions that must read existing jobs. |
-| `VEO_DEMO_PASSWORD` | Shared password for the hosted hackathon demo. |
-| `VEO_TRUSTED_PRIVATE_DEPLOYMENT` | Optional `true` only if access is already authenticated outside these routes; otherwise production requires `VEO_DEMO_PASSWORD`. |
 
 Mount credentials as a runtime secret; install/build steps do not need them. No Google access token or private key is returned to the browser. A signed job reference is a temporary capability to check and download that one clip.
 
@@ -66,7 +64,7 @@ npm test
 npm run build
 ```
 
-Veo tests cover request/operation shapes, filtered and failed jobs, image/prompt validation, signed capability expiry/tampering, and MP4 ranges. Creator tests additionally cover setting/prompt/photo mismatches and safe restoration of saved requests and drafts. Their video bytes are fixtures and do not represent a newly generated video. Browser QA uses intercepted generation/status/video responses.
+Veo tests cover request/operation shapes, filtered and failed jobs, image/prompt validation, signed capability expiry/tampering, and MP4 ranges. Creator browser checks cover setting/prompt/photo mismatches and restoration of saved requests and drafts. Their video bytes are fixtures and do not represent a newly generated video. Browser QA uses intercepted generation/status/video responses.
 
 Creator regression testing does not submit paid generations. Local builds and passing fixtures do not prove Google account access; runtime credentials and model permissions are verified separately from UI checks.
 

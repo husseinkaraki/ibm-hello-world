@@ -22,12 +22,11 @@ function fixture(body) {
   return { directory, credential, cleanup: () => rmSync(directory, { recursive: true, force: true }) };
 }
 
-test('setup sends secrets only over stdin and preserves signing/password values on rerun', async () => {
+test('setup sends secrets only over stdin and preserves the signing key on rerun', async () => {
   const files = fixture();
   const secrets = new Map();
   const calls = [];
   const messages = [];
-  const demoPassword = 'fixture-only-demo-password';
   const run = (args, options = {}) => {
     calls.push({ args, input: options.input });
     if (args[1] === 'secret' && args[2] === 'list') return JSON.stringify({ secrets: [...secrets.keys()].map(name => ({ name })) });
@@ -40,34 +39,26 @@ test('setup sends secrets only over stdin and preserves signing/password values 
     }
     return '{}';
   };
-  const dependencies = { run, roots: [], log: message => messages.push(message), promptPassword: async () => demoPassword };
+  const dependencies = { run, roots: [], log: message => messages.push(message) };
   try {
     await setupGoogleCloud({ project: 'example-project', credentials: files.credential }, dependencies);
     const signing = secrets.get('veo-job-signing').VEO_JOB_SECRET;
     assert.ok(signing.length >= 32);
-    assert.ok(!JSON.stringify(calls.map(call => call.args)).includes(demoPassword));
-    assert.ok(!messages.join('\n').includes(demoPassword));
+    assert.ok(!JSON.stringify(calls.map(call => call.args)).includes(signing));
+    assert.ok(!messages.join('\n').includes(signing));
     const update = calls.find(call => call.args[1] === 'app' && call.args[2] === 'update').args;
     assert.ok(update.includes('/var/run/secrets/google-cloud=veo-google-credentials'));
     assert.ok(update.includes('GOOGLE_APPLICATION_CREDENTIALS=/var/run/secrets/google-cloud/credentials.json'));
     assert.ok(update.includes('GOOGLE_CLOUD_LOCATION=us-central1'));
     assert.ok(update.includes('veo-job-signing:VEO_JOB_SECRET'));
-    assert.ok(update.includes('veo-demo-access:VEO_DEMO_PASSWORD'));
     assert.ok(!update.includes('--visibility'));
     const count = calls.length;
-    await setupGoogleCloud({ project: 'example-project', credentials: files.credential }, {
-      ...dependencies, promptPassword: () => { throw new Error('Existing password must be reused'); },
-    });
+    await setupGoogleCloud({ project: 'example-project', credentials: files.credential }, dependencies);
     assert.ok(secrets.get('veo-job-signing').VEO_JOB_SECRET === signing);
     assert.ok(!calls.slice(count).some(call => ['create', 'update'].includes(call.args[2]) && call.args.includes('veo-job-signing')));
-    assert.ok(!calls.slice(count).some(call => ['create', 'update'].includes(call.args[2]) && call.args.includes('veo-demo-access')));
-    // Existing 32-character signing strings and punctuation passwords are raw
-    // JSON values, not base64. Never decode or replace them during a rerun.
+    // Existing signing strings are plain JSON values, not base64.
     secrets.set('veo-job-signing', { VEO_JOB_SECRET: 'fixture'.padEnd(32, '!') });
-    secrets.set('veo-demo-access', { VEO_DEMO_PASSWORD: '!'.repeat(16) });
-    await setupGoogleCloud({ project: 'example-project', credentials: files.credential }, {
-      ...dependencies, promptPassword: () => { throw new Error('Existing password must be reused'); },
-    });
+    await setupGoogleCloud({ project: 'example-project', credentials: files.credential }, dependencies);
   } finally { files.cleanup(); }
 });
 

@@ -9,7 +9,7 @@
     "dev": "next dev --hostname 0.0.0.0 --port 8080",
     "build": "next build && node scripts/prepare-standalone.mjs",
     "start": "next start --hostname 0.0.0.0 --port 8080",
-    "check": "tsc --noEmit && node --check scripts/deploy.mjs && node --check scripts/verify.mjs && bash -n deploy.sh",
+    "check": "tsc --noEmit && node --check scripts/deploy.mjs && node --check scripts/runtime-bindings.mjs && node --check scripts/setup-google-cloud.mjs && node --check scripts/verify.mjs && bash -n deploy.sh",
     "test": "node --test"
   },
   "dependencies": {

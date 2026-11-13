@@ -51,7 +51,6 @@ export default function SceneCreator({ episodes }: { episodes: DramaEpisode[] })
   const [message, setMessage] = useState("");
   const [paused, setPaused] = useState(false);
   const [retry, setRetry] = useState(0);
-  const [password, setPassword] = useState("");
   const [dragging, setDragging] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const submitLock = useRef(false);
@@ -193,7 +192,7 @@ export default function SceneCreator({ episodes }: { episodes: DramaEpisode[] })
     for (const [key, value] of Object.entries(settings)) body.set(key, String(value));
     if (image) body.set("image", image);
     try {
-      const response = await fetch("/api/veo", { method: "POST", body, headers: password ? { "x-veo-password": password } : {} });
+      const response = await fetch("/api/veo", { method: "POST", body });
       const result = await response.json() as { job?: string; error?: string };
       if (!response.ok || !result.job) throw new Error(result.error || "Google did not confirm a generation. Check the request before trying again.");
       const submitted = { job: result.job, snapshot };
@@ -268,7 +267,6 @@ export default function SceneCreator({ episodes }: { episodes: DramaEpisode[] })
               <pre data-testid="effective-prompt">{effectivePrompt}</pre>
             </details>
             {!promptValid && <p className={styles.validation} role="alert">{basePrompt.trim().length < 10 ? "Describe your scene in at least 10 characters." : `Shorten the prompt to ${MAX_PROMPT_LENGTH} characters including audio direction.`}</p>}
-            {connection?.requiresPassword && <label className={styles.password}>Demo password<input type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} required disabled={locked} /></label>}
 
             <div className={styles.generateArea}>
               <button className={styles.generate} disabled={locked || !hydrated || !connection?.ready || !promptValid} type="submit"><Icon name="spark" size={19} /><span>{phase === "submitting" ? "Sending your scene…" : phase === "pending" ? "Your scene is generating…" : "Generate scene"}</span>{!busy && <Icon name="arrow" size={20} />}</button>

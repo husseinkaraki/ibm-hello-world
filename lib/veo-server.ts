@@ -1,6 +1,5 @@
 import "server-only";
 import { GoogleAuth } from "google-auth-library";
-import { timingSafeEqual } from "node:crypto";
 import {
   VEO_MODEL, VeoError, type Readiness, type VertexOperation, type GenerationOptions,
   generationBody, operationState,
@@ -25,10 +24,6 @@ function configuration() {
   if (!secret || secret.length < 32) {
     throw new VeoError("Set VEO_JOB_SECRET to a random value of at least 32 characters, shared by all app instances.", 503);
   }
-  if (process.env.NODE_ENV === "production" && !process.env.VEO_DEMO_PASSWORD &&
-      process.env.VEO_TRUSTED_PRIVATE_DEPLOYMENT !== "true") {
-    throw new VeoError("Set VEO_DEMO_PASSWORD for the hosted demo, or authenticate the deployment and set VEO_TRUSTED_PRIVATE_DEPLOYMENT=true.", 503);
-  }
   return { project, location, secret, path: modelPath(project, location, VEO_MODEL) };
 }
 
@@ -45,19 +40,9 @@ export async function readiness(): Promise<Readiness> {
   try {
     configuration();
     await googleHeaders(); // Credentials only; never starts a generation or incurs a Veo charge.
-    return { ready: true, requiresPassword: Boolean(process.env.VEO_DEMO_PASSWORD), message: "Cloud credentials ready. Model access is checked when you generate." };
+    return { ready: true, requiresPassword: false, message: "Cloud credentials ready. Model access is checked when you generate." };
   } catch (error) {
-    return { ready: false, requiresPassword: Boolean(process.env.VEO_DEMO_PASSWORD), message: error instanceof VeoError ? error.message : "Google Cloud setup is incomplete." };
-  }
-}
-
-export function requireDemoPassword(request: Request) {
-  const expected = process.env.VEO_DEMO_PASSWORD;
-  if (!expected) return;
-  const actual = Buffer.from(request.headers.get("x-veo-password") || "");
-  const wanted = Buffer.from(expected);
-  if (actual.length !== wanted.length || !timingSafeEqual(actual, wanted)) {
-    throw new VeoError("Enter the demo password to generate a clip.", 401);
+    return { ready: false, requiresPassword: false, message: error instanceof VeoError ? error.message : "Google Cloud setup is incomplete." };
   }
 }
 

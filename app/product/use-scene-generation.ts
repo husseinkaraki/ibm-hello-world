@@ -102,7 +102,7 @@ export function useSceneGeneration(scene: string, episode: string) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scene, current.job, current.phase, current.paused, checkVersion]);
 
-  async function generate(prompt: string, focusWord: string, image: File | null, password: string, newTake = false) {
+  async function generate(prompt: string, focusWord: string, image: File | null, newTake = false) {
     const existing = recordRef.current[scene];
     if (!hydrated || submitLock.current || existing?.phase === "submitting" || existing?.phase === "pending" ||
         (!newTake && (existing?.job || existing?.phase === "uncertain"))) return;
@@ -113,7 +113,7 @@ export function useSceneGeneration(scene: string, episode: string) {
     body.set("resolution", "720p"); body.set("generateAudio", "true"); body.set("focusWord", focusWord);
     if (image) body.set("image", image);
     try {
-      const response = await fetch("/api/veo", { method: "POST", body, headers: password ? { "x-veo-password": password } : {} });
+      const response = await fetch("/api/veo", { method: "POST", body });
       const result = await response.json() as { job?: string; error?: string };
       if (!response.ok || !result.job) {
         update(scene, { phase: response.status >= 500 || response.ok ? "uncertain" : "error", message: result.error || "No generation was confirmed. Check Google Cloud before submitting another request." });

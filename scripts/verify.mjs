@@ -39,5 +39,5 @@ const readiness = await fetch(new URL('/api/veo', base), { signal: AbortSignal.t
 assert.equal(readiness.status, 200, 'Veo readiness route must be deployed');
 const ready = await readiness.json();
 assert.equal(typeof ready.ready, 'boolean');
-assert.equal(typeof ready.requiresPassword, 'boolean');
+assert.equal(ready.requiresPassword, false, 'Generation must not require a demo password');
 console.log(`Scene Creator, /veo compatibility, and API reachable; Google OAuth readiness: ${ready.ready ? 'ready' : 'not configured/ready'}. No video generation submitted.`);

@@ -21,7 +21,6 @@ export default function Product({ episode }: { episode: DramaEpisode }) {
   const [selfie, setSelfie] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [photoError, setPhotoError] = useState("");
-  const [password, setPassword] = useState("");
   const [finished, setFinished] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
   const fileInput = useRef<HTMLInputElement>(null);
@@ -34,7 +33,7 @@ export default function Product({ episode }: { episode: DramaEpisode }) {
   const generating = current.phase === "submitting" || current.phase === "pending";
   const last = index === episode.shots.length - 1;
   const attemptsDone = recorder.attempts.length === 3;
-  const disabledGeneration = !connection?.ready || !generation.hydrated || generating || Boolean(connection.requiresPassword && !password.trim());
+  const disabledGeneration = !connection?.ready || !generation.hydrated || generating;
 
   useEffect(() => {
     if (!selfie) { setPreview(null); return; }
@@ -58,7 +57,7 @@ export default function Product({ episode }: { episode: DramaEpisode }) {
     if (fileInput.current) fileInput.current.value = "";
   }
 
-  const startGeneration = (newTake = false) => void generation.generate(generationPrompt(shot, Boolean(selfie)), shot.focusWord, selfie, password, newTake);
+  const startGeneration = (newTake = false) => void generation.generate(generationPrompt(shot, Boolean(selfie)), shot.focusWord, selfie, newTake);
 
   return <main className={styles.app}>
     <div className={styles.shell}>
@@ -126,7 +125,6 @@ export default function Product({ episode }: { episode: DramaEpisode }) {
               <div className={styles.clipMeta}><span>~08 SEC</span><span>FULL AUDIO</span><span>VEO 3.1</span></div>
             </div>
             <div className={styles.generationControls}>
-              {connection?.requiresPassword && current.phase !== "complete" && <label className={styles.password}>Demo access password<input type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} disabled={generating} placeholder="Enter once for this session" /></label>}
               {connection && !connection.ready && current.phase !== "complete" && <div className={styles.connectionNotice}><strong>The studio needs a connection.</strong><p>You can still practice. Video generation will be available when the server is ready.</p><details><summary>Connection details</summary><p>{connection.message}</p></details></div>}
               {current.message && <div className={styles.generationMessage} role="alert"><p>{current.message}</p>{current.paused && <button type="button" onClick={generation.checkAgain}><Icon name="refresh" size={15} />Check this generation again</button>}</div>}
               {current.phase === "idle" || current.phase === "submitting" || (current.phase === "pending" && !current.paused) ? <><button type="button" className={styles.primaryButton} disabled={disabledGeneration} onClick={() => startGeneration()}><Icon name="spark" size={18} />{current.phase === "submitting" ? "Sending your scene…" : current.phase === "pending" ? "Creating your scene…" : "Generate my scene"}{!generating && <Icon name="arrow" size={18} />}</button><p className={styles.creditNote}>One clip · each generation uses Google Cloud credit</p></> : current.phase === "error" || current.phase === "uncertain" ? <><button type="button" className={styles.primaryButton} disabled={disabledGeneration} onClick={() => startGeneration(true)}><Icon name="refresh" size={16} />{current.phase === "uncertain" ? "Submit another paid request" : "Retry generation · new paid take"}</button><p className={styles.creditNote}>A new request can incur a new charge. Failed jobs are never resubmitted automatically.</p></> : null}

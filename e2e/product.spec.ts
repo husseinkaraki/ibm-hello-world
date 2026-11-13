@@ -6,7 +6,7 @@ import { setTimeout as delay } from "node:timers/promises";
 const clip = readFileSync(new URL("./fixtures/scene.mp4", import.meta.url));
 const photo = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aF9sAAAAASUVORK5CYII=", "base64");
 
-async function cloudFixture(page: Page, mode: "success" | "transient" | "failed" | "uncertain" = "success", password = false) {
+async function cloudFixture(page: Page, mode: "success" | "transient" | "failed" | "uncertain" = "success") {
   let submissions = 0;
   let checks = 0;
   const bodies: FormData[] = [];
@@ -24,13 +24,12 @@ async function cloudFixture(page: Page, mode: "success" | "transient" | "failed"
       submissions++;
       const body = await new Request(request.url(), { method: "POST", headers: { "content-type": request.headers()["content-type"] }, body: new Uint8Array(request.postDataBuffer()!) }).formData();
       bodies.push(body);
-      if (password) expect(request.headers()["x-veo-password"]).toBe("fixture-access-only");
       if (mode === "uncertain") return route.abort("failed");
       // Make submission/loading state observable without contacting an upstream service.
       await delay(150);
       return route.fulfill({ status: 202, json: { state: "pending", job: `fixture-${submissions}`, retryAfterSeconds: 5 } });
     }
-    return route.fulfill({ json: { ready: true, requiresPassword: password, message: "Browser QA fixture" } });
+    return route.fulfill({ json: { ready: true, requiresPassword: false, message: "Browser QA fixture" } });
   });
   return { get submissions() { return submissions; }, get checks() { return checks; }, bodies };
 }
@@ -118,12 +117,10 @@ test("a lost status check retries the existing job and restores it after reload"
   expect(cloud.submissions).toBe(1);
 });
 
-test("failed jobs require an explicit new paid take; the demo password is reused", async ({ page }) => {
-  const cloud = await cloudFixture(page, "failed", true);
+test("failed jobs require an explicit new paid take", async ({ page }) => {
+  const cloud = await cloudFixture(page, "failed");
   await page.goto("/"); await threeTakes(page);
   await page.getByRole("button", { name: "Next: your scene" }).click();
-  await expect(page.getByRole("button", { name: "Generate my scene" })).toBeDisabled();
-  await page.getByLabel("Demo access password").fill("fixture-access-only");
   await page.getByRole("button", { name: "Generate my scene" }).click();
   await expect(page.getByRole("main").getByRole("alert")).toContainText("generation was filtered");
   expect(cloud.submissions).toBe(1);

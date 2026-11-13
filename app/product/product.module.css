@@ -194,3 +194,28 @@
   .footer > div { font-size: 8px; width: 100%; justify-content: space-between; }
 }
 @media (max-width: 360px) { .app { padding: 0 12px; } .lesson { padding: 16px 14px 0; } .word { font-size: 51px; } .episodeTop > .eyebrow { font-size: 6px; } }
+
+.watchWorkspace { display: grid; grid-template-columns: minmax(180px, 1fr) minmax(260px, 1fr); align-items: start; gap: 28px; padding: 3px 0 19px; }
+.watchWorkspace .generationControls { width: 100%; margin: 0; max-width: none; padding-top: 5px; }
+.referenceHeading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 15px; color: #6b755d; font-size: 9px; font-weight: 650; letter-spacing: 1px; text-align: left; }
+.referenceHeading > span { font-size: 6px; letter-spacing: .6px; color: #929a84; }
+.referenceCards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.referenceCard { min-width: 0; border: 1px solid #e0e5d6; border-radius: 8px; overflow: hidden; background: #f7f8f1; text-align: left; }
+.referenceTitle { padding: 11px 10px 9px; display: flex; flex-direction: column; gap: 3px; }
+.referenceTitle > strong { font-size: 12px; font-weight: 600; }
+.referenceTitle > span { font-size: 7px; letter-spacing: .7px; color: #7b876a; }
+.referencePreview { height: 132px; background: #edeFE5; display: grid; place-items: center; color: #b0baa2; }
+.referencePreview img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.referenceActions { padding: 9px; min-height: 49px; display: flex; justify-content: space-between; align-items: center; gap: 5px; }
+.referenceActions .photoLabel { padding: 7px 9px; font-size: 10px; background: #fffef9; white-space: nowrap; }
+.referenceActions > button { border: 0; background: transparent; padding: 5px; color: #6e7d5c; }
+.fixedCastLabel { padding: 16px 10px; min-height: 49px; display: block; font-size: 9px; color: #6e7d5c; }
+.photoLimit { font-size: 9px; color: #8b947d; text-align: left; margin: 10px 0 20px; }
+.videoActions { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.videoActions .playScene { margin: 0; flex: 1; }
+.downloadLink { white-space: nowrap; font-size: 10px; text-decoration: none; color: #657752; }
+.downloadLink:hover { text-decoration: underline; }
+.watchWorkspace .promptSection { margin-top: 19px; }
+.watchWorkspace .filmRing { margin-bottom: 25px; }
+@media (max-width: 1000px) and (min-width: 741px) { .watchWorkspace { grid-template-columns: 1fr; } .watchWorkspace .generationControls { order: -1; max-width: 390px; margin: auto; } .watchReady .generationControls { order: initial; } }
+@media (max-width: 740px) { .watchWorkspace { display: flex; flex-direction: column; gap: 15px; } .watchWorkspace .generationControls { order: -1; } .watchReady .generationControls { order: initial; } .watchWorkspace .theater { margin: auto; } .referencePreview { height: 125px; } .referenceHeading { font-size: 8px; } .referenceHeading > span { font-size: 6px; } .referenceCards { gap: 9px; } }

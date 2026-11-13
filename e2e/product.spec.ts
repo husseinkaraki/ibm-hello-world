@@ -47,6 +47,15 @@ async function threeTakes(page: Page) {
   await expect(page.getByRole("button", { name: "Next: your scene" })).toBeEnabled();
 }
 
+async function openScene(page: Page) {
+  await page.getByRole("button", { name: "Next: your scene" }).click();
+  if (await page.getByAltText("Your character reference").count() === 0) {
+    await expect(page.getByLabel("Your photo", { exact: true })).toBeEnabled();
+    await page.getByLabel("Your photo", { exact: true }).setInputFiles({ name: "selfie-fixture.png", mimeType: "image/png", buffer: photo });
+  }
+  await expect(page.getByAltText("Lucy recurring character reference")).toBeVisible();
+}
+
 test("three actual local recordings unlock the video, with simulated scores and no threshold", async ({ page }) => {
   const cloud = await cloudFixture(page);
   await page.addInitScript(() => {
@@ -60,14 +69,14 @@ test("three actual local recordings unlock the video, with simulated scores and 
   });
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Finding Love at a Hackathon" })).toBeVisible();
-  await expect(page.getByText("Randomly simulated, not a pronunciation assessment.", { exact: false })).toBeVisible();
+  await expect(page.getByText("Random demo scores · not a speech assessment.", { exact: false })).toBeVisible();
   await threeTakes(page);
   await expect(page.getByRole("button", { name: "Record attempt 3" })).toBeDisabled();
   expect(await page.locator("strong").filter({ hasText: "55/100" }).count()).toBe(3);
   expect(await page.evaluate(() => (window as unknown as { recordedTracks: MediaStreamTrack[] }).recordedTracks.every(track => track.readyState === "ended"))).toBe(true);
   await page.getByRole("button", { name: "Play attempt 3" }).click();
   await expect(page.getByRole("button", { name: "Pause attempt 3" })).toBeVisible();
-  await page.getByRole("button", { name: "Next: your scene" }).click();
+  await openScene(page);
   expect(cloud.submissions).toBe(0);
   await expect(page.getByRole("button", { name: "Generate my scene" })).toBeEnabled();
   await expect(page.getByText("AUDIO DIRECTION:", { exact: false })).toHaveCount(0);
@@ -85,12 +94,14 @@ test("three actual local recordings unlock the video, with simulated scores and 
   expect(body.get("resolution")).toBe("720p");
   expect(body.get("generateAudio")).toBe("true");
   expect(body.get("image")).toBeNull();
+  expect((body.get("learnerImage") as File).name).toBe("selfie-fixture.png");
+  expect((body.get("castImage") as File).name).toBe("lucy.png");
   await page.getByRole("button", { name: "Play scene", exact: true }).click();
   await expect.poll(() => page.locator("video").evaluate(video => (video as HTMLVideoElement).currentTime)).toBeGreaterThan(0.1);
   const playingVideo = await page.locator("video").elementHandle();
   await page.getByRole("button", { name: "Back to practice" }).click();
   expect(await playingVideo!.evaluate(video => (video as HTMLVideoElement).paused)).toBe(true);
-  await page.getByRole("button", { name: "Next: your scene" }).click();
+  await openScene(page);
   await expect(page.getByLabel("Your generated scene using safe")).toBeVisible();
   expect(cloud.submissions).toBe(1);
   await page.getByRole("button", { name: "Next scene", exact: true }).click();
@@ -106,13 +117,13 @@ test("three actual local recordings unlock the video, with simulated scores and 
 test("a lost status check retries the existing job and restores it after reload", async ({ page }) => {
   const cloud = await cloudFixture(page, "transient");
   await page.goto("/"); await threeTakes(page);
-  await page.getByRole("button", { name: "Next: your scene" }).click();
+  await openScene(page);
   await page.getByRole("button", { name: "Generate my scene" }).click();
   await page.getByRole("button", { name: "Check this generation again" }).click();
   await expect(page.locator("video")).toBeVisible();
   expect(cloud.submissions).toBe(1);
   await page.reload(); await threeTakes(page);
-  await page.getByRole("button", { name: "Next: your scene" }).click();
+  await openScene(page);
   await expect(page.locator("video")).toBeVisible();
   expect(cloud.submissions).toBe(1);
 });
@@ -120,12 +131,12 @@ test("a lost status check retries the existing job and restores it after reload"
 test("failed jobs require an explicit new paid take", async ({ page }) => {
   const cloud = await cloudFixture(page, "failed");
   await page.goto("/"); await threeTakes(page);
-  await page.getByRole("button", { name: "Next: your scene" }).click();
+  await openScene(page);
   await page.getByRole("button", { name: "Generate my scene" }).click();
   await expect(page.getByRole("main").getByRole("alert")).toContainText("generation was filtered");
   expect(cloud.submissions).toBe(1);
   await page.getByRole("button", { name: "Back to practice" }).click();
-  await page.getByRole("button", { name: "Next: your scene" }).click();
+  await openScene(page);
   expect(cloud.submissions).toBe(1);
   await page.getByRole("button", { name: "Retry generation · new paid take" }).click();
   await expect(page.locator("video")).toBeVisible();
@@ -135,11 +146,11 @@ test("failed jobs require an explicit new paid take", async ({ page }) => {
 test("an ambiguous submission is never automatically resubmitted", async ({ page }) => {
   const cloud = await cloudFixture(page, "uncertain");
   await page.goto("/"); await threeTakes(page);
-  await page.getByRole("button", { name: "Next: your scene" }).click();
+  await openScene(page);
   await page.getByRole("button", { name: "Generate my scene" }).click();
   await expect(page.getByRole("main").getByRole("alert")).toContainText("may still have accepted");
   await page.getByRole("button", { name: "Back to practice" }).click();
-  await page.getByRole("button", { name: "Next: your scene" }).click();
+  await openScene(page);
   expect(cloud.submissions).toBe(1);
   await expect(page.getByRole("button", { name: "Submit another paid request" })).toBeVisible();
 });
@@ -154,28 +165,36 @@ test("microphone denial is friendly and never completes an attempt", async ({ pa
   await expect(page.getByRole("button", { name: "Play attempt 1" })).toHaveCount(0);
 });
 
-test("optional selfie is validated and reused on the next scene", async ({ page }) => {
+test("required learner photo and fixed Lucy reference are reused and changed photos invalidate cached clips", async ({ page }) => {
   const cloud = await cloudFixture(page);
   await page.goto("/");
-  await page.getByRole("button", { name: "Add your selfie" }).click();
-  await page.locator('input[type="file"]').setInputFiles({ name: "invalid.png", mimeType: "image/png", buffer: Buffer.from("fixture invalid photo") });
-  await expect(page.getByRole("main").getByRole("alert")).toContainText("Choose a JPEG or PNG");
-  await page.locator('input[type="file"]').setInputFiles({ name: "selfie-fixture.png", mimeType: "image/png", buffer: photo });
-  await expect(page.getByRole("button", { name: "Your selfie" })).toBeVisible();
-  await page.getByRole("button", { name: "Your selfie" }).click();
+  await expect(page.locator('input[type="file"]')).toHaveCount(0);
   await threeTakes(page);
   await page.getByRole("button", { name: "Next: your scene" }).click();
+  await expect(page.getByAltText("Lucy recurring character reference")).toBeVisible();
+  await expect(page.getByRole("button", { name: "Generate my scene" })).toBeDisabled();
+  const input = page.getByLabel("Your photo", { exact: true });
+  await input.setInputFiles({ name: "invalid.png", mimeType: "image/png", buffer: Buffer.from("fixture invalid photo") });
+  await expect(page.getByRole("main").getByRole("alert")).toContainText("Choose a JPEG or PNG");
+  await input.setInputFiles({ name: "selfie-fixture.png", mimeType: "image/png", buffer: photo });
   await page.getByRole("button", { name: "Generate my scene" }).click();
   await expect(page.locator("video")).toBeVisible();
-  await page.getByRole("button", { name: "Next scene", exact: true }).click();
-  await threeTakes(page);
-  await page.getByRole("button", { name: "Next: your scene" }).click();
+  const replacement = Buffer.concat([photo, Buffer.from([0])]);
+  await input.setInputFiles({ name: "replacement-fixture.png", mimeType: "image/png", buffer: replacement });
+  await expect(page.locator("video")).toHaveCount(0);
+  expect(cloud.submissions).toBe(1);
   await page.getByRole("button", { name: "Generate my scene" }).click();
   await expect(page.locator("video")).toBeVisible();
   expect(cloud.submissions).toBe(2);
-  expect((cloud.bodies[0].get("image") as File).name).toBe("selfie-fixture.png");
-  expect((cloud.bodies[1].get("image") as File).name).toBe("selfie-fixture.png");
-  expect(await (cloud.bodies[1].get("image") as File).arrayBuffer()).toEqual(await (cloud.bodies[0].get("image") as File).arrayBuffer());
+  await page.getByRole("button", { name: "Next scene", exact: true }).click();
+  await threeTakes(page);
+  await openScene(page);
+  await page.getByRole("button", { name: "Generate my scene" }).click();
+  await expect(page.locator("video")).toBeVisible();
+  expect(cloud.submissions).toBe(3);
+  expect((cloud.bodies[2].get("learnerImage") as File).name).toBe("replacement-fixture.png");
+  expect((cloud.bodies[2].get("castImage") as File).name).toBe("lucy.png");
+  expect(Buffer.from(await (cloud.bodies[1].get("castImage") as File).arrayBuffer()).equals(Buffer.from(await (cloud.bodies[2].get("castImage") as File).arrayBuffer()))).toBe(true);
 });
 
 test("mobile practice and watch screens fit without horizontal overflow", async ({ page }) => {
@@ -185,7 +204,7 @@ test("mobile practice and watch screens fit without horizontal overflow", async 
   await expect(page.getByRole("button", { name: "Record attempt 1" })).toBeInViewport();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   await threeTakes(page);
-  await page.getByRole("button", { name: "Next: your scene" }).click();
+  await openScene(page);
   await page.getByRole("button", { name: "Generate my scene" }).click();
   await expect(page.locator("video")).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
@@ -198,7 +217,7 @@ test("all ten scenes repeat the practice-to-video flow and finish without an emp
   for (let scene = 1; scene <= 10; scene++) {
     await expect(page.getByLabel(`Scene ${scene} of 10`, { exact: true })).toBeVisible();
     await threeTakes(page);
-    await page.getByRole("button", { name: "Next: your scene" }).click();
+    await openScene(page);
     await page.getByRole("button", { name: "Generate my scene" }).click();
     await expect(page.locator("video")).toBeVisible();
     await page.getByRole("button", { name: scene === 10 ? "Finish episode" : "Next scene", exact: true }).click();

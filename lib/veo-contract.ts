@@ -7,6 +7,7 @@ export type Resolution = "720p" | "1080p";
 export type GenerationOptions = { durationSeconds?: ClipSeconds; aspectRatio?: AspectRatio; resolution?: Resolution; generateAudio?: boolean };
 export const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
 export const MAX_PROMPT_LENGTH = 4000;
+export type ReferenceImage = { bytes: Uint8Array; mimeType: string };
 
 export type Readiness = {
   ready: boolean;
@@ -114,7 +115,10 @@ export function operationState(operation: VertexOperation): "pending" | "complet
   throw new VeoError("Google finished this request without a playable video. Try a different scene.", 422);
 }
 
-export function generationBody(prompt: string, image?: { bytes: Uint8Array; mimeType: string }, options: GenerationOptions = {}) {
+export function generationBody(prompt: string, image?: ReferenceImage, options: GenerationOptions = {}, referenceImages?: ReferenceImage[]) {
+  if (referenceImages && (image || referenceImages.length !== 2 || options.durationSeconds !== 8)) {
+    throw new VeoError("Cast-reference generation requires two asset images, no starting frame, and an eight-second clip.");
+  }
   return {
     instances: [{
       prompt,
@@ -122,6 +126,10 @@ export function generationBody(prompt: string, image?: { bytes: Uint8Array; mime
         bytesBase64Encoded: Buffer.from(image.bytes).toString("base64"),
         mimeType: image.mimeType,
       } } : {}),
+      ...(referenceImages ? { referenceImages: referenceImages.map(reference => ({
+        image: { bytesBase64Encoded: Buffer.from(reference.bytes).toString("base64"), mimeType: reference.mimeType },
+        referenceType: "asset",
+      })) } : {}),
     }],
     parameters: {
       sampleCount: 1,

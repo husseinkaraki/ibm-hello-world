@@ -1,7 +1,7 @@
 import "server-only";
 import { GoogleAuth } from "google-auth-library";
 import {
-  VEO_MODEL, VeoError, type Readiness, type VertexOperation, type GenerationOptions,
+  VEO_MODEL, VeoError, type Readiness, type VertexOperation, type GenerationOptions, type ReferenceImage,
   generationBody, operationState,
 } from "./veo-contract";
 import { createJobToken, modelPath, readJobToken, validateOperationName } from "./veo-job";
@@ -95,9 +95,9 @@ async function vertex(method: "predictLongRunning" | "fetchPredictOperation", bo
   return result;
 }
 
-export async function submitScene(prompt: string, image?: { bytes: Uint8Array; mimeType: string }, options: GenerationOptions = {}) {
+export async function submitScene(prompt: string, image?: ReferenceImage, options: GenerationOptions = {}, referenceImages?: ReferenceImage[]) {
   const config = configuration();
-  const operation = await vertex("predictLongRunning", generationBody(prompt, image, options));
+  const operation = await vertex("predictLongRunning", generationBody(prompt, image, options, referenceImages));
   validateOperationName(operation.name, config.path);
   return createJobToken(operation.name, config.secret);
 }

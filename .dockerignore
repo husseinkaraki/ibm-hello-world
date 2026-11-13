@@ -11,6 +11,8 @@
 !lib/**
 !content/
 !content/finding-love-at-a-hackathon/
+!content/finding-love-at-a-hackathon/media/
+!content/finding-love-at-a-hackathon/media/lucy.png
 !content/finding-love-at-a-hackathon/shot-data/
 !content/finding-love-at-a-hackathon/shot-data/episode-01.json
 !content/finding-love-at-a-hackathon/shot-data/episode-02.json

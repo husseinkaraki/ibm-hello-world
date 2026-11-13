@@ -3,7 +3,7 @@ import { episodes } from "../../lib/drama-episode";
 import SceneCreator from "./scene-creator";
 
 export const metadata: Metadata = {
-  title: "Scene Creator",
+  title: "Scene Creator · Drama Talk",
   description: "Choose a Finding Love at a Hackathon scene, direct your take, and create a personalized video with Veo 3.1 Fast.",
 };
 

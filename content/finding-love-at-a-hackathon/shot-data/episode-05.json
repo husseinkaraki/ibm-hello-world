@@ -1,0 +1,597 @@
+{
+  "schema_version": "1.1",
+  "series_title": "Finding Love at a Hackathon",
+  "episode_number": 5,
+  "episode_id": "E05",
+  "episode_title": "A Better Offer",
+  "source_script": "episodes/episode-05.md",
+  "duration_seconds": 80,
+  "aspect_ratio": "9:16",
+  "audio_mode": "full_scene_audio_focus_word_silently_mouthed",
+  "story_time": "Friday, approximately 18:06:20; no long jump during the eight-second desk move.",
+  "hook": "The gold pass goes back into Leo's hand.",
+  "incoming_cliffhanger_id": "E04-C",
+  "incoming_payoff": "E05-S01-S02 answer the career choice immediately and avoid treating Maya as a favor.",
+  "turn": "An honest choice renews the partnership, but the official offline test interrupts their incomplete rehearsal.",
+  "relationship_beat": "Maya teases [name] about listening; their attraction has a basis in learning each other's habits.",
+  "cliffhanger": {
+    "id": "E05-C",
+    "event": "The live qualifier starts with Wi-Fi disabled and their second helper phone still blank.",
+    "next_payoff": "E06-S01 opens the saved local demo; S02-S04 reveal that two isolated copies can assign the same request twice."
+  },
+  "shots": [
+    {
+      "id": "E05-S01",
+      "shot_number": 1,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 0,
+      "episode_end_seconds": 8,
+      "scene": "INT. HACKATHON HALL - KITCHEN ALCOVE - EVENING",
+      "location_id": "ALCOVE",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Immediate payoff to E04-C: [name] returns the pass",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Leo"
+      ],
+      "visible_action": "[name] returns the gold pass to Leo before turning back toward Maya; Maya lets out a breath but does not celebrate for [name].",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "stay",
+        "meaning": "Remain in a place or situation.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "I'd rather stay.",
+        "performance_text": "I'd rather [silently mouthed: stay].",
+        "labelled_text": "[name]: I'd rather [silently mouthed: stay].",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Leo",
+          "text": "Last chance for the interview.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "I'd rather stay.",
+          "performance_text": "I'd rather [silently mouthed: stay].",
+          "labelled_text": "[name]: I'd rather [silently mouthed: stay].",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Leo",
+          "text": "That place will go.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Gold pass remains unaccepted in the alcove",
+        "out": "[name] declines Leo's one-place offer and stays with Beacon"
+      },
+      "edit_only_overlay": "None",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the small kitchen alcove off the same coworking hall, a counter and water cups, warm under-cabinet practicals and cool light from the hall. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Gold pass remains unaccepted in the alcove. Action: [name] returns the gold pass to Leo before turning back toward Maya; Maya lets out a breath but does not celebrate for [name]. [name] performs the exact learner line naturally: \"I'd rather stay.\". Only the exact focus word \"stay\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Leo says aloud: \"Last chance for the interview.\". After the learner line, Leo says aloud: \"That place will go.\". Ending state: [name] declines Leo's one-place offer and stays with Beacon. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E05-S02",
+      "shot_number": 2,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 8,
+      "episode_end_seconds": 16,
+      "scene": "INT. HACKATHON HALL - KITCHEN ALCOVE - EVENING",
+      "location_id": "ALCOVE",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya"
+      ],
+      "visible_action": "[name] faces Maya at an ordinary conversational distance and taps the folded request-flow card instead of making a romantic gesture.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "need",
+        "meaning": "Require something to achieve a goal.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "We need your design.",
+        "performance_text": "We [silently mouthed: need] your design.",
+        "labelled_text": "[name]: We [silently mouthed: need] your design.",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Maya",
+          "text": "I don't need pity.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "We need your design.",
+          "performance_text": "We [silently mouthed: need] your design.",
+          "labelled_text": "[name]: We [silently mouthed: need] your design.",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "Good. I want a partner.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Leo has the returned pass; the partners remain",
+        "out": "[name] names Maya's competence as the reason to stay"
+      },
+      "edit_only_overlay": "None",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: the small kitchen alcove off the same coworking hall, a counter and water cups, warm under-cabinet practicals and cool light from the hall. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Leo has the returned pass; the partners remain. Action: [name] faces Maya at an ordinary conversational distance and taps the folded request-flow card instead of making a romantic gesture. [name] performs the exact learner line naturally: \"We need your design.\". Only the exact focus word \"need\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"I don't need pity.\". After the learner line, Maya says aloud: \"Good. I want a partner.\". Ending state: [name] names Maya's competence as the reason to stay. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E05-S03",
+      "shot_number": 3,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 16,
+      "episode_end_seconds": 24,
+      "scene": "INT. HACKATHON HALL - TABLE 7 - EVENING",
+      "location_id": "T7",
+      "camera": "Medium two-shot with a short backward track as [name] takes one step to table 7.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya"
+      ],
+      "visible_action": "[name] carries the green request card back to table 7 with Maya, setting it between their two laptops rather than claiming either machine.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "worth",
+        "meaning": "Having enough value to justify effort.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "This is worth building.",
+        "performance_text": "This is [silently mouthed: worth] building.",
+        "labelled_text": "[name]: This is [silently mouthed: worth] building.",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Maya",
+          "text": "Even without that interview?",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "This is worth building.",
+          "performance_text": "This is [silently mouthed: worth] building.",
+          "labelled_text": "[name]: This is [silently mouthed: worth] building.",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "Then make it reliable.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "The partners leave the alcove with their separate receipts",
+        "out": "Their work, rather than a grand romantic promise, brings them back together"
+      },
+      "edit_only_overlay": "None",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium two-shot with a short backward track as [name] takes one step to table 7. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: The partners leave the alcove with their separate receipts. Action: [name] carries the green request card back to table 7 with Maya, setting it between their two laptops rather than claiming either machine. [name] performs the exact learner line naturally: \"This is worth building.\". Only the exact focus word \"worth\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"Even without that interview?\". After the learner line, Maya says aloud: \"Then make it reliable.\". Ending state: Their work, rather than a grand romantic promise, brings them back together. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E05-S04",
+      "shot_number": 4,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 24,
+      "episode_end_seconds": 32,
+      "scene": "INT. HACKATHON HALL - TABLE 7 - EVENING",
+      "location_id": "T7",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Emotional turn: attraction grows from an explicit working value",
+      "visible_cast": [
+        "[name]",
+        "Maya"
+      ],
+      "visible_action": "[name] folds the joint receipt flat beside the keyboard while Maya puts the independent-work notebook back in her bag.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "honest",
+        "meaning": "Truthful and not deceptive.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "I want an honest win.",
+        "performance_text": "I want an [silently mouthed: honest] win.",
+        "labelled_text": "[name]: I want an [silently mouthed: honest] win.",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Maya",
+          "text": "No shortcuts from Leo?",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "I want an honest win.",
+          "performance_text": "I want an [silently mouthed: honest] win.",
+          "labelled_text": "[name]: I want an [silently mouthed: honest] win.",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "Then we test the ugly parts.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Both partners have chosen Beacon",
+        "out": "[name] commits to a fair result, with no guarantee of a prize"
+      },
+      "edit_only_overlay": "None",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Both partners have chosen Beacon. Action: [name] folds the joint receipt flat beside the keyboard while Maya puts the independent-work notebook back in her bag. [name] performs the exact learner line naturally: \"I want an honest win.\". Only the exact focus word \"honest\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"No shortcuts from Leo?\". After the learner line, Maya says aloud: \"Then we test the ugly parts.\". Ending state: [name] commits to a fair result, with no guarantee of a prize. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E05-S05",
+      "shot_number": 5,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 32,
+      "episode_end_seconds": 40,
+      "scene": "INT. HACKATHON HALL - TABLE 7 - EVENING",
+      "location_id": "T7",
+      "camera": "Medium close two-shot; diagram remains below the visible faces of [name] and Maya.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya"
+      ],
+      "visible_action": "[name] slides the black laptop aside just enough for Maya to place a three-step request, claim and confirm diagram between them.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "plan",
+        "meaning": "A set of intended steps.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "Show me your plan.",
+        "performance_text": "Show me your [silently mouthed: plan].",
+        "labelled_text": "[name]: Show me your [silently mouthed: plan].",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Maya",
+          "text": "One request. One helper.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "Show me your plan.",
+          "performance_text": "Show me your [silently mouthed: plan].",
+          "labelled_text": "[name]: Show me your [silently mouthed: plan].",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "Claim. Confirm. Then hide it.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Local version handles one device only",
+        "out": "Maya defines the claim-confirm handoff that must survive losing Wi-Fi"
+      },
+      "edit_only_overlay": "REQUEST > CLAIM > CONFIRM",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close two-shot; diagram remains below the visible faces of [name] and Maya. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Local version handles one device only. Action: [name] slides the black laptop aside just enough for Maya to place a three-step request, claim and confirm diagram between them. [name] performs the exact learner line naturally: \"Show me your plan.\". Only the exact focus word \"plan\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"One request. One helper.\". After the learner line, Maya says aloud: \"Claim. Confirm. Then hide it.\". Ending state: Maya defines the claim-confirm handoff that must survive losing Wi-Fi. Leave room beside [name] for the editor to add this exact short overlay: REQUEST > CLAIM > CONFIRM. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E05-S06",
+      "shot_number": 6,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 40,
+      "episode_end_seconds": 48,
+      "scene": "INT. HACKATHON HALL - TABLE 7 - EVENING",
+      "location_id": "T7",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Slow-burn friction: Maya teases a habit she has noticed",
+      "visible_cast": [
+        "[name]",
+        "Maya"
+      ],
+      "visible_action": "[name] withdraws a hovering finger from the test phone and lets Maya finish pointing out the confirmation beat.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "listen",
+        "meaning": "Pay attention to what someone says.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "I can listen.",
+        "performance_text": "I can [silently mouthed: listen].",
+        "labelled_text": "[name]: I can [silently mouthed: listen].",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Maya",
+          "text": "Don't race the confirmation.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "I can listen.",
+          "performance_text": "I can [silently mouthed: listen].",
+          "labelled_text": "[name]: I can [silently mouthed: listen].",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "That is harder than coding.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Maya has explained the three-step handoff",
+        "out": "[name] agrees to follow the handoff timing before another tap"
+      },
+      "edit_only_overlay": "None",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Maya has explained the three-step handoff. Action: [name] withdraws a hovering finger from the test phone and lets Maya finish pointing out the confirmation beat. [name] performs the exact learner line naturally: \"I can listen.\". Only the exact focus word \"listen\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"Don't race the confirmation.\". After the learner line, Maya says aloud: \"That is harder than coding.\". Ending state: [name] agrees to follow the handoff timing before another tap. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E05-S07",
+      "shot_number": 7,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 48,
+      "episode_end_seconds": 56,
+      "scene": "INT. HACKATHON HALL - TABLE 7 - EVENING",
+      "location_id": "T7",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya"
+      ],
+      "visible_action": "[name] places the second test phone beside the first while Maya opens the two saved demo copies; neither is a real service.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "test",
+        "meaning": "Try something to find out how it works.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "Let's test two devices.",
+        "performance_text": "Let's [silently mouthed: test] two devices.",
+        "labelled_text": "[name]: Let's [silently mouthed: test] two devices.",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Maya",
+          "text": "We only tried one device.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "Let's test two devices.",
+          "performance_text": "Let's [silently mouthed: test] two devices.",
+          "labelled_text": "[name]: Let's [silently mouthed: test] two devices.",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "After both local files load.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Single-device success has not proved cross-device behavior",
+        "out": "Two fictional helper devices are prepared for the official test"
+      },
+      "edit_only_overlay": "TWO DEVICES / FICTIONAL TEST REQUESTS",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Single-device success has not proved cross-device behavior. Action: [name] places the second test phone beside the first while Maya opens the two saved demo copies; neither is a real service. [name] performs the exact learner line naturally: \"Let's test two devices.\". Only the exact focus word \"test\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"We only tried one device.\". After the learner line, Maya says aloud: \"After both local files load.\". Ending state: Two fictional helper devices are prepared for the official test. Leave room beside [name] for the editor to add this exact short overlay: TWO DEVICES / FICTIONAL TEST REQUESTS. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E05-S08",
+      "shot_number": 8,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 56,
+      "episode_end_seconds": 64,
+      "scene": "INT. HACKATHON HALL - TABLE 7 - EVENING",
+      "location_id": "T7",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya"
+      ],
+      "visible_action": "[name] checks a low-battery icon on the black laptop and plugs in its table power lead; Maya returns the blue power bank beside [name] after charging her phone.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "ready",
+        "meaning": "Prepared for what comes next.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "We're nearly ready.",
+        "performance_text": "We're nearly [silently mouthed: ready].",
+        "labelled_text": "[name]: We're nearly [silently mouthed: ready].",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Maya",
+          "text": "Your battery is still low.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "We're nearly ready.",
+          "performance_text": "We're nearly [silently mouthed: ready].",
+          "labelled_text": "[name]: We're nearly [silently mouthed: ready].",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "Table power stays on for now.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Maya still has the borrowed blue power bank",
+        "out": "Blue power bank is back with [name]; black laptop remains dependent on table power"
+      },
+      "edit_only_overlay": "BLACK LAPTOP: LOW BATTERY / TABLE POWER",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Maya still has the borrowed blue power bank. Action: [name] checks a low-battery icon on the black laptop and plugs in its table power lead; Maya returns the blue power bank beside [name] after charging her phone. [name] performs the exact learner line naturally: \"We're nearly ready.\". Only the exact focus word \"ready\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"Your battery is still low.\". After the learner line, Maya says aloud: \"Table power stays on for now.\". Ending state: Blue power bank is back with [name]; black laptop remains dependent on table power. Leave room beside [name] for the editor to add this exact short overlay: BLACK LAPTOP: LOW BATTERY / TABLE POWER. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E05-S09",
+      "shot_number": 9,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 64,
+      "episode_end_seconds": 72,
+      "scene": "INT. HACKATHON HALL - TABLE 7 - EVENING",
+      "location_id": "T7",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Jules"
+      ],
+      "visible_action": "[name] looks up from a disconnected Wi-Fi icon as Jules raises the OFFLINE TEST card beside table 7; Maya reaches for the second test phone.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "signal",
+        "meaning": "A message sent electronically or by a sign.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "We lost the signal.",
+        "performance_text": "We lost the [silently mouthed: signal].",
+        "labelled_text": "[name]: We lost the [silently mouthed: signal].",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Jules",
+          "text": "Offline qualifier. Wi-Fi off.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "We lost the signal.",
+          "performance_text": "We lost the [silently mouthed: signal].",
+          "labelled_text": "[name]: We lost the [silently mouthed: signal].",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Jules",
+          "text": "Table power cycles later too.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Two devices are prepared but have not completed a shared-state test",
+        "out": "The official qualifier cuts Wi-Fi; local copies must now carry the demo"
+      },
+      "edit_only_overlay": "QUALIFIER: WI-FI OFF / TABLE POWER CYCLE NEXT",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Two devices are prepared but have not completed a shared-state test. Action: [name] looks up from a disconnected Wi-Fi icon as Jules raises the OFFLINE TEST card beside table 7; Maya reaches for the second test phone. [name] performs the exact learner line naturally: \"We lost the signal.\". Only the exact focus word \"signal\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"Offline qualifier. Wi-Fi off.\". After the learner line, Jules says aloud: \"Table power cycles later too.\". Ending state: The official qualifier cuts Wi-Fi; local copies must now carry the demo. Leave room beside [name] for the editor to add this exact short overlay: QUALIFIER: WI-FI OFF / TABLE POWER CYCLE NEXT. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E05-S10",
+      "shot_number": 10,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 72,
+      "episode_end_seconds": 80,
+      "scene": "INT. HACKATHON HALL - TABLE 7 - EVENING",
+      "location_id": "T7",
+      "camera": "Locked medium three-shot, [name] foreground with both test phones low in frame.",
+      "beat": "Cliffhanger: the live test begins before their second device is ready",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Jules"
+      ],
+      "visible_action": "[name] keeps the loaded first phone upright while Maya turns the second, still-empty phone toward [name]; Jules starts the visible qualifier clock.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "start",
+        "meaning": "Begin an activity.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "Did the test start?",
+        "performance_text": "Did the test [silently mouthed: start]?",
+        "labelled_text": "[name]: Did the test [silently mouthed: start]?",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Jules",
+          "text": "Yes. Begin now.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "Did the test start?",
+          "performance_text": "Did the test [silently mouthed: start]?",
+          "labelled_text": "[name]: Did the test [silently mouthed: start]?",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "The second phone is blank.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Wi-Fi is off; second phone is not fully loaded",
+        "out": "Official testing has begun with one blank device and no time for a private rehearsal"
+      },
+      "edit_only_overlay": "OFFLINE QUALIFIER - LIVE",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Location and lighting: a coworking hackathon hall at table 7, pale wood desks, a green folding demo board and laptops, warm overhead practicals and cool screen fill; the check-in desk is behind the camera. Camera: Locked medium three-shot, [name] foreground with both test phones low in frame. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Wi-Fi is off; second phone is not fully loaded. Action: [name] keeps the loaded first phone upright while Maya turns the second, still-empty phone toward [name]; Jules starts the visible qualifier clock. [name] performs the exact learner line naturally: \"Did the test start?\". Only the exact focus word \"start\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"Yes. Begin now.\". After the learner line, Maya says aloud: \"The second phone is blank.\". Ending state: Official testing has begun with one blank device and no time for a private rehearsal. Leave room beside [name] for the editor to add this exact short overlay: OFFLINE QUALIFIER - LIVE. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    }
+  ]
+}

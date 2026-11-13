@@ -1,0 +1,52 @@
+{
+  "id": "E__-S__",
+  "shot_number": 1,
+  "duration_seconds": 8,
+  "source_duration_seconds": 8,
+  "episode_start_seconds": 0,
+  "episode_end_seconds": 8,
+  "scene": "INT. HACKATHON HALL - TABLE 7 - EVENING",
+  "location_id": "T7",
+  "camera": "<one framing and small move that keeps [name] visible throughout>",
+  "beat": "<dramatic change>",
+  "visible_cast": [
+    "[name]",
+    "Maya"
+  ],
+  "visible_action": "[name] <one clear visible action; recognizable face stays in frame>.",
+  "protagonist_visible_throughout": true,
+  "focus_word": {
+    "word": "<word>",
+    "meaning": "<brief plain-English meaning>",
+    "primary": true,
+    "delivery": "silently_mouthed_by_[name]"
+  },
+  "learner_line": {
+    "speaker": "[name]",
+    "text": "<short natural line containing the exact word>",
+    "performance_text": "<same line with [silently mouthed: <word>] replacing just the word>",
+    "labelled_text": "[name]: <same marked performance line>",
+    "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest normally. No word timing or synchronization."
+  },
+  "dialogue": [
+    {
+      "speaker": "Maya",
+      "text": "<short audible supporting line>",
+      "delivery": "voiced_normally"
+    },
+    {
+      "speaker": "[name]",
+      "text": "<short natural line containing the exact word>",
+      "performance_text": "<same line with [silently mouthed: <word>] replacing just the word>",
+      "labelled_text": "[name]: <same marked performance line>",
+      "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest normally. No word timing or synchronization."
+    }
+  ],
+  "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+  "continuity": {
+    "in": "<complete starting state>",
+    "out": "<specific changed state>"
+  },
+  "edit_only_overlay": "<short necessary label, or None>",
+  "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. <Write complete fixed casting/wardrobe descriptions for every other visible adult actor.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: \"<plain line>\". Only the exact focus word \"<word>\" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action."
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.1",
+  "series_title": "Finding Love at a Hackathon",
+  "source_of_truth": "episodes/*.md",
+  "audio_mode": "full_scene_audio_focus_word_silently_mouthed",
+  "planned_episodes": 45,
+  "optional_expansion_episodes": 60,
+  "completed_episodes": 10,
+  "completed_shots": 100,
+  "completed_runtime_seconds": 800,
+  "episodes": [
+    {
+      "episode_id": "E01",
+      "episode_title": "The Last Seat",
+      "script": "episodes/episode-01.md",
+      "shot_data": "shot-data/episode-01.json",
+      "script_sha256": "7a5bd5787b9456aa882ea749622775c5e363779e59f4f6f0c942c6a7c7f64c1e",
+      "shots": 10,
+      "duration_seconds": 80
+    },
+    {
+      "episode_id": "E02",
+      "episode_title": "Her Signature",
+      "script": "episodes/episode-02.md",
+      "shot_data": "shot-data/episode-02.json",
+      "script_sha256": "76b756f9f14f2716ea9c6aeb0d8e6cb8b9f5622acda271127e35a3e83244ab69",
+      "shots": 10,
+      "duration_seconds": 80
+    },
+    {
+      "episode_id": "E03",
+      "episode_title": "Page Two",
+      "script": "episodes/episode-03.md",
+      "shot_data": "shot-data/episode-03.json",
+      "script_sha256": "9fd92e99ef8db63694e51738c80d4294fa9d213de7d76efa99b2fc1a2d06ea2d",
+      "shots": 10,
+      "duration_seconds": 80
+    },
+    {
+      "episode_id": "E04",
+      "episode_title": "One Place",
+      "script": "episodes/episode-04.md",
+      "shot_data": "shot-data/episode-04.json",
+      "script_sha256": "cb2afdb868a94d9defeb994887361fa080aa0cbc1e4523aa295f47d43238fe04",
+      "shots": 10,
+      "duration_seconds": 80
+    },
+    {
+      "episode_id": "E05",
+      "episode_title": "A Better Offer",
+      "script": "episodes/episode-05.md",
+      "shot_data": "shot-data/episode-05.json",
+      "script_sha256": "2910b795547adcc2c1a049c6f90b2e0bd4571ddb2c0b82a496de0a9100d9f72d",
+      "shots": 10,
+      "duration_seconds": 80
+    },
+    {
+      "episode_id": "E06",
+      "episode_title": "Two Helpers",
+      "script": "episodes/episode-06.md",
+      "shot_data": "shot-data/episode-06.json",
+      "script_sha256": "8c2520c332fa4827816829a6970a35c7c6d5cf16ee4031ab4b06a9661a45b1f2",
+      "shots": 10,
+      "duration_seconds": 80
+    },
+    {
+      "episode_id": "E07",
+      "episode_title": "The Honest Error",
+      "script": "episodes/episode-07.md",
+      "shot_data": "shot-data/episode-07.json",
+      "script_sha256": "2f1a4983b9290061fa1a97e22cff0eab80dce52549fcaee3abfc7f0dbd9149dd",
+      "shots": 10,
+      "duration_seconds": 80
+    },
+    {
+      "episode_id": "E08",
+      "episode_title": "Two Yeses",
+      "script": "episodes/episode-08.md",
+      "shot_data": "shot-data/episode-08.json",
+      "script_sha256": "fc9e7ffcd66fb0c3c1615f4bff1289c98d9e073e11489dd71cab3a1f87e65b9c",
+      "shots": 10,
+      "duration_seconds": 80
+    },
+    {
+      "episode_id": "E09",
+      "episode_title": "Your Turn",
+      "script": "episodes/episode-09.md",
+      "shot_data": "shot-data/episode-09.json",
+      "script_sha256": "cf4d880232e86aca7eced4a0fbe81a57d08e00d75a74d611a88a44a816fbf6d1",
+      "shots": 10,
+      "duration_seconds": 80
+    },
+    {
+      "episode_id": "E10",
+      "episode_title": "Hold Our Place",
+      "script": "episodes/episode-10.md",
+      "shot_data": "shot-data/episode-10.json",
+      "script_sha256": "2fbb8ca5e0074f90d4efaa16a4dfd8aa967ce9fb2b0c86762b154dce199fbde9",
+      "shots": 10,
+      "duration_seconds": 80
+    }
+  ]
+}

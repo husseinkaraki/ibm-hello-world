@@ -1,0 +1,601 @@
+{
+  "schema_version": "1.1",
+  "series_title": "Finding Love at a Hackathon",
+  "episode_number": 2,
+  "episode_id": "E02",
+  "episode_title": "Her Signature",
+  "source_script": "episodes/episode-02.md",
+  "duration_seconds": 80,
+  "aspect_ratio": "9:16",
+  "audio_mode": "full_scene_audio_focus_word_silently_mouthed",
+  "story_time": "Friday, 18:01:20; directly after the entry hold.",
+  "hook": "The red hold card blocks the joint roster as Leo lays down apparent prior art.",
+  "incoming_cliffhanger_id": "E01-C",
+  "incoming_payoff": "E02-S01 produces Leo's complaint immediately; S02-S04 separate a shared visual idea from proof of authorship.",
+  "turn": "A confident claim based on a signature becomes suspect when page two is missing.",
+  "relationship_beat": "[name] lets Maya speak and shields her private notes; support is attentive rather than possessive.",
+  "cliffhanger": {
+    "id": "E02-C",
+    "event": "The signature scan is only page one of two; Maya says the missing page changes the claim.",
+    "next_payoff": "E03-S01-S03: Maya produces both originals and Jules reads the code-exclusion clause."
+  },
+  "shots": [
+    {
+      "id": "E02-S01",
+      "shot_number": 1,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 0,
+      "episode_end_seconds": 8,
+      "scene": "INT. HACKATHON HALL - CHECK-IN DESK - EVENING",
+      "location_id": "DESK",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Immediate payoff to E01-C: the claim is produced",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Jules",
+        "Leo"
+      ],
+      "visible_action": "[name] lowers the joint roster beside Jules's red HOLD card and opens a palm toward Leo's pitch sheet, asking for evidence rather than reaching for it.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "show",
+        "meaning": "Let someone see something.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "Please show us.",
+        "performance_text": "Please [silently mouthed: show] us.",
+        "labelled_text": "[name]: Please [silently mouthed: show] us.",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Jules",
+          "text": "The entry stays frozen.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "Please show us.",
+          "performance_text": "Please [silently mouthed: show] us.",
+          "labelled_text": "[name]: Please [silently mouthed: show] us.",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Leo",
+          "text": "My project. From last week.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Beacon is on hold at the check-in desk",
+        "out": "Leo places his pitch sheet on the desk"
+      },
+      "edit_only_overlay": "ENTRY ON HOLD",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Beacon is on hold at the check-in desk. Action: [name] lowers the joint roster beside Jules's red HOLD card and opens a palm toward Leo's pitch sheet, asking for evidence rather than reaching for it. [name] performs the exact learner line naturally: \"Please show us.\". Only the exact focus word \"show\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"The entry stays frozen.\". After the learner line, Leo says aloud: \"My project. From last week.\". Ending state: Leo places his pitch sheet on the desk. Leave room beside [name] for the editor to add this exact short overlay: ENTRY ON HOLD. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E02-S02",
+      "shot_number": 2,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 8,
+      "episode_end_seconds": 16,
+      "scene": "INT. HACKATHON HALL - CHECK-IN DESK - EVENING",
+      "location_id": "DESK",
+      "camera": "Face-led medium three-shot; [name] holds the two papers below chin height.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Leo"
+      ],
+      "visible_action": "[name] holds a green request card beside Leo's glossy green-card sketch while keeping both faces visible; Maya leans in to inspect the resemblance.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "same",
+        "meaning": "Alike in the relevant way.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "These look the same.",
+        "performance_text": "These look the [silently mouthed: same].",
+        "labelled_text": "[name]: These look the [silently mouthed: same].",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Leo",
+          "text": "Same board. Same green card.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "These look the same.",
+          "performance_text": "These look the [silently mouthed: same].",
+          "labelled_text": "[name]: These look the [silently mouthed: same].",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "A color is not code.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Leo's sheet shows a green request card",
+        "out": "The shared visual idea is clear, but no code has been compared"
+      },
+      "edit_only_overlay": "None",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Face-led medium three-shot; [name] holds the two papers below chin height. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Leo's sheet shows a green request card. Action: [name] holds a green request card beside Leo's glossy green-card sketch while keeping both faces visible; Maya leans in to inspect the resemblance. [name] performs the exact learner line naturally: \"These look the same.\". Only the exact focus word \"same\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Leo says aloud: \"Same board. Same green card.\". After the learner line, Maya says aloud: \"A color is not code.\". Ending state: The shared visual idea is clear, but no code has been compared. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E02-S03",
+      "shot_number": 3,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 16,
+      "episode_end_seconds": 24,
+      "scene": "INT. HACKATHON HALL - CHECK-IN DESK - EVENING",
+      "location_id": "DESK",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Leo",
+        "Jules"
+      ],
+      "visible_action": "[name] tilts the printed sheet so Jules can inspect its footer; Leo taps the printed date with one finger.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "look",
+        "meaning": "Direct attention toward something.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "Please look at the dates.",
+        "performance_text": "Please [silently mouthed: look] at the dates.",
+        "labelled_text": "[name]: Please [silently mouthed: look] at the dates.",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Leo",
+          "text": "Printed yesterday.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "Please look at the dates.",
+          "performance_text": "Please [silently mouthed: look] at the dates.",
+          "labelled_text": "[name]: Please [silently mouthed: look] at the dates.",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Jules",
+          "text": "Printing does not prove authorship.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "The glossy sheet has a printed date",
+        "out": "A printed date has been shown, without proving creation time"
+      },
+      "edit_only_overlay": "PRINT DATE IS NOT CREATION DATE",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: The glossy sheet has a printed date. Action: [name] tilts the printed sheet so Jules can inspect its footer; Leo taps the printed date with one finger. [name] performs the exact learner line naturally: \"Please look at the dates.\". Only the exact focus word \"look\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Leo says aloud: \"Printed yesterday.\". After the learner line, Jules says aloud: \"Printing does not prove authorship.\". Ending state: A printed date has been shown, without proving creation time. Leave room beside [name] for the editor to add this exact short overlay: PRINT DATE IS NOT CREATION DATE. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E02-S04",
+      "shot_number": 4,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 24,
+      "episode_end_seconds": 32,
+      "scene": "INT. HACKATHON HALL - CHECK-IN DESK - EVENING",
+      "location_id": "DESK",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Reversal: apparent proof becomes an unanswered comparison",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Leo"
+      ],
+      "visible_action": "[name] sets the glossy sheet flat, leaving room for Maya to put her worn notebook beside it; [name] keeps a measured expression.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "proof",
+        "meaning": "Evidence that supports a claim.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "That's not proof.",
+        "performance_text": "That's not [silently mouthed: proof].",
+        "labelled_text": "[name]: That's not [silently mouthed: proof].",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Leo",
+          "text": "Mine was here first.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "That's not proof.",
+          "performance_text": "That's not [silently mouthed: proof].",
+          "labelled_text": "[name]: That's not [silently mouthed: proof].",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "Then see my notebook.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Leo relies on a print date",
+        "out": "Maya is invited to show her independent record"
+      },
+      "edit_only_overlay": "None",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Leo relies on a print date. Action: [name] sets the glossy sheet flat, leaving room for Maya to put her worn notebook beside it; [name] keeps a measured expression. [name] performs the exact learner line naturally: \"That's not proof.\". Only the exact focus word \"proof\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Leo says aloud: \"Mine was here first.\". After the learner line, Maya says aloud: \"Then see my notebook.\". Ending state: Maya is invited to show her independent record. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E02-S05",
+      "shot_number": 5,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 32,
+      "episode_end_seconds": 40,
+      "scene": "INT. HACKATHON HALL - CHECK-IN DESK - EVENING",
+      "location_id": "DESK",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Jules"
+      ],
+      "visible_action": "[name] steps half a pace aside to give Maya the desk instead of answering for her; Maya faces Jules directly.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "ask",
+        "meaning": "Request information from someone.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "We should ask Maya.",
+        "performance_text": "We should [silently mouthed: ask] Maya.",
+        "labelled_text": "[name]: We should [silently mouthed: ask] Maya.",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Jules",
+          "text": "Who wrote the local queue?",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "We should ask Maya.",
+          "performance_text": "We should [silently mouthed: ask] Maya.",
+          "labelled_text": "[name]: We should [silently mouthed: ask] Maya.",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "I did. Every version.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Both records are on the desk",
+        "out": "Maya speaks for her own contribution"
+      },
+      "edit_only_overlay": "None",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Both records are on the desk. Action: [name] steps half a pace aside to give Maya the desk instead of answering for her; Maya faces Jules directly. [name] performs the exact learner line naturally: \"We should ask Maya.\". Only the exact focus word \"ask\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"Who wrote the local queue?\". After the learner line, Maya says aloud: \"I did. Every version.\". Ending state: Maya speaks for her own contribution. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E02-S06",
+      "shot_number": 6,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 40,
+      "episode_end_seconds": 48,
+      "scene": "INT. HACKATHON HALL - CHECK-IN DESK - EVENING",
+      "location_id": "DESK",
+      "camera": "Tight two-shot at desk height; [name] face stays clear beside Maya's notebook.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Jules"
+      ],
+      "visible_action": "[name] holds the notebook edge steady while Maya opens her earliest dated sketch, then stops before the next folded page.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "first",
+        "meaning": "Earlier than all others in order.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "Your first draft?",
+        "performance_text": "Your [silently mouthed: first] draft?",
+        "labelled_text": "[name]: Your [silently mouthed: first] draft?",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Maya",
+          "text": "Before the workshop.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "Your first draft?",
+          "performance_text": "Your [silently mouthed: first] draft?",
+          "labelled_text": "[name]: Your [silently mouthed: first] draft?",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Jules",
+          "text": "Keep the original.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Maya has a worn notebook with a folded private page",
+        "out": "Earliest sketch is visible only to Jules and the partners"
+      },
+      "edit_only_overlay": "None",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Tight two-shot at desk height; [name] face stays clear beside Maya's notebook. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Maya has a worn notebook with a folded private page. Action: [name] holds the notebook edge steady while Maya opens her earliest dated sketch, then stops before the next folded page. [name] performs the exact learner line naturally: \"Your first draft?\". Only the exact focus word \"first\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"Before the workshop.\". After the learner line, Jules says aloud: \"Keep the original.\". Ending state: Earliest sketch is visible only to Jules and the partners. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E02-S07",
+      "shot_number": 7,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 48,
+      "episode_end_seconds": 56,
+      "scene": "INT. HACKATHON HALL - CHECK-IN DESK - EVENING",
+      "location_id": "DESK",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Quiet relationship beat: help includes respecting a boundary",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Leo"
+      ],
+      "visible_action": "[name] raises a hand gently before Maya unfolds a personal page toward Leo; Maya closes that section herself and meets the eyes of [name].",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "keep",
+        "meaning": "Continue to hold or retain.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "Please keep that page closed.",
+        "performance_text": "Please [silently mouthed: keep] that page closed.",
+        "labelled_text": "[name]: Please [silently mouthed: keep] that page closed.",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Maya",
+          "text": "My personal notes are next.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "Please keep that page closed.",
+          "performance_text": "Please [silently mouthed: keep] that page closed.",
+          "labelled_text": "[name]: Please [silently mouthed: keep] that page closed.",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "Thank you.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Private notebook page is still folded",
+        "out": "Private material stays closed; relevant sketch remains available"
+      },
+      "edit_only_overlay": "None",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Private notebook page is still folded. Action: [name] raises a hand gently before Maya unfolds a personal page toward Leo; Maya closes that section herself and meets the eyes of [name]. [name] performs the exact learner line naturally: \"Please keep that page closed.\". Only the exact focus word \"keep\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Maya says aloud: \"My personal notes are next.\". After the learner line, Maya says aloud: \"Thank you.\". Ending state: Private material stays closed; relevant sketch remains available. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E02-S08",
+      "shot_number": 8,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 56,
+      "episode_end_seconds": 64,
+      "scene": "INT. HACKATHON HALL - CHECK-IN DESK - EVENING",
+      "location_id": "DESK",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Jules",
+        "Leo"
+      ],
+      "visible_action": "[name] aligns the two project sheets without mixing them; Jules places a separate-demo card between the piles.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "fair",
+        "meaning": "Treating people by the same reasonable rules.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "One test sounds fair.",
+        "performance_text": "One test sounds [silently mouthed: fair].",
+        "labelled_text": "[name]: One test sounds [silently mouthed: fair].",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Jules",
+          "text": "Separate demos. No shared files.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "One test sounds fair.",
+          "performance_text": "One test sounds [silently mouthed: fair].",
+          "labelled_text": "[name]: One test sounds [silently mouthed: fair].",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Leo",
+          "text": "She signed the sketch away.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Two records are separate; hold still active",
+        "out": "Jules proposes independent demos, not access to private files"
+      },
+      "edit_only_overlay": "SEPARATE DEMOS / PRIVATE FILES STAY PRIVATE",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Jules is a fictional adult nonbinary organizer, 32, with cropped dark hair, mustard blazer over a black T-shirt, dark trousers and orange lanyard. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Two records are separate; hold still active. Action: [name] aligns the two project sheets without mixing them; Jules places a separate-demo card between the piles. [name] performs the exact learner line naturally: \"One test sounds fair.\". Only the exact focus word \"fair\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Jules says aloud: \"Separate demos. No shared files.\". After the learner line, Leo says aloud: \"She signed the sketch away.\". Ending state: Jules proposes independent demos, not access to private files. Leave room beside [name] for the editor to add this exact short overlay: SEPARATE DEMOS / PRIVATE FILES STAY PRIVATE. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E02-S09",
+      "shot_number": 9,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 64,
+      "episode_end_seconds": 72,
+      "scene": "INT. HACKATHON HALL - CHECK-IN DESK - EVENING",
+      "location_id": "DESK",
+      "camera": "Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background.",
+      "beat": "Escalation",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Leo"
+      ],
+      "visible_action": "[name] looks from a cropped scan in Leo's hand to Maya; [name] does not grab the document or demand her device.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "sign",
+        "meaning": "Write a signature to confirm agreement.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "Did you sign this?",
+        "performance_text": "Did you [silently mouthed: sign] this?",
+        "labelled_text": "[name]: Did you [silently mouthed: sign] this?",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "Leo",
+          "text": "Her signature. Right there.",
+          "delivery": "voiced_normally"
+        },
+        {
+          "speaker": "[name]",
+          "text": "Did you sign this?",
+          "performance_text": "Did you [silently mouthed: sign] this?",
+          "labelled_text": "[name]: Did you [silently mouthed: sign] this?",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "The workshop cover. Yes.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Leo introduces a scanned workshop cover sheet",
+        "out": "Maya acknowledges her signature on the cover, not the whole claim"
+      },
+      "edit_only_overlay": "WORKSHOP RELEASE - PAGE 1 OF 2",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Medium close-up of [name]; a slow 10 cm push keeps the other actor in the vertical background. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Leo introduces a scanned workshop cover sheet. Action: [name] looks from a cropped scan in Leo's hand to Maya; [name] does not grab the document or demand her device. [name] performs the exact learner line naturally: \"Did you sign this?\". Only the exact focus word \"sign\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Before the learner line, Leo says aloud: \"Her signature. Right there.\". After the learner line, Maya says aloud: \"The workshop cover. Yes.\". Ending state: Maya acknowledges her signature on the cover, not the whole claim. Leave room beside [name] for the editor to add this exact short overlay: WORKSHOP RELEASE - PAGE 1 OF 2. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    },
+    {
+      "id": "E02-S10",
+      "shot_number": 10,
+      "duration_seconds": 8,
+      "source_duration_seconds": 8,
+      "episode_start_seconds": 72,
+      "episode_end_seconds": 80,
+      "scene": "INT. HACKATHON HALL - CHECK-IN DESK - EVENING",
+      "location_id": "DESK",
+      "camera": "Locked close three-shot, [name] dominant; document and bag remain below the faces.",
+      "beat": "Cliffhanger: an acknowledged signature is missing its governing second page",
+      "visible_cast": [
+        "[name]",
+        "Maya",
+        "Leo"
+      ],
+      "visible_action": "[name] points to the printed one-of-two marker, then watches Maya lift her closed bag onto the desk while Leo lowers the single scan.",
+      "protagonist_visible_throughout": true,
+      "focus_word": {
+        "word": "page",
+        "meaning": "One side of a sheet in a document.",
+        "primary": true,
+        "delivery": "silently_mouthed_by_[name]"
+      },
+      "learner_line": {
+        "speaker": "[name]",
+        "text": "Where's the second page?",
+        "performance_text": "Where's the second [silently mouthed: page]?",
+        "labelled_text": "[name]: Where's the second [silently mouthed: page]?",
+        "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+      },
+      "dialogue": [
+        {
+          "speaker": "[name]",
+          "text": "Where's the second page?",
+          "performance_text": "Where's the second [silently mouthed: page]?",
+          "labelled_text": "[name]: Where's the second [silently mouthed: page]?",
+          "focus_delivery": "Visibly mouth only the focus word without voicing it; speak the rest of the line normally. No word timing or synchronization."
+        },
+        {
+          "speaker": "Maya",
+          "text": "It changes everything.",
+          "delivery": "voiced_normally"
+        }
+      ],
+      "sound_cues": "Normal hall murmur, laptop fan, natural paper/contact effects and a low instrumental tension score. Continue all background sound under the silently mouthed word; all other dialogue is voiced normally.",
+      "continuity": {
+        "in": "Only page one of a two-page workshop release is present",
+        "out": "The missing second page may change the claim; Maya reaches for her original"
+      },
+      "edit_only_overlay": "MISSING: PAGE 2",
+      "video_prompt": "Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name] and preserve that exact identity without inventing appearance or gender. [name] is an adult wearing a charcoal T-shirt, open navy overshirt, dark jeans, plain white trainers and green lanyard. Maya is a fictional adult woman, 28, with a dark wavy bob, olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Leo is a fictional adult man, 30, with short dark curls, burgundy crewneck, dark trousers and teal lanyard. Location and lighting: the same coworking hall at a white check-in desk beside table 7, glass doors behind it, warm overhead practicals and cool screen fill. Camera: Locked close three-shot, [name] dominant; document and bag remain below the faces. Keep [name] physically on screen with a recognizable face for the entire shot; props and other actors remain subordinate to that face. Starting state: Only page one of a two-page workshop release is present. Action: [name] points to the printed one-of-two marker, then watches Maya lift her closed bag onto the desk while Leo lowers the single scan. [name] performs the exact learner line naturally: \"Where's the second page?\". Only the exact focus word \"page\" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK: audible supporting dialogue, hall ambience, laptop fan, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute any other word, actor, ambience, music or effect. No bleep, substitute word or timing/synchronization instruction. Let the opening action play with normal ambience and music. After the learner line, Maya says aloud: \"It changes everything.\". Ending state: The missing second page may change the claim; Maya reaches for her original. Leave room beside [name] for the editor to add this exact short overlay: MISSING: PAGE 2. No generated captions, logos or readable interface text; all required text is added in editing. No cutaway, time jump or extra action."
+    }
+  ]
+}

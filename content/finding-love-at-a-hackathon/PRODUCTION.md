@@ -1,0 +1,22 @@
+# Finding Love at a Hackathon
+## Production and prompt instructions
+
+Use a single 9:16 source clip for each of the ten scripted shots. Each source is eight seconds; cut them in numbered order for an 80-second episode. The hook begins in the first shot and the cliffhanger ends the tenth. Keep title text, any captions and required interface/receipt labels inside those shots. They do not need extra cards or reaction inserts.
+
+Supply the user's character/selfie reference for [name] before generation. The prompts intentionally specify no physical appearance or gender for [name]. Keep the same adult identity, outfit, lanyard and reference across all shots. Lock casting references for Maya, Leo and Jules once chosen and use the wardrobe/location guide. No reference image is included in this package.
+
+Every shot shows [name]'s recognizable face throughout. Frame phones, papers and tokens below chin height and slightly beside the face; do not cover the face with the board or paper. A close prop view still includes [name]. Other actors remain in the narrow frame or in depth behind [name]. Camera moves are small and have a clear endpoint. Avoid adding reverse shots, a crowd or a second action sequence inside one clip.
+
+The prompt requests **normal full scene audio**. Supporting characters speak their written dialogue aloud. [name] speaks every non-target word in the learner line normally, then visibly mouths only the marked target without voicing it. Ambience, music and effects continue through that word. No bleep, replacement word, global silence or timing trigger is requested. The short ordinary gap made by one unvoiced word is intentional. Do not read the bracket annotation aloud.
+
+The plain `learner_line.text` is the practice asset; `performance_text` marks the scene delivery. A user can record the plain word or phrase for learning independently. This package does not splice that recording into generated audio or require alignment, detection, ducking, timestamps or soundtrack replacement. The current proof of concept relies on the prompt instruction itself.
+
+Generate or perform the opening action, short learner phrase and final response as one coherent scene. No dialogue line needs a fixed position inside the eight seconds. Leave breathing and eye reactions where they fit naturally. The written dialogue budget is short enough for an ordinary brisk delivery; do not turn it into a vocabulary recital. The focus word means something in the scene: it identifies a problem, asks for a decision, names a value or moves an action forward.
+
+Required short overlay text is an editing asset, not dialogue. Add it beside the actor without covering the face. The prompts avoid relying on generated tiny text, long agreements, readable signatures or full code screens. The private page can be physically masked; the edit can show only the relevant fictional clause or version label. A caption of the learner line may reproduce the marked word for learning, but should never create a second taught word or imply it was audibly spoken.
+
+For the offline test, stage a single staffed local confirmation desk and numbered paper tokens. Helper phones show requests; they do not somehow synchronize through a disabled network. The black laptop's weak battery, current orange USB and charged silver laptop are already established before the reset. The room stays lit when desk power cycles. Recovery opens the saved V2 local demo and preserves the paper ledger, rather than recreating software instantly.
+
+The JSON and prompts can be selected in a Scene Creator without changing the underlying scripts. If a duration, action, word or learner line is edited for a new authored version, update that canonical Markdown shot, its marked performance line and prompt together, then export and validate again. Reference inputs and optional generation settings can be supplied outside the content records. Do not replace [name] with an invented casting description.
+
+The files have passed text-level structural and editorial checks. No generated clips are included. Identity consistency, natural full sound and target-only silent mouthing need an ordinary viewing/listening check when outputs exist; this package has not claimed those model behaviors were rendered or verified.

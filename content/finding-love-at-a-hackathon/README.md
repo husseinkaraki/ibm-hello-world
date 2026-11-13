@@ -6,7 +6,7 @@ Ten complete original episodes of a planned 45-episode vertical romance thriller
 
 Start with [episode 01's complete script](episodes/episode-01.md) or its [machine-readable shot data](shot-data/episode-01.json). Every shot includes camera, visible action, dialogue, one word and meaning, a short marked learner line, continuity and a copyable, self-contained 9:16 video prompt. The user character/selfie reference must be supplied when generating; this package does not invent [name]'s appearance or include a reference image.
 
-**Recurring co-star:** Lucy is [name]'s fictional adult romantic co-star and product-design partner. Her identity comes from the supplied Lucy character reference, named **lucy.png** by the application. Prompts distinguish Lucy's reference from [name]'s selfie, preserve the hackathon wardrobe, and use the same cast name in dialogue, shot data and overlays. Binary packaging and reference-image API handling belong to the application.
+**Recurring co-star:** Lucy is [name]'s fictional adult romantic co-star and product-design partner, visibly present alongside [name] in all 100 shots. Her identity comes from the supplied Lucy character reference, named **lucy.png** by the application. Prompts distinguish Lucy's reference from [name]'s selfie, preserve the hackathon wardrobe, and use the same cast name in dialogue, shot data and overlays. Binary packaging and reference-image API handling belong to the application.
 
 | Episode | Title | Script | Shot data |
 | --- | --- | --- | --- |

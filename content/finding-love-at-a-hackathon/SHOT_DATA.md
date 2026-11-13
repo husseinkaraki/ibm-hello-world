@@ -25,7 +25,7 @@
 
 Every episode has `audio_mode: full_scene_audio_focus_word_silently_mouthed`. There is **no** `onset_seconds`, `focus_word_time_seconds`, learner audio window or target synchronization field. The plain practice text does not mean the target should be audibly spoken in the generated scene: the marked performance text and video prompt control that distinction. Do not send the plain line alone as an instruction to voice the entire line.
 
-The recurring romantic co-star's cast/speaker identifier is `Lucy`; uppercase on-screen labels use `LUCY`. Her identity reference is the application-managed `lucy.png`, explicitly bound to Lucy in each video prompt and kept separate from the learner reference for `[name]`. Leo and Jules keep their existing identifiers and roles. The schema remains 1.1 with the same JSON keys and field types; only the corresponding character name and reference instructions change. The manifest's script hashes are regenerated from the updated canonical scripts.
+The recurring romantic co-star's cast/speaker identifier is `Lucy`; uppercase on-screen labels use `LUCY`. Her identity reference is the application-managed `lucy.png`, explicitly bound to Lucy in each video prompt and kept separate from the learner reference for `[name]`. Both `[name]` and `Lucy` appear in every `visible_cast` list and are visibly present in every shot. Leo and Jules keep their existing identifiers and roles. The schema remains 1.1 with the same JSON keys and field types; co-star naming/reference instructions and E02-S03's small visible reaction change. The manifest's script hashes are regenerated from the updated canonical scripts.
 
 Example of the first record's learning fields:
 

@@ -67,8 +67,8 @@ def run() -> tuple[list[dict], list[str]]:
             require(shot['episode_start_seconds'] == (i-1)*8 and shot['episode_end_seconds'] == i*8,
                     f'{sid}: contiguous edit range')
             require(shot['location_id'] in LOCATIONS, f'{sid}: known location')
-            require(set(shot['visible_cast']) <= CAST and shot['visible_cast'].count('[name]') == 1,
-                    f'{sid}: cast/placeholder')
+            require(set(shot['visible_cast']) <= CAST and shot['visible_cast'].count('[name]') == 1
+                    and shot['visible_cast'].count('Lucy') == 1, f'{sid}: learner/co-star cast')
             require(shot['protagonist_visible_throughout'], f'{sid}: visible protagonist flag')
             require('[name]' in shot['visible_action'] and '[name]' in shot['camera'],
                     f'{sid}: protagonist visible in action and camera')
@@ -109,12 +109,10 @@ def run() -> tuple[list[dict], list[str]]:
                 require(term in prompt, f'{sid}: prompt missing {term!r}')
             require('supplied Lucy character reference (lucy.png)' in prompt,
                     f'{sid}: reference must be explicitly bound to Lucy')
-            if 'Lucy' in shot['visible_cast']:
-                require("for Lucy's face, hair and recognizable identity" in prompt,
-                        f'{sid}: preserve Lucy reference identity')
-            else:
-                require('Lucy is not visible in this shot' in prompt,
-                        f'{sid}: keep the co-star reference off screen')
+            require("for Lucy's face, hair and recognizable identity" in prompt,
+                    f'{sid}: preserve Lucy reference identity')
+            require('Keep Lucy visibly present throughout the shot' in prompt,
+                    f'{sid}: co-star must stay visible with the learner')
             require(not OLD_AUDIO.search(prompt), f'{sid}: obsolete prompt audio instructions')
             require(shot['continuity']['in'] in prompt and shot['continuity']['out'] in prompt,
                     f'{sid}: prompt must include its own starting/ending state')
@@ -143,7 +141,7 @@ def report(episodes: list[dict]) -> str:
              '- Exactly ten shots per episode, 100 unique shot IDs and 800 seconds total (13:20). Every episode is 80 seconds (01:20).',
              '- Every source shot is eight seconds; edit ranges are contiguous and totals are within 60–120 seconds.',
              '- Every camera/action description keeps [name] visible; every prompt requires the supplied reference and a recognizable face throughout.',
-             '- Lucy is the reference-backed recurring romantic co-star. All 100 prompts bind lucy.png to Lucy, including an explicit off-screen instruction in E02-S03. Leo and Jules remain distinct.',
+             '- Lucy is the reference-backed recurring romantic co-star. All 100 shots include both [name] and Lucy; every prompt binds lucy.png to Lucy and keeps her visibly present. Leo and Jules remain distinct.',
              '- Exactly one primary focus object per shot; one exact focus-word occurrence in its short plain learner line; exact [name] speaker label.',
              '- Plain lines and silently-mouthed performance annotations agree. All supporting dialogue is voiced normally.',
              '- Every prompt requests dialogue, ambience, sound effects and score, keeps that background continuous, and leaves only the one [name] focus word unvoiced.',

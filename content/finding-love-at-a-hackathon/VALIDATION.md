@@ -22,7 +22,7 @@ All structural checks pass:
 - Exactly ten shots per episode, 100 unique shot IDs and 800 seconds total (13:20). Every episode is 80 seconds (01:20).
 - Every source shot is eight seconds; edit ranges are contiguous and totals are within 60–120 seconds.
 - Every camera/action description keeps [name] visible; every prompt requires the supplied reference and a recognizable face throughout.
-- Lucy is the reference-backed recurring romantic co-star. All 100 prompts bind lucy.png to Lucy, including an explicit off-screen instruction in E02-S03. Leo and Jules remain distinct.
+- Lucy is the reference-backed recurring romantic co-star. All 100 shots include both [name] and Lucy; every prompt binds lucy.png to Lucy and keeps her visibly present. Leo and Jules remain distinct.
 - Exactly one primary focus object per shot; one exact focus-word occurrence in its short plain learner line; exact [name] speaker label.
 - Plain lines and silently-mouthed performance annotations agree. All supporting dialogue is voiced normally.
 - Every prompt requests dialogue, ambience, sound effects and score, keeps that background continuous, and leaves only the one [name] focus word unvoiced.

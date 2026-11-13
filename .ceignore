@@ -1,0 +1,16 @@
+*
+!Dockerfile
+!package.json
+!package-lock.json
+!next.config.ts
+!next-env.d.ts
+!tsconfig.json
+!app/
+!app/**
+!scripts/
+!scripts/prepare-standalone.mjs
+# Keep environment files excluded even inside otherwise allowed directories.
+**/.env
+**/.env.*
+.env
+.env.*

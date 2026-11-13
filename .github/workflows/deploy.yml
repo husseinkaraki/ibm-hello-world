@@ -1,0 +1,86 @@
+name: Check and deploy to IBM Cloud
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ibm-hello-world-${{ github.workflow }}
+  cancel-in-progress: false
+
+env:
+  IBM_CLOUD_ACCOUNT_ID: ${{ vars.IBM_CLOUD_ACCOUNT_ID || '2142ae6722f5478e9f37cf83403b9cbe' }}
+  CE_REGION: ${{ vars.CE_REGION || 'eu-es' }}
+  CE_RESOURCE_GROUP: ${{ vars.CE_RESOURCE_GROUP || 'Default' }}
+  CE_PROJECT_NAME: ${{ vars.CE_PROJECT_NAME || 'watsonx-Hackathon Code Engine' }}
+  CE_APP_NAME: ${{ vars.CE_APP_NAME || 'hello-world' }}
+  CE_REGISTRY: ${{ vars.CE_REGISTRY || 'es.icr.io' }}
+  CE_REGISTRY_NAMESPACE: ${{ vars.CE_REGISTRY_NAMESPACE || 'ibm-hello-2142ae67' }}
+  CE_REGISTRY_SECRET: ${{ vars.CE_REGISTRY_SECRET || 'hello-world-registry' }}
+  NEXT_TELEMETRY_DISABLED: '1'
+
+jobs:
+  checks:
+    name: Check application
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+      - run: npm ci
+      - run: npm run build
+      - run: npm run check
+      - run: npm test
+
+  deploy:
+    name: Deploy and verify IBM URL
+    needs: checks
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+      - name: Check deployment credential
+        env:
+          IBMCLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
+        run: |
+          if [ -z "$IBMCLOUD_API_KEY" ]; then
+            echo '::error::Add the encrypted repository Actions secret IBM_CLOUD_API_KEY before deploying.'
+            exit 1
+          fi
+      - name: Install official IBM Cloud CLI and Code Engine plugin
+        run: |
+          curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+          ibmcloud plugin install code-engine -f
+      - name: Authenticate to IBM Cloud
+        env:
+          IBMCLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
+        run: |
+          ibmcloud login -a https://cloud.ibm.com -c "$IBM_CLOUD_ACCOUNT_ID" -r "$CE_REGION" -g "$CE_RESOURCE_GROUP"
+      - name: Create or update the Hello World application
+        run: ./deploy.sh auto
+      - name: Verify the deployed HTTPS endpoints
+        run: |
+          APP_URL="$(ibmcloud ce app get --name "$CE_APP_NAME" --output url)"
+          node scripts/verify.mjs "$APP_URL"
+          printf 'Deployed and verified [%s](%s)\n' "$APP_URL" "$APP_URL" >> "$GITHUB_STEP_SUMMARY"
+      - name: End IBM Cloud session
+        if: always()
+        run: |
+          if command -v ibmcloud >/dev/null 2>&1; then
+            ibmcloud logout
+          fi

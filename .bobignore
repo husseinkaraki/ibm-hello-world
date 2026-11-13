@@ -1,0 +1,10 @@
+# IBM Bob uses gitignore syntax. Only sanitized examples may enter context.
+**/.env
+**/.env.*
+!**/.env.example
+node_modules/
+.next/
+.git/
+*.log
+.bluemix/
+.ibmcloud/

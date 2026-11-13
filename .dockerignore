@@ -42,3 +42,7 @@ credentials*.json
 **/*.p12
 *.pfx
 **/*.pfx
+
+# Google project credential files stay out of context and source uploads.
+mich-devfest-hackathon-*.json
+**/mich-devfest-hackathon-*.json

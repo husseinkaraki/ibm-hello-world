@@ -3,6 +3,7 @@ import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { runtimeBindingFingerprint } from './runtime-bindings.mjs';
 
 const localCli = join(homedir(), '.local/bin/ibmcloud');
 const cli = process.env.IBMCLOUD_CLI || (existsSync(localCli) ? localCli : 'ibmcloud');
@@ -29,6 +30,10 @@ if (action === 'auto') {
   const apps = JSON.parse(run(['ce', 'app', 'list', '--output', 'json'], true));
   action = apps.items.some(app => app.metadata.name === appName) ? 'update' : 'create';
 }
+// Image deployments must retain independently configured runtime secrets.
+const before = action === 'update'
+  ? runtimeBindingFingerprint(JSON.parse(run(['ce', 'app', 'get', '--name', appName, '--output', 'json'], true)))
+  : undefined;
 
 const registry = process.env.CE_REGISTRY || 'es.icr.io';
 const namespace = process.env.CE_REGISTRY_NAMESPACE || 'ibm-hello-2142ae67';
@@ -53,3 +58,11 @@ const args = [
 ];
 if (action === 'update') args.push('--commands-clear', '--arguments-clear');
 run(args);
+if (before !== undefined) {
+  const after = runtimeBindingFingerprint(JSON.parse(run(['ce', 'app', 'get', '--name', appName, '--output', 'json'], true)));
+  if (before !== after) {
+    console.error('Deployment changed environment variables or secret mounts. Review the IBM runtime configuration; values were not printed.');
+    process.exit(1);
+  }
+  console.log('Existing runtime environment and secret mounts preserved.');
+}

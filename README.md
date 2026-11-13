@@ -82,6 +82,8 @@ node scripts/verify.mjs https://hello-world.2h3l0fzdglyt.eu-es.codeengine.appdom
 
 ## Environment files and Bob
 
+For Veo's Google credential creation and IBM runtime-secret setup, see [Google Cloud credentials](docs/google-cloud-credentials.md). Runtime Google credentials and app secrets stay out of GitHub Actions and container builds.
+
 This Hello World app requires no secrets. `.env.example` contains comments and placeholders only. Keep real development values in `.env.local`; do not prefix secrets with `NEXT_PUBLIC_`, which would make them available to browser code. Production runtime credentials belong in IBM Code Engine secrets and secret-backed environment variables.
 
 `.bobignore` is present both in this repository and at `/Users/karaki/dev/ibm/.bobignore`, so either workspace root excludes `.env`, `.env.local`, and other `.env.*` files. `.gitignore` excludes the same files while allowing a sanitized `.env.example`. Docker and Code Engine uploads use explicit source allowlists and final environment-file exclusions, including files nested in the app directory. They do not upload `.env.example` either.

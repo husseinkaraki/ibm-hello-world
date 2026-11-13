@@ -24,3 +24,12 @@ const css = await fetch(new URL(cssPath.replaceAll('&amp;', '&'), base), { signa
 assert.equal(css.status, 200, 'Next.js stylesheet must be accessible');
 assert.match(css.headers.get('content-type'), /^text\/css/);
 console.log(`Verified Next.js ${status.nextVersion} / TypeScript, health JSON, and CSS over HTTPS at ${base}`);
+const veoPage = await fetch(new URL('/veo', base), { signal: AbortSignal.timeout(30_000) });
+assert.equal(veoPage.status, 200, 'Veo page must be deployed');
+assert.match(await veoPage.text(), /Scene Lab/);
+const readiness = await fetch(new URL('/api/veo', base), { signal: AbortSignal.timeout(60_000) });
+assert.equal(readiness.status, 200, 'Veo readiness route must be deployed');
+const ready = await readiness.json();
+assert.equal(typeof ready.ready, 'boolean');
+assert.equal(typeof ready.requiresPassword, 'boolean');
+console.log(`Veo page and API reachable; Google OAuth readiness: ${ready.ready ? 'ready' : 'not configured/ready'}. No video generation submitted.`);

@@ -27,3 +27,7 @@ output/playwright/
 .playwright-cli/
 !.env.example
 !**/.env.example
+
+# Google project credential files stay out of context and source uploads.
+mich-devfest-hackathon-*.json
+**/mich-devfest-hackathon-*.json

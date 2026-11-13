@@ -7,6 +7,8 @@
 !tsconfig.json
 !app/
 !app/**
+!lib/
+!lib/**
 !scripts/
 !scripts/prepare-standalone.mjs
 # Keep environment files excluded even inside otherwise allowed directories.
@@ -14,3 +16,33 @@
 **/.env.*
 .env
 .env.*
+
+# Keep credentials out of newly allowed server modules.
+.env*
+**/.env*
+.envrc
+**/.envrc
+secrets/
+**/secrets/
+credentials/
+**/credentials/
+application_default_credentials.json
+**/application_default_credentials.json
+credentials*.json
+**/credentials*.json
+*-credentials.json
+**/*-credentials.json
+*service-account*.json
+**/*service-account*.json
+*.key
+**/*.key
+*.pem
+**/*.pem
+*.p12
+**/*.p12
+*.pfx
+**/*.pfx
+
+# Google project credential files stay out of context and source uploads.
+mich-devfest-hackathon-*.json
+**/mich-devfest-hackathon-*.json

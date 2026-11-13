@@ -45,7 +45,29 @@ The story, one-word learning objective and full-audio rule must all agree. A bra
 
 **Copyable video prompt:**
 ```text
-Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Keep Lucy visibly present throughout the shot, with her recognizable face in frame alongside [name]. <Write complete fixed casting/wardrobe descriptions for any other visible adult actors.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: "<plain line>". Only the exact focus word "<word>" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action.
+Finding Love at a Hackathon — <shot_id> — <episode_title>
+FORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.
+REFERENCE IMAGES:
+<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.
+<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.
+CAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.
+integrated_multimodal_description: <tone, visual style and emotional pressure>.
+SETTING AND LIGHT: <venue, furniture, practical light and screen fill>.
+CAMERA: <framing and one small move keeping [name] recognizable>.
+Keep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.
+START: <complete incoming state>.
+PERFORMANCE — no required word onset. Plain learner line: "<short line with the exact focus word>".
+Play once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.
+Only the exact focus word "<focus_word>" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.
+Ranges guide action/camera, not word timing, detection or recording insertion.
+[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.
+[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.
+[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.
+END: <complete changed state>.
+VISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.
+overall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.
+non_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.
+EDIT ONLY: <label or None; add later, not in generated frames>.
 ```
 
 ### E__-S02 | 00:08-00:16 | 8 seconds
@@ -74,7 +96,29 @@ Generate one continuous 8-second live-action-style shot in 9:16 portrait composi
 
 **Copyable video prompt:**
 ```text
-Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Keep Lucy visibly present throughout the shot, with her recognizable face in frame alongside [name]. <Write complete fixed casting/wardrobe descriptions for any other visible adult actors.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: "<plain line>". Only the exact focus word "<word>" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action.
+Finding Love at a Hackathon — <shot_id> — <episode_title>
+FORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.
+REFERENCE IMAGES:
+<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.
+<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.
+CAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.
+integrated_multimodal_description: <tone, visual style and emotional pressure>.
+SETTING AND LIGHT: <venue, furniture, practical light and screen fill>.
+CAMERA: <framing and one small move keeping [name] recognizable>.
+Keep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.
+START: <complete incoming state>.
+PERFORMANCE — no required word onset. Plain learner line: "<short line with the exact focus word>".
+Play once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.
+Only the exact focus word "<focus_word>" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.
+Ranges guide action/camera, not word timing, detection or recording insertion.
+[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.
+[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.
+[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.
+END: <complete changed state>.
+VISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.
+overall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.
+non_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.
+EDIT ONLY: <label or None; add later, not in generated frames>.
 ```
 
 ### E__-S03 | 00:16-00:24 | 8 seconds
@@ -103,7 +147,29 @@ Generate one continuous 8-second live-action-style shot in 9:16 portrait composi
 
 **Copyable video prompt:**
 ```text
-Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Keep Lucy visibly present throughout the shot, with her recognizable face in frame alongside [name]. <Write complete fixed casting/wardrobe descriptions for any other visible adult actors.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: "<plain line>". Only the exact focus word "<word>" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action.
+Finding Love at a Hackathon — <shot_id> — <episode_title>
+FORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.
+REFERENCE IMAGES:
+<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.
+<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.
+CAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.
+integrated_multimodal_description: <tone, visual style and emotional pressure>.
+SETTING AND LIGHT: <venue, furniture, practical light and screen fill>.
+CAMERA: <framing and one small move keeping [name] recognizable>.
+Keep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.
+START: <complete incoming state>.
+PERFORMANCE — no required word onset. Plain learner line: "<short line with the exact focus word>".
+Play once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.
+Only the exact focus word "<focus_word>" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.
+Ranges guide action/camera, not word timing, detection or recording insertion.
+[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.
+[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.
+[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.
+END: <complete changed state>.
+VISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.
+overall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.
+non_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.
+EDIT ONLY: <label or None; add later, not in generated frames>.
 ```
 
 ### E__-S04 | 00:24-00:32 | 8 seconds
@@ -132,7 +198,29 @@ Generate one continuous 8-second live-action-style shot in 9:16 portrait composi
 
 **Copyable video prompt:**
 ```text
-Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Keep Lucy visibly present throughout the shot, with her recognizable face in frame alongside [name]. <Write complete fixed casting/wardrobe descriptions for any other visible adult actors.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: "<plain line>". Only the exact focus word "<word>" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action.
+Finding Love at a Hackathon — <shot_id> — <episode_title>
+FORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.
+REFERENCE IMAGES:
+<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.
+<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.
+CAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.
+integrated_multimodal_description: <tone, visual style and emotional pressure>.
+SETTING AND LIGHT: <venue, furniture, practical light and screen fill>.
+CAMERA: <framing and one small move keeping [name] recognizable>.
+Keep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.
+START: <complete incoming state>.
+PERFORMANCE — no required word onset. Plain learner line: "<short line with the exact focus word>".
+Play once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.
+Only the exact focus word "<focus_word>" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.
+Ranges guide action/camera, not word timing, detection or recording insertion.
+[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.
+[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.
+[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.
+END: <complete changed state>.
+VISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.
+overall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.
+non_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.
+EDIT ONLY: <label or None; add later, not in generated frames>.
 ```
 
 ### E__-S05 | 00:32-00:40 | 8 seconds
@@ -161,7 +249,29 @@ Generate one continuous 8-second live-action-style shot in 9:16 portrait composi
 
 **Copyable video prompt:**
 ```text
-Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Keep Lucy visibly present throughout the shot, with her recognizable face in frame alongside [name]. <Write complete fixed casting/wardrobe descriptions for any other visible adult actors.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: "<plain line>". Only the exact focus word "<word>" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action.
+Finding Love at a Hackathon — <shot_id> — <episode_title>
+FORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.
+REFERENCE IMAGES:
+<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.
+<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.
+CAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.
+integrated_multimodal_description: <tone, visual style and emotional pressure>.
+SETTING AND LIGHT: <venue, furniture, practical light and screen fill>.
+CAMERA: <framing and one small move keeping [name] recognizable>.
+Keep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.
+START: <complete incoming state>.
+PERFORMANCE — no required word onset. Plain learner line: "<short line with the exact focus word>".
+Play once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.
+Only the exact focus word "<focus_word>" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.
+Ranges guide action/camera, not word timing, detection or recording insertion.
+[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.
+[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.
+[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.
+END: <complete changed state>.
+VISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.
+overall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.
+non_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.
+EDIT ONLY: <label or None; add later, not in generated frames>.
 ```
 
 ### E__-S06 | 00:40-00:48 | 8 seconds
@@ -190,7 +300,29 @@ Generate one continuous 8-second live-action-style shot in 9:16 portrait composi
 
 **Copyable video prompt:**
 ```text
-Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Keep Lucy visibly present throughout the shot, with her recognizable face in frame alongside [name]. <Write complete fixed casting/wardrobe descriptions for any other visible adult actors.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: "<plain line>". Only the exact focus word "<word>" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action.
+Finding Love at a Hackathon — <shot_id> — <episode_title>
+FORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.
+REFERENCE IMAGES:
+<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.
+<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.
+CAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.
+integrated_multimodal_description: <tone, visual style and emotional pressure>.
+SETTING AND LIGHT: <venue, furniture, practical light and screen fill>.
+CAMERA: <framing and one small move keeping [name] recognizable>.
+Keep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.
+START: <complete incoming state>.
+PERFORMANCE — no required word onset. Plain learner line: "<short line with the exact focus word>".
+Play once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.
+Only the exact focus word "<focus_word>" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.
+Ranges guide action/camera, not word timing, detection or recording insertion.
+[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.
+[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.
+[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.
+END: <complete changed state>.
+VISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.
+overall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.
+non_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.
+EDIT ONLY: <label or None; add later, not in generated frames>.
 ```
 
 ### E__-S07 | 00:48-00:56 | 8 seconds
@@ -219,7 +351,29 @@ Generate one continuous 8-second live-action-style shot in 9:16 portrait composi
 
 **Copyable video prompt:**
 ```text
-Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Keep Lucy visibly present throughout the shot, with her recognizable face in frame alongside [name]. <Write complete fixed casting/wardrobe descriptions for any other visible adult actors.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: "<plain line>". Only the exact focus word "<word>" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action.
+Finding Love at a Hackathon — <shot_id> — <episode_title>
+FORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.
+REFERENCE IMAGES:
+<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.
+<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.
+CAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.
+integrated_multimodal_description: <tone, visual style and emotional pressure>.
+SETTING AND LIGHT: <venue, furniture, practical light and screen fill>.
+CAMERA: <framing and one small move keeping [name] recognizable>.
+Keep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.
+START: <complete incoming state>.
+PERFORMANCE — no required word onset. Plain learner line: "<short line with the exact focus word>".
+Play once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.
+Only the exact focus word "<focus_word>" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.
+Ranges guide action/camera, not word timing, detection or recording insertion.
+[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.
+[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.
+[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.
+END: <complete changed state>.
+VISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.
+overall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.
+non_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.
+EDIT ONLY: <label or None; add later, not in generated frames>.
 ```
 
 ### E__-S08 | 00:56-01:04 | 8 seconds
@@ -248,7 +402,29 @@ Generate one continuous 8-second live-action-style shot in 9:16 portrait composi
 
 **Copyable video prompt:**
 ```text
-Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Keep Lucy visibly present throughout the shot, with her recognizable face in frame alongside [name]. <Write complete fixed casting/wardrobe descriptions for any other visible adult actors.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: "<plain line>". Only the exact focus word "<word>" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action.
+Finding Love at a Hackathon — <shot_id> — <episode_title>
+FORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.
+REFERENCE IMAGES:
+<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.
+<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.
+CAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.
+integrated_multimodal_description: <tone, visual style and emotional pressure>.
+SETTING AND LIGHT: <venue, furniture, practical light and screen fill>.
+CAMERA: <framing and one small move keeping [name] recognizable>.
+Keep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.
+START: <complete incoming state>.
+PERFORMANCE — no required word onset. Plain learner line: "<short line with the exact focus word>".
+Play once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.
+Only the exact focus word "<focus_word>" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.
+Ranges guide action/camera, not word timing, detection or recording insertion.
+[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.
+[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.
+[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.
+END: <complete changed state>.
+VISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.
+overall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.
+non_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.
+EDIT ONLY: <label or None; add later, not in generated frames>.
 ```
 
 ### E__-S09 | 01:04-01:12 | 8 seconds
@@ -277,7 +453,29 @@ Generate one continuous 8-second live-action-style shot in 9:16 portrait composi
 
 **Copyable video prompt:**
 ```text
-Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Keep Lucy visibly present throughout the shot, with her recognizable face in frame alongside [name]. <Write complete fixed casting/wardrobe descriptions for any other visible adult actors.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: "<plain line>". Only the exact focus word "<word>" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action.
+Finding Love at a Hackathon — <shot_id> — <episode_title>
+FORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.
+REFERENCE IMAGES:
+<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.
+<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.
+CAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.
+integrated_multimodal_description: <tone, visual style and emotional pressure>.
+SETTING AND LIGHT: <venue, furniture, practical light and screen fill>.
+CAMERA: <framing and one small move keeping [name] recognizable>.
+Keep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.
+START: <complete incoming state>.
+PERFORMANCE — no required word onset. Plain learner line: "<short line with the exact focus word>".
+Play once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.
+Only the exact focus word "<focus_word>" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.
+Ranges guide action/camera, not word timing, detection or recording insertion.
+[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.
+[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.
+[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.
+END: <complete changed state>.
+VISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.
+overall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.
+non_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.
+EDIT ONLY: <label or None; add later, not in generated frames>.
 ```
 
 ### E__-S10 | 01:12-01:20 | 8 seconds
@@ -306,5 +504,27 @@ Generate one continuous 8-second live-action-style shot in 9:16 portrait composi
 
 **Copyable video prompt:**
 ```text
-Generate one continuous 8-second live-action-style shot in 9:16 portrait composition. Use the supplied character/selfie reference for [name], preserving that exact adult identity without inventing appearance or gender. [name] wears a charcoal T-shirt, open navy overshirt, dark jeans, white trainers and green lanyard. Lucy is the reference-backed recurring romantic co-star and fictional adult woman, 28. Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity, distinct from the learner reference for [name]. Keep Lucy in her hackathon wardrobe: olive overshirt over a cream T-shirt, black trousers, teal lanyard and a silver watch on her left wrist. Keep Lucy visibly present throughout the shot, with her recognizable face in frame alongside [name]. <Write complete fixed casting/wardrobe descriptions for any other visible adult actors.> Location and lighting: <complete venue, furniture, practical light and screen fill>. Camera: <framing and small move>. Keep [name] physically visible with a recognizable face throughout; never substitute a prop-only insert. Starting state: <full state>. Action: [name] <one clear action>. [name] performs the exact learner line: "<plain line>". Only the exact focus word "<word>" is visibly mouthed by [name] with no audible voice; every other word in that line is spoken normally. Generate a normal FULL SCENE SOUNDTRACK with audible supporting dialogue, hall ambience, natural sound effects and a low instrumental dramatic score. Keep that soundtrack continuous while [name] silently mouths the one target word. Do not silence the clip or mute other words, actors, ambience, music or effects. No bleep, replacement or synchronization instruction. Supporting dialogue before/after: <exact short lines and speaker names>. Ending state: <full state>. Add required text in editing; no generated captions, logos or readable interfaces. No cutaway, time jump or extra action.
+Finding Love at a Hackathon — <shot_id> — <episode_title>
+FORMAT: One continuous 8-second live-action-style shot, 9:16 portrait. Segments are action beats, not extra shots. No generated text, captions, logos or watermarks.
+REFERENCE IMAGES:
+<image 1> — [name]: Use the supplied character/selfie reference for [name]; preserve exact adult identity, no invented appearance/gender. Charcoal tee, open navy overshirt, dark jeans, white trainers, green lanyard.
+<image 2> — LUCY: Use the supplied Lucy character reference (lucy.png) for Lucy's face, hair and recognizable identity. Story asset: media/lucy.png. Lucy is the adult romantic co-star, 28; olive overshirt, cream tee, black trousers, teal lanyard, left silver watch. Keep identities distinct; ignore photo backgrounds.
+CAST: [name] | Lucy | <optional distinct Leo/Jules with fixed wardrobe; do not reuse reference identities>.
+integrated_multimodal_description: <tone, visual style and emotional pressure>.
+SETTING AND LIGHT: <venue, furniture, practical light and screen fill>.
+CAMERA: <framing and one small move keeping [name] recognizable>.
+Keep [name] on screen with a recognizable face for the entire shot; Lucy stays alongside. Props remain below faces.
+START: <complete incoming state>.
+PERFORMANCE — no required word onset. Plain learner line: "<short line with the exact focus word>".
+Play once: <supporting line> / [name]: <line with [silently mouthed: <focus_word>]> / <supporting response>.
+Only the exact focus word "<focus_word>" is visibly mouthed by [name] with no audible voice; the rest of that line is spoken normally. Other actors speak aloud; never read annotations.
+Ranges guide action/camera, not word timing, detection or recording insertion.
+[Segment 1 | 00:00.000–00:02.000] <immediate hook/action and reaction>.
+[Segment 2 | 00:02.000–00:05.000] <one visible escalation or choice>.
+[Segment 3 | 00:05.000–00:08.000] <changed state, emotional reaction or cliffhanger>.
+END: <complete changed state>.
+VISUAL CONTINUITY: Retain image 1/[name], image 2/Lucy, wardrobe, props and light. No identity swap, prop-only insert or time jump.
+overall_soundscape: Normal FULL SCENE SOUNDTRACK: written dialogue, hall ambience, natural action sound effects and a low instrumental dramatic score. Keep that soundtrack continuous through the single unvoiced word; no bleep or global mute.
+non_diegetic_music: <quiet instrumental mood beneath speech; continue normally>.
+EDIT ONLY: <label or None; add later, not in generated frames>.
 ```

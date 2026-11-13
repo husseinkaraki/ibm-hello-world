@@ -3,6 +3,17 @@
   "series_title": "Finding Love at a Hackathon",
   "source_of_truth": "episodes/*.md",
   "audio_mode": "full_scene_audio_focus_word_silently_mouthed",
+  "reference_images": {
+    "image_1": {
+      "character": "[name]",
+      "source": "learner_upload"
+    },
+    "image_2": {
+      "character": "Lucy",
+      "path": "media/lucy.png",
+      "route": "/api/cast-reference"
+    }
+  },
   "planned_episodes": 45,
   "optional_expansion_episodes": 60,
   "completed_episodes": 10,
@@ -14,7 +25,7 @@
       "episode_title": "The Last Seat",
       "script": "episodes/episode-01.md",
       "shot_data": "shot-data/episode-01.json",
-      "script_sha256": "12e0319f5e26d8a24250735f156b0088f9f075666597d6c17fa6eba6a7419ed4",
+      "script_sha256": "28f254055ea641c95b697b9145bfd8a416a21586f954527d6cf21c01fa7ab31c",
       "shots": 10,
       "duration_seconds": 80
     },

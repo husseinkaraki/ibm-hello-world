@@ -269,7 +269,7 @@
         },
         "visible_cast": {
           "type": "array",
-          "minItems": 2,
+          "minItems": 1,
           "maxItems": 4,
           "uniqueItems": true,
           "items": {
@@ -282,14 +282,7 @@
           },
           "contains": {
             "const": "[name]"
-          },
-          "allOf": [
-            {
-              "contains": {
-                "const": "Lucy"
-              }
-            }
-          ]
+          }
         },
         "visible_action": {
           "type": "string",

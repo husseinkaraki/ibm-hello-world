@@ -179,22 +179,27 @@ test("required learner photo and fixed Lucy reference are reused and changed pho
   await input.setInputFiles({ name: "selfie-fixture.png", mimeType: "image/png", buffer: photo });
   await page.getByRole("button", { name: "Generate my scene" }).click();
   await expect(page.locator("video")).toBeVisible();
+  await page.getByRole("button", { name: "Regenerate scene", exact: true }).dblclick();
+  await expect(page.locator("video")).toHaveAttribute("src", /fixture-2/);
+  expect(cloud.submissions).toBe(2);
+  expect(Buffer.from(await (cloud.bodies[1].get("learnerImage") as File).arrayBuffer()).equals(photo)).toBe(true);
+  expect(Buffer.from(await (cloud.bodies[0].get("castImage") as File).arrayBuffer()).equals(Buffer.from(await (cloud.bodies[1].get("castImage") as File).arrayBuffer()))).toBe(true);
   const replacement = Buffer.concat([photo, Buffer.from([0])]);
   await input.setInputFiles({ name: "replacement-fixture.png", mimeType: "image/png", buffer: replacement });
   await expect(page.locator("video")).toHaveCount(0);
-  expect(cloud.submissions).toBe(1);
+  expect(cloud.submissions).toBe(2);
   await page.getByRole("button", { name: "Generate my scene" }).click();
   await expect(page.locator("video")).toBeVisible();
-  expect(cloud.submissions).toBe(2);
+  expect(cloud.submissions).toBe(3);
   await page.getByRole("button", { name: "Next scene", exact: true }).click();
   await threeTakes(page);
   await openScene(page);
   await page.getByRole("button", { name: "Generate my scene" }).click();
   await expect(page.locator("video")).toBeVisible();
-  expect(cloud.submissions).toBe(3);
-  expect((cloud.bodies[2].get("learnerImage") as File).name).toBe("replacement-fixture.png");
-  expect((cloud.bodies[2].get("castImage") as File).name).toBe("lucy.png");
-  expect(Buffer.from(await (cloud.bodies[1].get("castImage") as File).arrayBuffer()).equals(Buffer.from(await (cloud.bodies[2].get("castImage") as File).arrayBuffer()))).toBe(true);
+  expect(cloud.submissions).toBe(4);
+  expect((cloud.bodies[3].get("learnerImage") as File).name).toBe("replacement-fixture.png");
+  expect((cloud.bodies[3].get("castImage") as File).name).toBe("lucy.png");
+  expect(Buffer.from(await (cloud.bodies[2].get("castImage") as File).arrayBuffer()).equals(Buffer.from(await (cloud.bodies[3].get("castImage") as File).arrayBuffer()))).toBe(true);
 });
 
 test("mobile practice and watch screens fit without horizontal overflow", async ({ page }) => {

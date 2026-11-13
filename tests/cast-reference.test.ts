@@ -3,6 +3,7 @@ import { test } from "node:test";
 import { readFileSync } from "node:fs";
 import { parseGenerationRequest } from "../lib/veo-request.ts";
 import { generationBody, MAX_IMAGE_BYTES } from "../lib/veo-contract.ts";
+import { dramaGenerationIdentity, DRAMA_GENERATION_CONTRACT, DRAMA_SETTINGS } from "../lib/drama-generation.ts";
 
 const learner = new Uint8Array([255, 216, 255, 0]);
 const lucy = readFileSync(new URL("../content/finding-love-at-a-hackathon/media/lucy.png", import.meta.url));
@@ -30,6 +31,12 @@ test("the product sends both ordered native asset references with distinct learn
   assert.match(result.prompt, /Reference image 1 is the learner/);
   assert.match(result.prompt, /Reference image 2 is Lucy/);
   assert.match(result.prompt, /mouths only the focus word "safe"/);
+  const identity = JSON.parse(dramaGenerationIdentity("[name] catches the falling board beside Lucy.", "safe", "learner-hash:lucy-hash"));
+  assert.equal(identity.prompt, result.prompt);
+  assert.equal(identity.contract, DRAMA_GENERATION_CONTRACT);
+  assert.deepEqual(identity.settings, DRAMA_SETTINGS);
+  assert.notEqual(dramaGenerationIdentity("Changed scene prompt", "safe", "learner-hash:lucy-hash"), JSON.stringify(identity));
+  assert.notEqual(dramaGenerationIdentity("[name] catches the falling board beside Lucy.", "safe", "changed-photo:lucy-hash"), JSON.stringify(identity));
 });
 
 test("missing, substituted, duplicate, invalid, or oversized photos cannot reach paid generation", async () => {

@@ -29,7 +29,7 @@ console.log(`Verified Next.js ${status.nextVersion} / TypeScript, health JSON, a
 const creatorPage = await fetch(new URL('/scene-creator', base), { signal: AbortSignal.timeout(30_000) });
 assert.equal(creatorPage.status, 200, 'Scene Creator must be deployed');
 const creatorHtml = await creatorPage.text();
-assert.match(creatorHtml, /<title>Scene Creator<\/title>/);
+assert.match(creatorHtml, /<title>Scene Creator · Drama Talk<\/title>/);
 assert.match(creatorHtml, /Your scene preview/);
 assert.match(creatorHtml, /Back to learning/);
 const legacyCreator = await fetch(new URL('/veo', base), { redirect: 'manual', signal: AbortSignal.timeout(30_000) });

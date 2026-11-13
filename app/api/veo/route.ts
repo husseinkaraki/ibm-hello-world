@@ -1,4 +1,5 @@
-import { MAX_IMAGE_BYTES, VeoError, validateImage, validatePrompt } from "../../../lib/veo-contract";
+import { MAX_IMAGE_BYTES, VeoError, validateImage, validatePrompt, validateVideoSettings, validateFocusWord } from "../../../lib/veo-contract";
+import { composeScenePrompt } from "../../../lib/scene-prompt";
 import { errorResponse, json, readiness, requireDemoPassword, requireSameOrigin, submitScene } from "../../../lib/veo-server";
 
 export const runtime = "nodejs";
@@ -22,7 +23,9 @@ export async function POST(request: Request) {
     let data: FormData;
     try { data = await request.formData(); }
     catch { throw new VeoError("The upload could not be read. Choose your photo again."); }
-    const prompt = validatePrompt(data.get("prompt"));
+    const focusWord = validateFocusWord(data.get("focusWord"));
+    const options = validateVideoSettings(data);
+    const prompt = validatePrompt(composeScenePrompt(validatePrompt(data.get("prompt")), focusWord, options));
     const file = data.get("image");
     let image: { bytes: Uint8Array; mimeType: string } | undefined;
     if (file instanceof File && file.size > 0) {
@@ -33,7 +36,7 @@ export async function POST(request: Request) {
     } else if (typeof file === "string") {
       throw new VeoError("Choose a JPEG or PNG photo.");
     }
-    const job = await submitScene(prompt, image);
+    const job = await submitScene(prompt, image, options);
     return json({ state: "pending", job, retryAfterSeconds: 10 }, 202);
   } catch (error) {
     return errorResponse(error);
